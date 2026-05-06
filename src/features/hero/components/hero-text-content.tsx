@@ -30,7 +30,7 @@ const HeroTextContent = () => {
           className="h-12 rounded-full px-8 text-sm font-semibold shadow-lg"
         >
           <a href={HERO_DATA.resumeHref} aria-label="Download resume PDF">
-            <FileDown className="size-4" data-icon="inline-start" />
+            <FileDown className="size-4" />
             Download Resume
           </a>
         </Button>
@@ -42,7 +42,7 @@ const HeroTextContent = () => {
         >
           <a href="#projects" aria-label="View portfolio projects">
             View Work
-            <ArrowRight className="size-4" data-icon="inline-end" />
+            <ArrowRight className="size-4" />
           </a>
         </Button>
       </div>

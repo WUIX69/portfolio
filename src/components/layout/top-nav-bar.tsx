@@ -85,7 +85,7 @@ const TopNavBar = () => {
           className="rounded-full px-4 text-sm font-bold shadow-md"
         >
           <a href="#" aria-label="Download resume">
-            <FileDown className="size-4 md:hidden" data-icon="inline-start" />
+            <FileDown className="size-4 md:hidden" />
             <span className="hidden md:inline">Resume</span>
             <span className="md:hidden">Resume</span>
           </a>
