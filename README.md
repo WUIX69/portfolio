@@ -1,63 +1,50 @@
-# Jonathan L. Violeta - Resume Summary
+# Jonathan L. — Portfolio Website
 
-**Jonathan L. Violeta**  
-**Junior Full Stack Developer**  
-jonavioleta19@gmail.com | +639924865960 | Sta. Maria, Bulacan
+A modern, responsive, and performant personal portfolio website built to showcase projects, skills, and professional experience. Developed with a focus on clean architecture, maintainability, and an intuitive user interface.
 
----
+## 🚀 Tech Stack
 
-### **Summary**
+- **Framework:** Next.js 16.1 (App Router)
+- **Library:** React 19
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **UI Components:** Shadcn UI & Radix UI Primitives
+- **Theming:** `next-themes` (Light/Dark mode)
+- **Typography:** Plus Jakarta Sans, Inter, JetBrains Mono
 
-Junior Full Stack Developer with 2+ years of experience delivering end-to-end web applications.
-Known for working independently on complex features, system improvements, and full development lifecycles.
-Strong in both backend architecture and frontend implementation, with a focus on performance, scalability, and clean code.
-Experienced in Agile environments and effective in communicating technical solutions to stakeholders.
+## 📂 Architecture & Structure
 
-### **Work Experience**
+The codebase follows a scalable architecture inspired by **Feature-Sliced Design (FSD)** to ensure modularity and separation of concerns
 
-**Jr. Fullstack Web Developer | Juanwork | Freelance**  
-_Apr 2024 – Jan 2026_
+## 🛠️ Getting Started
 
-- Independently developed and deployed complex features across freelancer and client-facing modules
-- Designed and optimized system workflows, improving overall performance and usability
-- Built automation scripts to streamline internal processes and reduce manual workload
-- Presented technical solutions and system capabilities to stakeholders during conferences
-- Collaborated in Agile workflows including daily stand-ups and strategic planning sessions
+### Prerequisites
 
-### **Education**
+Make sure you have Node.js and **pnpm** installed.
 
-- **Bachelor of Science in Information Technology** | Bulacan State University (2020–2026)
-- **Senior High School (ICT)** | Immaculate Conception Polytechnic (2018–2020)
-- **Junior High School** | Parada National High School (2013–2018)
+### Installation
 
-### **Key Skills**
+1. Install dependencies:
 
-**Core Technologies:**
+   ```bash
+   pnpm install
+   ```
 
-- **PHP:** Laravel, MVC, Legacy Systems
-- **JavaScript/TypeScript:** React, Next.js, Vue, Alpine, jQuery
-- **CSS & UI:** Tailwind, Bootstrap, Native CSS, Shadcn, Figma
-- **Databases:** MySQL, PostgreSQL
-- **Version Control:** Git, GitHub, Bitbucket
+2. Start the development server (with Turbopack):
 
-**Additional Experience:**
+   ```bash
+   pnpm run dev
+   ```
 
-- Python (Django)
-- Java (NetBeans, GUI)
-- C++, C#, C
+3. Build for production:
 
-**Development & Soft Skills:**
+   ```bash
+   pnpm run build
+   ```
 
-- Full Stack Development (Frontend & Backend)
-- Agile Development
-- AI Integration
-- Code Optimization & Cleanup
-- Fast Learner, Adaptable, Team-Oriented
-- Strong Communication & Problem-Solving
-
-### **References**
-
-**Kleng Bancud**  
-CEO, Juanwork Inc.  
-Phone: +63997-619-6696  
-Email: kleng@juanwork.ph
+4. Format and Lint:
+   ```bash
+   pnpm run format
+   pnpm run lint
+   pnpm run typecheck
+   ```
