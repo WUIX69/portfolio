@@ -1,4 +1,4 @@
-import { NavigationLink, SocialLink } from "@/types/portfolio"
+import { type NavigationLink, type SocialLink } from "@/types/navigation"
 
 export const NAVIGATION_LINKS: NavigationLink[] = [
   { label: "Home", href: "#home", id: "home" },

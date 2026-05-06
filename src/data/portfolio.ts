@@ -1,4 +1,17 @@
-import { HeroData } from "@/types/portfolio"
+export interface PortfolioStat {
+  value: string
+  label: string
+}
+
+export interface HeroData {
+  fullName: string
+  tagline: string
+  title: string
+  highlightedTitle: string
+  description: string
+  stats: PortfolioStat[]
+  resumeHref: string
+}
 
 export const HERO_DATA: HeroData = {
   fullName: "Jonathan L. Violeta",
