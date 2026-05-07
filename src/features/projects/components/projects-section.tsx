@@ -4,7 +4,7 @@ import { SectionHeader } from "@/components/shared/section-header"
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="w-full py-16 md:py-24">
+    <section id="projects" className="w-full">
       <SectionHeader
         title="Projects Showcase"
         subtitle="A curated selection of full-feature lifecycles, complex system migrations, and scalable architectures designed for modern SaaS platforms."

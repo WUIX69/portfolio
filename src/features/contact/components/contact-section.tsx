@@ -8,7 +8,7 @@ import { TestimonialBanner } from "./testimonial-banner"
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="w-full py-16 md:py-24">
+    <section id="contact" className="w-full">
       <SectionHeader
         title={CONTACT_DATA.title}
         subtitle={CONTACT_DATA.description}

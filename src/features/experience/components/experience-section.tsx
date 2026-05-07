@@ -10,7 +10,7 @@ import { SectionHeader } from "@/components/shared/section-header"
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="w-full py-16 md:py-24">
+    <section id="experience" className="w-full">
       <SectionHeader
         title="Journey & Arsenal"
         subtitle="A timeline of architectural ownership and a curated grid of technical proficiencies driving modern web solutions."
