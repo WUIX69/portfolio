@@ -1,63 +1,148 @@
-# Jonathan L. Violeta - Resume Summary
+# VIOLETA, JONATHAN L.
 
-**Jonathan L. Violeta**  
-**Junior Full Stack Developer**  
-jonavioleta19@gmail.com | +639924865960 | Sta. Maria, Bulacan
+## JR. Full Stack Developer
+
+- Email: jonavioleta19@gmail.com
+- Phone: +639924865960
+- Address: BLK 33 LOT 32, SVHS, Sta. Maria Bulacan
 
 ---
 
-### **Summary**
+# SUMMARY
 
-Junior Full Stack Developer with 2+ years of experience delivering end-to-end web applications.
-Known for working independently on complex features, system improvements, and full development lifecycles.
-Strong in both backend architecture and frontend implementation, with a focus on performance, scalability, and clean code.
-Experienced in Agile environments and effective in communicating technical solutions to stakeholders.
+A Full Stack Developer with over two years of experience in real-world end-to-end software development. Distinguished by a high degree of technical autonomy, I possess a proven track record of leading full-feature lifecycles and complex system migrations without senior oversight. A multilingual professional and Agile practitioner, I specialize in bridging backend architecture with user-centered design to deliver scalable, high-performance digital products.
 
-### **Work Experience**
+---
 
-**Jr. Fullstack Web Developer | Juanwork | Freelance**  
-_Apr 2024 – Jan 2026_
+# WORK EXPERIENCE
 
-- Independently developed and deployed complex features across freelancer and client-facing modules
-- Designed and optimized system workflows, improving overall performance and usability
-- Built automation scripts to streamline internal processes and reduce manual workload
-- Presented technical solutions and system capabilities to stakeholders during conferences
-- Collaborated in Agile workflows including daily stand-ups and strategic planning sessions
+## JR. Fullstack Web Developer — Juanwork | Freelance | Remote
 
-### **Education**
+**Apr 2024 - Present**
 
-- **Bachelor of Science in Information Technology** | Bulacan State University (2020–2026)
-- **Senior High School (ICT)** | Immaculate Conception Polytechnic (2018–2020)
-- **Junior High School** | Parada National High School (2013–2018)
+### Tech Stack
 
-### **Key Skills**
+- 1yr Legacy:
+  - PHP
+  - JQuery
+  - MySQL
+  - MVC
+  - Paymongo
+- 1yr Migration:
+  - React
+  - Next.js
+  - Drizzle ORM
+  - PostgreSQL
+  - FastAPI
+  - Xendit
 
-**Core Technologies:**
+### Responsibilities & Contributions
 
-- **PHP:** Laravel, MVC, Legacy Systems
-- **JavaScript/TypeScript:** React, Next.js, Vue, Alpine, jQuery
-- **CSS & UI:** Tailwind, Bootstrap, Native CSS, Shadcn, Figma
-- **Databases:** MySQL, PostgreSQL
-- **Version Control:** Git, GitHub, Bitbucket
+- Operated independently without senior supervision, taking full accountability for the implementation of complex features.
+- Developed and optimized core system flows for both freelancer and client-facing modules.
+- Engineered original features to enhance system performance and created custom automation scripts to streamline daily workflows.
+- Conducted high-level technical demonstrations for stakeholders during conferences to showcase system capabilities.
+- Actively contributed to daily stand-ups and monthly strategy meetings within an Agile framework.
 
-**Additional Experience:**
+---
+
+# EDUCATION
+
+## Bachelor of Science in Information Technology
+
+**Bulacan State University**  
+2020 - 2026
+
+## Senior High School — Information Communication Technology
+
+**Immaculate Conception Polytechnic**  
+2018 - 2020
+
+## Junior High School
+
+**Parada National High School**  
+2013 - 2018
+
+---
+
+# KEY SKILLS
+
+## Development & Soft Skills
+
+- Full Stack Development (Frontend, Backend)
+- Agile Development
+- Artificial Intelligence
+  - Integration
+  - Modern Practices
+  - Productivity Boost
+- Code Optimization & Cleanup
+- Fast Learner
+- Competitive
+- Adaptable
+- Team-Oriented
+- Strong Communication & Problem-Solving
+- Customer Services
+- CI/CD Pipelines
+  - GitHub Actions
+  - Automation
+- Automated Testing
+  - Unit Testing
+  - Integration Testing
+- Authentication & Security Implementation (JWT)
+- Database Optimization & Performance Tuning
+
+## Additional Experience
 
 - Python (Django)
-- Java (NetBeans, GUI)
-- C++, C#, C
+- Java (Netbeans, GUI)
+- C (C++, C#, C)
 
-**Development & Soft Skills:**
+---
 
-- Full Stack Development (Frontend & Backend)
-- Agile Development
-- AI Integration
-- Code Optimization & Cleanup
-- Fast Learner, Adaptable, Team-Oriented
-- Strong Communication & Problem-Solving
+# CORE TECHNOLOGIES
 
-### **References**
+## Backend & Frontend Programming
 
-**Kleng Bancud**  
-CEO, Juanwork Inc.  
-Phone: +63997-619-6696  
-Email: kleng@juanwork.ph
+- PHP
+  - Laravel
+  - Legacy/Native
+  - MVC
+- JavaScript / TypeScript
+  - jQuery
+  - React
+  - Node.js
+  - Next.js
+  - Vue
+  - Alpine
+
+## UI/UX & Styling
+
+- Tailwind CSS
+- Bootstrap
+- Fomantic UI
+- Native CSS
+- Shadcn
+- Figma
+- Stitch
+
+## Databases
+
+- MySQL
+- PostgreSQL
+
+## Version Control
+
+- Git
+- GitHub
+- Bitbucket
+- Git Bash
+
+---
+
+# REFERENCES
+
+## Kleng Bancud
+
+- Role: CEO, Juanwork Inc.
+- Phone: +63997-619-6696
+- Email: kleng@juanwork.ph
