@@ -19,7 +19,7 @@ const ContactSection = dynamic(() =>
 
 const Page = () => {
   return (
-    <div className="flex flex-col gap-40 py-5">
+    <div className="flex flex-col gap-30 py-5">
       <HeroSection />
       <ExperienceSection />
       <ProjectsSection />
