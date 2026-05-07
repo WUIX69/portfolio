@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import {
   ArrowRight,
@@ -7,6 +9,7 @@ import {
   Wallet,
   type LucideIcon,
 } from "lucide-react"
+import { motion, HTMLMotionProps } from "motion/react"
 
 import { type Project } from "@/types/projects"
 import { cn } from "@/lib/utils"
@@ -17,20 +20,22 @@ const ICON_MAP: Record<string, LucideIcon> = {
   article: FileText,
 }
 
-interface ProjectCardProps {
+interface ProjectCardProps extends HTMLMotionProps<"article"> {
   project: Project
 }
 
-const ProjectCard = ({ project }: ProjectCardProps) => {
+const ProjectCard = ({ project, className, ...props }: ProjectCardProps) => {
   const isWide = project.variant === "wide"
   const Icon = project.icon ? ICON_MAP[project.icon] : null
 
   return (
-    <article
+    <motion.article
       className={cn(
-        "group flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-lg shadow-primary/5 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10",
-        isWide ? "md:col-span-2 lg:flex-row" : "col-span-1"
+        "group flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-lg shadow-primary/5 transition-shadow duration-300 hover:shadow-xl hover:shadow-primary/10",
+        isWide ? "md:col-span-2 lg:flex-row" : "col-span-1",
+        className
       )}
+      {...props}
     >
       {/* Image Container */}
       <div
@@ -113,8 +118,9 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           )}
         </div>
       </div>
-    </article>
+    </motion.article>
   )
 }
 
 export { ProjectCard }
+

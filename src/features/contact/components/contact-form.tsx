@@ -2,10 +2,12 @@
 
 import * as React from "react"
 import { Send } from "lucide-react"
+import { motion, HTMLMotionProps } from "motion/react"
 import { IconWrapper } from "@/components/shared/icon-wrapper"
 import { ButtonWithLoading } from "@/components/shared/button-with-loading"
+import { cn } from "@/lib/utils"
 
-const ContactForm = () => {
+const ContactForm = ({ className, ...props }: HTMLMotionProps<"div">) => {
   const [isSubmitting, setIsSubmitting] = React.useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -18,7 +20,13 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="flex flex-col rounded-2xl border border-border bg-card p-8 shadow-lg shadow-primary/5 md:col-span-2 md:row-span-2 md:p-10">
+    <motion.div
+      className={cn(
+        "flex flex-col rounded-2xl border border-border bg-card p-8 shadow-lg shadow-primary/5 md:col-span-2 md:row-span-2 md:p-10",
+        className
+      )}
+      {...props}
+    >
       <div className="mb-8 flex items-center gap-3">
         <IconWrapper icon={Send} variant="primary" size="md" />
         <h2 className="font-sans text-2xl font-bold text-foreground">
@@ -71,8 +79,9 @@ const ContactForm = () => {
           Send Message
         </ButtonWithLoading>
       </form>
-    </div>
+    </motion.div>
   )
 }
 
 export { ContactForm }
+

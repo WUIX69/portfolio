@@ -1,29 +1,72 @@
+"use client"
+
 import { FileDown, ArrowRight } from "lucide-react"
+import { motion, Variants } from "motion/react"
 
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { HERO_DATA } from "@/data/portfolio"
 
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
+    },
+  },
+}
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
+  },
+}
+
 const HeroTextContent = () => {
   return (
-    <div className="col-span-1 z-10 flex flex-col gap-6 lg:col-span-6">
-      <div className="inline-flex w-fit items-center gap-2 rounded-full bg-accent px-4 py-2">
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      className="col-span-1 z-10 flex flex-col gap-6 lg:col-span-6"
+    >
+      <motion.div
+        variants={itemVariants}
+        className="inline-flex w-fit items-center gap-2 rounded-full bg-accent px-4 py-2"
+      >
         <span className="size-2 rounded-full bg-primary" aria-hidden="true" />
         <span className="text-sm font-semibold tracking-tight text-accent-foreground">
           {HERO_DATA.tagline}
         </span>
-      </div>
+      </motion.div>
 
-      <h1 className="text-4xl font-extrabold tracking-tighter sm:text-5xl lg:text-[48px] lg:leading-[1.1]">
+      <motion.h1
+        variants={itemVariants}
+        className="text-4xl font-extrabold tracking-tighter sm:text-5xl lg:text-[48px] lg:leading-[1.1]"
+      >
         {HERO_DATA.title} <br />
         <span className="text-primary">{HERO_DATA.highlightedTitle}</span>
-      </h1>
+      </motion.h1>
 
-      <p className="max-w-lg text-lg leading-relaxed text-muted-foreground">
+      <motion.p
+        variants={itemVariants}
+        className="max-w-lg text-lg leading-relaxed text-muted-foreground"
+      >
         {HERO_DATA.description}
-      </p>
+      </motion.p>
 
-      <div className="mt-4 flex flex-wrap items-center gap-4">
+      <motion.div
+        variants={itemVariants}
+        className="mt-4 flex flex-wrap items-center gap-4"
+      >
         <Button
           asChild
           size="lg"
@@ -45,9 +88,12 @@ const HeroTextContent = () => {
             <ArrowRight className="size-4" />
           </a>
         </Button>
-      </div>
+      </motion.div>
 
-      <div className="mt-8 flex items-center gap-6 border-t border-border pt-8">
+      <motion.div
+        variants={itemVariants}
+        className="mt-8 flex items-center gap-6 border-t border-border pt-8"
+      >
         {HERO_DATA.stats.map((stat, statIndex) => (
           <div key={stat.label} className="flex items-center gap-6">
             {statIndex > 0 && (
@@ -67,9 +113,10 @@ const HeroTextContent = () => {
             </div>
           </div>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   )
 }
 
 export { HeroTextContent }
+

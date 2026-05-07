@@ -1,22 +1,43 @@
+import { Variants } from "motion/react"
 import { PROJECTS_DATA } from "@/data/projects"
 import { ProjectCard } from "@/features/projects/components/project-card"
 import { SectionHeader } from "@/components/shared/section-header"
+import { MotionViewport } from "@/components/shared/motion-viewport"
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
+  },
+}
 
 const ProjectsSection = () => {
   return (
     <section id="projects" className="w-full">
-      <SectionHeader
-        title="Projects Showcase"
-        subtitle="A curated selection of full-feature lifecycles, complex system migrations, and scalable architectures designed for modern SaaS platforms."
-        titleClassName="text-primary"
-      />
+      <MotionViewport>
+        <SectionHeader
+          title="Projects Showcase"
+          subtitle="A curated selection of full-feature lifecycles, complex system migrations, and scalable architectures designed for modern SaaS platforms."
+          titleClassName="text-primary"
+          variants={itemVariants}
+        />
 
-      {/* Bento Grid */}
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {PROJECTS_DATA.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </div>
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {PROJECTS_DATA.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              variants={itemVariants}
+            />
+          ))}
+        </div>
+      </MotionViewport>
     </section>
   )
 }

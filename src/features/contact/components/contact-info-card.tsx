@@ -1,14 +1,29 @@
-import { Mail, Phone } from "lucide-react"
-import { IconWrapper } from "@/components/shared/icon-wrapper"
+"use client"
 
-interface ContactInfoCardProps {
+import { Mail, Phone } from "lucide-react"
+import { motion, HTMLMotionProps } from "motion/react"
+import { IconWrapper } from "@/components/shared/icon-wrapper"
+import { cn } from "@/lib/utils"
+
+interface ContactInfoCardProps extends HTMLMotionProps<"div"> {
   email: string
   phone: string
 }
 
-const ContactInfoCard = ({ email, phone }: ContactInfoCardProps) => {
+const ContactInfoCard = ({
+  email,
+  phone,
+  className,
+  ...props
+}: ContactInfoCardProps) => {
   return (
-    <div className="relative overflow-hidden rounded-2xl bg-primary p-8 text-primary-foreground shadow-lg shadow-primary/20 md:col-span-1 md:row-span-1 md:p-10">
+    <motion.div
+      className={cn(
+        "relative overflow-hidden rounded-2xl bg-primary p-8 text-primary-foreground shadow-lg shadow-primary/20 md:col-span-1 md:row-span-1 md:p-10",
+        className
+      )}
+      {...props}
+    >
       <div className="relative z-10 flex h-full flex-col justify-between">
         <div>
           <IconWrapper
@@ -31,8 +46,9 @@ const ContactInfoCard = ({ email, phone }: ContactInfoCardProps) => {
       </div>
       {/* Decorative element */}
       <div className="absolute -bottom-8 -right-8 size-32 rounded-full bg-white/10 blur-2xl" />
-    </div>
+    </motion.div>
   )
 }
 
 export { ContactInfoCard }
+

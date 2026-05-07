@@ -1,14 +1,28 @@
+"use client"
+
 import { Briefcase } from "lucide-react"
+import { motion, HTMLMotionProps } from "motion/react"
 
 import { type ExperienceEntry } from "@/types/portfolio"
+import { cn } from "@/lib/utils"
 
-interface ExperienceCardProps {
+interface ExperienceCardProps extends HTMLMotionProps<"section"> {
   experience: ExperienceEntry
 }
 
-const ExperienceCard = ({ experience }: ExperienceCardProps) => {
+const ExperienceCard = ({
+  experience,
+  className,
+  ...props
+}: ExperienceCardProps) => {
   return (
-    <section className="rounded-xl border border-border bg-card p-8 shadow-sm">
+    <motion.section
+      className={cn(
+        "rounded-xl border border-border bg-card p-8 shadow-sm",
+        className
+      )}
+      {...props}
+    >
       <div className="mb-8 flex items-center gap-3">
         <div className="flex size-10 items-center justify-center rounded-lg bg-accent text-primary">
           <Briefcase className="size-5" aria-hidden="true" />
@@ -56,8 +70,9 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 
 export { ExperienceCard }
+

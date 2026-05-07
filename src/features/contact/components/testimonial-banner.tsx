@@ -1,14 +1,28 @@
+"use client"
+
 import { Quote, Star } from "lucide-react"
+import { motion, HTMLMotionProps } from "motion/react"
+import { cn } from "@/lib/utils"
 
 import { type Testimonial } from "@/types/contact"
 
-interface TestimonialBannerProps {
+interface TestimonialBannerProps extends HTMLMotionProps<"div"> {
   testimonial: Testimonial
 }
 
-const TestimonialBanner = ({ testimonial }: TestimonialBannerProps) => {
+const TestimonialBanner = ({
+  testimonial,
+  className,
+  ...props
+}: TestimonialBannerProps) => {
   return (
-    <div className="flex flex-col items-start gap-8 rounded-2xl border border-primary/10 bg-primary/5 p-8 shadow-lg shadow-primary/5 md:col-span-4 md:row-span-1 md:flex-row md:items-center md:p-10">
+    <motion.div
+      className={cn(
+        "flex flex-col items-start gap-8 rounded-2xl border border-primary/10 bg-primary/5 p-8 shadow-lg shadow-primary/5 md:col-span-4 md:row-span-1 md:flex-row md:items-center md:p-10",
+        className
+      )}
+      {...props}
+    >
       <div className="flex size-16 shrink-0 items-center justify-center rounded-full bg-primary/10">
         <Quote className="size-8 text-primary" />
       </div>
@@ -35,8 +49,9 @@ const TestimonialBanner = ({ testimonial }: TestimonialBannerProps) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
 export { TestimonialBanner }
+

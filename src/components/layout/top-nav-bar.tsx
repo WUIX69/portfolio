@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { CodeXml, Mail, Menu, FileDown } from "lucide-react"
+import { motion } from "motion/react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -44,7 +45,13 @@ const TopNavBar = () => {
   )
 
   return (
-    <nav
+    <motion.nav
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{
+        duration: 0.5,
+        ease: [0.25, 0.1, 0.25, 1],
+      }}
       className="fixed top-0 left-0 z-50 flex w-full items-center justify-between bg-background/80 px-6 py-4 shadow-md backdrop-blur-md md:px-8"
       aria-label="Main navigation"
     >
@@ -120,6 +127,7 @@ const TopNavBar = () => {
               className="rounded-full text-primary md:hidden"
               aria-label="Open navigation menu"
             >
+              <span className="sr-only">Toggle menu</span>
               <Menu className="size-5" />
             </Button>
           </SheetTrigger>
@@ -179,8 +187,9 @@ const TopNavBar = () => {
           </SheetContent>
         </Sheet>
       </div>
-    </nav>
+    </motion.nav>
   )
 }
 
 export { TopNavBar }
+
