@@ -1,9 +1,21 @@
 import {
-  type HeroData,
   type ExperienceEntry,
   type EducationEntry,
   type SkillCategory,
 } from "@/types/portfolio"
+
+interface HeroData {
+  fullName: string
+  tagline: string
+  title: string
+  highlightedTitle: string
+  description: string
+  stats: {
+    value: string
+    label: string
+  }[]
+  resumeHref: string
+}
 
 export const HERO_DATA: HeroData = {
   fullName: "Jonathan L. Violeta",
