@@ -23,7 +23,7 @@ export const HERO_DATA: HeroData = {
   title: "Jr. Full Stack",
   highlightedTitle: "Developer",
   description:
-    "Demonstrated technical autonomy with 2+ years of experience building scalable web applications. Passionate about bridging the gap between robust backend systems and intuitive user interfaces.",
+    "A Full Stack Developer with over two years of experience in real-world end-to-end software development. Distinguished by a high degree of technical autonomy, I possess a proven track record of leading full-feature lifecycles and complex system migrations without senior oversight.",
   stats: [
     { value: "2+", label: "Years Experience" },
     { value: "15+", label: "Projects Shipped" },
@@ -34,15 +34,32 @@ export const HERO_DATA: HeroData = {
 export const EXPERIENCE_DATA: ExperienceEntry[] = [
   {
     id: "juanwork",
-    role: "Jr. Full Stack Developer",
+    role: "Jr. Fullstack Web Developer",
     company: "Juanwork",
-    period: "Apr 2024 – Jan 2026",
+    period: "Apr 2024 – Present",
+    type: "Freelance | Remote",
     description:
-      "Spearheaded technical ownership of key modules within the core platform. Directed system architecture decisions to improve scalability and reduce technical debt across both frontend and backend environments.",
+      "Operated independently without senior supervision, taking full accountability for the implementation of complex features. Developed and optimized core system flows for both freelancer and client-facing modules.",
     achievements: [
-      "Architected and deployed scalable RESTful APIs serving 10k+ daily interactions.",
-      "Led the migration of legacy components to modern React/Next.js stacks.",
-      "Implemented CI/CD pipelines reducing deployment time by 40%.",
+      "Led the migration of legacy PHP/JQuery systems to modern Next.js/PostgreSQL architecture.",
+      "Engineered original features and custom automation scripts to streamline daily workflows.",
+      "Conducted high-level technical demonstrations for stakeholders during conferences.",
+      "Integrated secure payment gateways including Paymongo and Xendit.",
+    ],
+    techStack: [
+      "Next.js",
+      "React",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "FastAPI",
+      "PHP",
+      "JQuery",
+      "MVC/Rest API",
+      "MySQL",
+      "Fomantic UI/Bootstrap",
+      "XAMPP/WAMP",
+      "Xendit/Paymongo",
+      "Tailwind CSS",
     ],
   },
 ]
@@ -52,36 +69,72 @@ export const EDUCATION_DATA: EducationEntry[] = [
     id: "bulsu",
     school: "Bulacan State University",
     degree: "Bachelor of Science in Information Technology",
+    period: "2020 - 2026",
+  },
+  {
+    id: "icp",
+    school: "Immaculate Conception Polytechnic",
+    degree: "Senior High School — ICT",
+    period: "2018 - 2020",
+  },
+  {
+    id: "pnhs",
+    school: "Parada National High School",
+    degree: "Junior High School",
+    period: "2013 - 2018",
   },
 ]
 
 export const SKILLS_DATA: SkillCategory[] = [
   {
-    title: "Expertise",
+    title: "Core Technologies",
     description:
-      "Technologies utilized extensively in production environments with deep architectural understanding.",
+      "High-level proficiency in modern web development stacks and frameworks.",
     skills: [
       "PHP / Laravel",
-      "JavaScript",
-      "TypeScript",
+      "JQuery",
+      "MVC/RestAPI",
+      "XAMPP/WAMP",
+      "JavaScript / TypeScript",
       "React",
       "Next.js",
+      "PostgreSQL",
       "MySQL",
       "Tailwind CSS",
+      "Drizzle ORM",
     ],
     variant: "primary",
     iconName: "military_tech",
   },
   {
-    title: "Proficient",
+    title: "Technical Arsenal",
     description:
-      "Solid working knowledge and experience in building features and maintaining systems.",
+      "Versatile experience with various programming languages and backend systems.",
     skills: [
       "Python / Django",
+      "FastAPI",
       "Java",
-      "PostgreSQL",
+      "C / C++ / C#",
+      "Git / GitHub / Bitbucket",
       "Docker",
-      "AWS (EC2, S3)",
+      "CI/CD (GitHub Actions)",
+      "Automated Testing",
+    ],
+    variant: "secondary",
+    iconName: "psychology",
+  },
+  {
+    title: "Engineering & Soft Skills",
+    description:
+      "Methodologies and professional attributes that drive delivery.",
+    skills: [
+      "Agile Development",
+      "AI Integration",
+      "Code Optimization",
+      "Security (JWT)",
+      "Problem-Solving",
+      "Strong Communication",
+      "Team-Oriented",
     ],
     variant: "secondary",
     iconName: "psychology",

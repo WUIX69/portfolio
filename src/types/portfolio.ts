@@ -5,12 +5,15 @@ export interface ExperienceEntry {
   period: string
   description: string
   achievements: string[]
+  techStack: string[]
+  type: string
 }
 
 export interface EducationEntry {
   id: string
   school: string
   degree: string
+  period: string
 }
 
 export interface SkillCategory {

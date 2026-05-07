@@ -3,10 +3,10 @@ import { type ContactData } from "@/types/contact"
 export const CONTACT_DATA: ContactData = {
   title: "Let's build something radical.",
   description:
-    "I'm currently available for freelance projects and full-time opportunities. Reach out and let's start a conversation.",
-  email: "jonathan.v@devmail.com",
-  phone: "+1 (555) 000-1234",
-  location: "Silicon Valley, CA",
+    "I'm currently available for full-time opportunities and strategic collaborations. Reach out and let's start a conversation.",
+  email: "jonavioleta19@gmail.com",
+  phone: "+639924865960",
+  location: "Sta. Maria, Bulacan, PH",
   socials: [
     {
       id: "linkedin",
@@ -20,24 +20,12 @@ export const CONTACT_DATA: ContactData = {
       href: "#",
       iconName: "Github",
     },
-    {
-      id: "twitter",
-      label: "Twitter",
-      href: "#",
-      iconName: "Twitter",
-    },
-    {
-      id: "instagram",
-      label: "Instagram",
-      href: "#",
-      iconName: "Instagram",
-    },
   ],
   testimonial: {
     quote:
-      "Jonathan's ability to bridge the gap between complex backend logic and pixel-perfect UI is rare. He delivered our enterprise portal two weeks ahead of schedule with flawless execution.",
-    author: "Sarah Chen",
-    role: "Senior Product Director, TechFlow Inc.",
+      "Jonathan's technical autonomy is exceptional. He led complex system migrations and full-feature lifecycles without senior oversight, delivering high-performance results for our platform.",
+    author: "Kleng Bancud",
+    role: "CEO, Juanwork Inc.",
     rating: 5,
   },
 }

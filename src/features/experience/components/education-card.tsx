@@ -17,11 +17,16 @@ const EducationCard = ({ education }: EducationCardProps) => {
           Education
         </h2>
       </div>
-      <div>
-        <h3 className="mb-1 font-sans text-xl font-semibold text-foreground">
-          {education.school}
-        </h3>
-        <p className="text-sm text-muted-foreground">{education.degree}</p>
+      <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
+        <div>
+          <h3 className="mb-1 font-sans text-xl font-semibold text-foreground">
+            {education.school}
+          </h3>
+          <p className="text-sm text-muted-foreground">{education.degree}</p>
+        </div>
+        <span className="mt-2 w-fit rounded-full bg-accent px-3 py-1 font-mono text-xs font-medium text-primary sm:mt-0">
+          {education.period}
+        </span>
       </div>
     </section>
   )
