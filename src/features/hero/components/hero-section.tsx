@@ -5,7 +5,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="flex min-h-[calc(100vh-144px)] w-full items-center pt-6"
+      className="flex min-h-[calc(100vh-144px)] w-full items-center"
     >
       <div className="grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-6">
         <HeroTextContent />
