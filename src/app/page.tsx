@@ -1,6 +1,21 @@
+import dynamic from "next/dynamic"
 import { HeroSection } from "@/features/hero/components/hero-section"
-import { ExperienceSection } from "@/features/experience/components/experience-section"
-import { ProjectsSection } from "@/features/projects/components/projects-section"
+
+const ExperienceSection = dynamic(() =>
+  import("@/features/experience/components/experience-section").then(
+    (mod) => mod.ExperienceSection
+  )
+)
+const ProjectsSection = dynamic(() =>
+  import("@/features/projects/components/projects-section").then(
+    (mod) => mod.ProjectsSection
+  )
+)
+const ContactSection = dynamic(() =>
+  import("@/features/contact/components/contact-section").then(
+    (mod) => mod.ContactSection
+  )
+)
 
 const Page = () => {
   return (
@@ -8,6 +23,7 @@ const Page = () => {
       <HeroSection />
       <ExperienceSection />
       <ProjectsSection />
+      <ContactSection />
     </div>
   )
 }

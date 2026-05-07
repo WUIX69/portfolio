@@ -6,19 +6,16 @@ import {
 import { ExperienceCard } from "@/features/experience/components/experience-card"
 import { EducationCard } from "@/features/experience/components/education-card"
 import { SkillsBento } from "@/features/experience/components/skills-bento"
+import { SectionHeader } from "@/components/shared/section-header"
 
 const ExperienceSection = () => {
   return (
     <section id="experience" className="w-full py-16 md:py-24">
-      <header className="mx-auto mb-16 max-w-2xl text-center">
-        <h2 className="mb-4 font-sans text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
-          Journey & Arsenal
-        </h2>
-        <p className="text-lg text-muted-foreground">
-          A timeline of architectural ownership and a curated grid of technical
-          proficiencies driving modern web solutions.
-        </p>
-      </header>
+      <SectionHeader
+        title="Journey & Arsenal"
+        subtitle="A timeline of architectural ownership and a curated grid of technical proficiencies driving modern web solutions."
+        align="center"
+      />
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
         {/* Left Column: Experience & Education */}

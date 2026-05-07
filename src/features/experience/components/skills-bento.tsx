@@ -2,6 +2,7 @@ import { Award, Brain, type LucideIcon } from "lucide-react"
 
 import { type SkillCategory } from "@/types/portfolio"
 import { cn } from "@/lib/utils"
+import { IconWrapper } from "@/components/shared/icon-wrapper"
 
 const ICON_MAP: Record<string, LucideIcon> = {
   military_tech: Award,
@@ -18,16 +19,11 @@ const SkillCard = ({ category }: SkillCardProps) => {
   return (
     <section className="flex h-full flex-col rounded-xl border border-border bg-card p-8 shadow-sm">
       <div className="mb-6 flex items-center gap-3">
-        <div
-          className={cn(
-            "flex size-10 items-center justify-center rounded-lg",
-            category.variant === "primary"
-              ? "bg-primary/10 text-primary"
-              : "bg-secondary text-secondary-foreground"
-          )}
-        >
-          <Icon className="size-5" aria-hidden="true" />
-        </div>
+        <IconWrapper
+          icon={Icon}
+          variant={category.variant === "primary" ? "primary" : "secondary"}
+          size="md"
+        />
         <h2 className="font-sans text-xl font-semibold text-foreground">
           {category.title}
         </h2>

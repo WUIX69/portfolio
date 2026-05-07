@@ -1,0 +1,23 @@
+export interface SocialLink {
+  id: string
+  label: string
+  href: string
+  iconName: string
+}
+
+export interface Testimonial {
+  quote: string
+  author: string
+  role: string
+  rating: number
+}
+
+export interface ContactData {
+  title: string
+  description: string
+  email: string
+  phone: string
+  location: string
+  socials: SocialLink[]
+  testimonial: Testimonial
+}
