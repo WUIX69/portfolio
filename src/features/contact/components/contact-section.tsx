@@ -21,10 +21,12 @@ const itemVariants: Variants = {
 }
 
 import { Container } from "@/components/layout/container"
+import { SectionGradient } from "@/components/layout/section-gradient"
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="w-full">
+    <section id="contact" className="relative w-full overflow-hidden">
+      <SectionGradient side="right" />
       <Container>
         <MotionViewport>
           <SectionHeader
