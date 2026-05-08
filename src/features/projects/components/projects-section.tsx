@@ -21,7 +21,7 @@ import { SectionGradient } from "@/components/layout/section-gradient"
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="relative w-full overflow-hidden">
+    <section id="projects" className="relative w-full overflow-hidden py-20">
       <SectionGradient side="left" />
       <Container>
         <MotionViewport>

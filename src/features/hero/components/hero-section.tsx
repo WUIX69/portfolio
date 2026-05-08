@@ -10,7 +10,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative flex min-h-[calc(100vh-144px)] w-full items-center overflow-hidden"
+      className="relative flex min-h-[calc(100vh-72px)] w-full items-center overflow-hidden"
     >
       <HeroThreadsBackground />
       <SectionGradient side="left" />
