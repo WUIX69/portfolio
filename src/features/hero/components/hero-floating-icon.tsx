@@ -45,16 +45,16 @@ const HeroFloatingIcon = ({ techIcon }: HeroFloatingIconProps) => {
         },
       }}
       className={cn(
-        "absolute z-20 flex size-12 items-center justify-center rounded-2xl",
-        "border border-border/50 bg-card/80 shadow-lg backdrop-blur-sm",
-        "transition-all duration-300 hover:scale-110 hover:border-primary/40 hover:bg-card",
+        "absolute z-20 m-0 flex size-12 items-center justify-center rounded-2xl p-0",
+        "cursor-pointer",
+        "transition-all duration-300 hover:scale-115",
         techIcon.position
       )}
       aria-label={techIcon.label}
       title={techIcon.label}
       role="img"
     >
-      <IconComponent size={24} color={`#${techIcon.brandHex}`} />
+      <IconComponent size={27} color={`#${techIcon.brandHex}`} />
     </motion.div>
   )
 }
