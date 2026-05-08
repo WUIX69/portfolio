@@ -18,42 +18,46 @@ const itemVariants: Variants = {
   },
 }
 
+import { Container } from "@/components/layout/container"
+
 const ExperienceSection = () => {
   return (
     <section id="experience" className="w-full">
-      <MotionViewport>
-        <SectionHeader
-          title="Journey & Arsenal"
-          subtitle="A timeline of architectural ownership and a curated grid of technical proficiencies driving modern web solutions."
-          align="center"
-          variants={itemVariants}
-        />
+      <Container>
+        <MotionViewport>
+          <SectionHeader
+            title="Journey & Arsenal"
+            subtitle="A timeline of architectural ownership and a curated grid of technical proficiencies driving modern web solutions."
+            align="center"
+            variants={itemVariants}
+          />
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-          {/* Left Column: Experience & Education */}
-          <div className="flex flex-col gap-6 lg:col-span-7">
-            {EXPERIENCE_DATA.map((exp) => (
-              <ExperienceCard
-                key={exp.id}
-                experience={exp}
-                variants={itemVariants}
-              />
-            ))}
-            {EDUCATION_DATA.map((edu) => (
-              <EducationCard
-                key={edu.id}
-                education={edu}
-                variants={itemVariants}
-              />
-            ))}
-          </div>
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
+            {/* Left Column: Experience & Education */}
+            <div className="flex flex-col gap-6 lg:col-span-7">
+              {EXPERIENCE_DATA.map((exp) => (
+                <ExperienceCard
+                  key={exp.id}
+                  experience={exp}
+                  variants={itemVariants}
+                />
+              ))}
+              {EDUCATION_DATA.map((edu) => (
+                <EducationCard
+                  key={edu.id}
+                  education={edu}
+                  variants={itemVariants}
+                />
+              ))}
+            </div>
 
-          {/* Right Column: Skills Bento */}
-          <div className="lg:col-span-5">
-            <SkillsBento categories={SKILLS_DATA} variants={itemVariants} />
+            {/* Right Column: Skills Bento */}
+            <div className="lg:col-span-5">
+              <SkillsBento categories={SKILLS_DATA} variants={itemVariants} />
+            </div>
           </div>
-        </div>
-      </MotionViewport>
+        </MotionViewport>
+      </Container>
     </section>
   )
 }

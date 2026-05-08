@@ -3,6 +3,7 @@
 import { HeroTextContent } from "@/features/hero/components/hero-text-content"
 import { HeroVisualCard } from "@/features/hero/components/hero-visual-card"
 import { HeroThreadsBackground } from "@/features/hero/components/hero-threads-background"
+import { Container } from "@/components/layout/container"
 
 const HeroSection = () => {
   return (
@@ -12,10 +13,12 @@ const HeroSection = () => {
     >
       <HeroThreadsBackground />
 
-      <div className="relative z-10 grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-6">
-        <HeroTextContent />
-        <HeroVisualCard />
-      </div>
+      <Container className="relative z-10">
+        <div className="grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-6">
+          <HeroTextContent />
+          <HeroVisualCard />
+        </div>
+      </Container>
     </section>
   )
 }

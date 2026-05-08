@@ -56,7 +56,7 @@ const RootLayout = ({
       <body className="flex min-h-screen flex-col bg-background pt-[72px] text-foreground">
         <ThemeProvider>
           <TopNavBar />
-          <main className="mx-auto w-full max-w-[1440px] flex-grow px-6 md:px-8">
+          <main className="flex-grow">
             {children}
           </main>
           <Footer />

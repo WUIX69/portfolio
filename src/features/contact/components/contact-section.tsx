@@ -20,39 +20,43 @@ const itemVariants: Variants = {
   },
 }
 
+import { Container } from "@/components/layout/container"
+
 const ContactSection = () => {
   return (
     <section id="contact" className="w-full">
-      <MotionViewport>
-        <SectionHeader
-          title={CONTACT_DATA.title}
-          subtitle={CONTACT_DATA.description}
-          titleClassName="text-primary md:text-6xl"
-          variants={itemVariants}
-        />
+      <Container>
+        <MotionViewport>
+          <SectionHeader
+            title={CONTACT_DATA.title}
+            subtitle={CONTACT_DATA.description}
+            titleClassName="text-primary md:text-6xl"
+            variants={itemVariants}
+          />
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-4 md:grid-rows-[repeat(3,minmax(280px,auto))]">
-          <ContactForm variants={itemVariants} />
-          <ContactInfoCard
-            variants={itemVariants}
-            email={CONTACT_DATA.email}
-            phone={CONTACT_DATA.phone}
-          />
-          <SocialLinksCard
-            variants={itemVariants}
-            socials={CONTACT_DATA.socials}
-          />
-          <LocationMap
-            variants={itemVariants}
-            location={CONTACT_DATA.location}
-          />
-          <TestimonialBanner
-            variants={itemVariants}
-            testimonial={CONTACT_DATA.testimonial}
-          />
-        </div>
-      </MotionViewport>
+          {/* Bento Grid */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-4 md:grid-rows-[repeat(3,minmax(280px,auto))]">
+            <ContactForm variants={itemVariants} />
+            <ContactInfoCard
+              variants={itemVariants}
+              email={CONTACT_DATA.email}
+              phone={CONTACT_DATA.phone}
+            />
+            <SocialLinksCard
+              variants={itemVariants}
+              socials={CONTACT_DATA.socials}
+            />
+            <LocationMap
+              variants={itemVariants}
+              location={CONTACT_DATA.location}
+            />
+            <TestimonialBanner
+              variants={itemVariants}
+              testimonial={CONTACT_DATA.testimonial}
+            />
+          </div>
+        </MotionViewport>
+      </Container>
     </section>
   )
 }
