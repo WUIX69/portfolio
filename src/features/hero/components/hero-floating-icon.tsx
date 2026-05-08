@@ -12,10 +12,12 @@ interface HeroFloatingIconProps {
 
 const HeroFloatingIcon = ({ techIcon }: HeroFloatingIconProps) => {
   const iconComponentName = `Si${techIcon.slug}` as keyof typeof SimpleIcons
-  const IconComponent = SimpleIcons[iconComponentName] as ComponentType<{
-    size: number
-    color: string
-  }> | undefined
+  const IconComponent = SimpleIcons[iconComponentName] as
+    | ComponentType<{
+        size: number
+        color: string
+      }>
+    | undefined
 
   if (!IconComponent) return null
 
@@ -28,25 +30,25 @@ const HeroFloatingIcon = ({ techIcon }: HeroFloatingIconProps) => {
         y: [0, -8, 0],
       }}
       transition={{
-        opacity: { duration: 0.5, delay: techIcon.floatDelay + 0.8 },
+        opacity: { duration: 0.2, delay: techIcon.floatDelay },
         scale: {
           type: "spring",
-          stiffness: 260,
+          stiffness: 400,
           damping: 20,
-          delay: techIcon.floatDelay + 0.8,
+          delay: techIcon.floatDelay,
         },
         y: {
           duration: techIcon.floatDuration,
           repeat: Infinity,
           ease: "easeInOut",
-          delay: techIcon.floatDelay + 1.2,
+          delay: techIcon.floatDelay,
         },
       }}
       className={cn(
         "absolute z-20 flex size-12 items-center justify-center rounded-2xl",
         "border border-border/50 bg-card/80 shadow-lg backdrop-blur-sm",
-        "transition-all duration-300 hover:border-primary/40 hover:bg-card hover:scale-110",
-        techIcon.position,
+        "transition-all duration-300 hover:scale-110 hover:border-primary/40 hover:bg-card",
+        techIcon.position
       )}
       aria-label={techIcon.label}
       title={techIcon.label}
