@@ -2,6 +2,7 @@ import {
   type ExperienceEntry,
   type EducationEntry,
   type SkillCategory,
+  type HeroTechIcon,
 } from "@/types/portfolio"
 
 interface HeroData {
@@ -139,4 +140,26 @@ export const SKILLS_DATA: SkillCategory[] = [
     variant: "secondary",
     iconName: "psychology",
   },
+]
+
+export const HERO_TECH_ICONS: HeroTechIcon[] = [
+  // ── Top quadrant ──
+  { slug: "Nextdotjs",   label: "Next.js",       brandHex: "000000", position: "top-10 right-10",           floatDelay: 0.0, floatDuration: 3.0 },
+  { slug: "React",       label: "React",         brandHex: "61DAFB", position: "top-[20%] left-16",         floatDelay: 0.2, floatDuration: 3.4 },
+  { slug: "Typescript",  label: "TypeScript",     brandHex: "3178C6", position: "top-[15%] left-[25%]",      floatDelay: 0.4, floatDuration: 2.8 },
+  
+  // ── Middle quadrant (Sides) ──
+  { slug: "Javascript",  label: "JavaScript",     brandHex: "F7DF1E", position: "top-[40%] left-8",          floatDelay: 0.6, floatDuration: 3.2 },
+  { slug: "Tailwindcss", label: "Tailwind CSS",   brandHex: "06B6D4", position: "top-[45%] right-12",        floatDelay: 0.8, floatDuration: 2.6 },
+  { slug: "Postgresql",  label: "PostgreSQL",     brandHex: "4169E1", position: "top-[55%] left-12",         floatDelay: 1.0, floatDuration: 3.6 },
+  { slug: "Php",         label: "PHP",           brandHex: "777BB4", position: "top-[60%] right-10",        floatDelay: 0.1, floatDuration: 3.2 },
+
+  // ── Bottom quadrant ──
+  { slug: "Python",      label: "Python",        brandHex: "3776AB", position: "bottom-[25%] right-8",      floatDelay: 0.3, floatDuration: 2.9 },
+  { slug: "Mysql",       label: "MySQL",         brandHex: "4479A1", position: "bottom-[30%] left-10",      floatDelay: 0.5, floatDuration: 3.5 },
+  { slug: "Fastapi",     label: "FastAPI",       brandHex: "009688", position: "bottom-[15%] right-16",     floatDelay: 0.7, floatDuration: 2.7 },
+  { slug: "Git",         label: "Git",           brandHex: "F05032", position: "bottom-[10%] left-[20%]",    floatDelay: 0.9, floatDuration: 3.3 },
+  { slug: "Github",      label: "GitHub",        brandHex: "181717", position: "bottom-[40%] right-20",     floatDelay: 1.1, floatDuration: 3.1 },
+  { slug: "Docker",      label: "Docker",        brandHex: "2496ED", position: "top-[10%] left-[40%]",      floatDelay: 1.2, floatDuration: 2.8 },
+  { slug: "Jquery",      label: "jQuery",        brandHex: "0769AD", position: "bottom-[5%] right-[40%]",   floatDelay: 1.3, floatDuration: 3.4 },
 ]

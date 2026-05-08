@@ -4,6 +4,7 @@ import Image from "next/image"
 import { motion } from "motion/react"
 
 import { HeroStatusOverlay } from "@/features/hero/components/hero-status-overlay"
+import { HeroFloatingIcons } from "@/features/hero/components/hero-floating-icons"
 
 const HeroVisualCard = () => {
   return (
@@ -20,6 +21,8 @@ const HeroVisualCard = () => {
       <div className="relative h-[500px] w-full overflow-hidden rounded-[2rem] lg:h-[600px]">
         {/* Decorative Background Gradient */}
         <div className="absolute inset-0 -z-10 w-full bg-gradient-to-t from-primary/20 via-transparent to-transparent" />
+
+        <HeroFloatingIcons />
 
         <div className="relative h-full w-full overflow-hidden rounded-xl">
           <Image
@@ -38,4 +41,3 @@ const HeroVisualCard = () => {
 }
 
 export { HeroVisualCard }
-

@@ -23,3 +23,11 @@ export interface SkillCategory {
   variant: "primary" | "secondary"
   iconName: string
 }
+export interface HeroTechIcon {
+  slug: string
+  label: string
+  brandHex: string
+  position: string
+  floatDelay: number
+  floatDuration: number
+}
