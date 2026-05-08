@@ -27,7 +27,7 @@ const HeroFloatingIcon = ({ techIcon }: HeroFloatingIconProps) => {
       animate={{
         opacity: 1,
         scale: 1,
-        y: [0, -8, 0],
+        y: [0, -25, 0],
       }}
       transition={{
         opacity: { duration: 0.2, delay: techIcon.floatDelay },
