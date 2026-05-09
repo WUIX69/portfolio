@@ -2,11 +2,14 @@ export interface Project {
   id: string
   title: string
   description: string
+  longDescription?: string
+  architecture?: string
+  purpose?: string
   tags: string[]
   techStack: string[]
-  image?: string
+  images?: string[]
   icon?: string
   link?: string
   github?: string
-  variant: "wide" | "standard"
+  variant: "wide" | "standard" | "full"
 }

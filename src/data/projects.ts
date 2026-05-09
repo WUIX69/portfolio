@@ -2,50 +2,150 @@ import { type Project } from "@/types/projects"
 
 export const PROJECTS_DATA: Project[] = [
   {
-    id: "enterprise-dashboard",
-    title: "Enterprise Dashboard Overhaul",
+    id: "mindtrack",
+    title: "MindTrack",
     description:
-      "Led the migration of a legacy monolithic dashboard to a scalable micro-frontend architecture using React and Node.js. Reduced load times by 40% and improved developer velocity across 3 distinct teams.",
-    tags: ["System Migration", "React"],
-    techStack: ["TypeScript", "GraphQL", "AWS"],
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuA8fK3aC9-2N58zsdDplNsXtNyZBsmykiTlghk4rM6nq-GmGM17HTDToKIpeI_PZRCegvMuve6zkJJRLK4cJyirYs7JFq8wzfDGDNO42m6uF1dGzVgGVWc_s-ELx-gmBW3BZM9nIBlsiaf5IGim-VDCguYYx3emViJjlF-q2mw0AYufXpBq-qEwEh_REU0kdIaYzHm1dz6F2dOrtP0wf7wX6cNuDd1zVbYgVIuWh4aAVPZ7-D5RhHNdmNL0psgGI-AQplJKQAUvgqI1",
+      "Web-based Patient Management and Online Appointment System built for a mental health clinic.",
+    longDescription:
+      "MindTrack is a web-based Patient Management and Online Appointment System built for the Wayside Psyche Resources Center, a mental health clinic. Its purpose is to digitize clinic operations by automating appointment scheduling, patient record management, and administrative reporting.",
+    architecture:
+      "LAMP/WAMP architecture with custom PHP framework. Pattern: Input-Process-Output (IPO) data flow. Structure: Feature-Sliced Design.",
+    purpose:
+      "Replaces manual scheduling with a centralized platform where patients book consultations online, admins manage requests, and clinicians access records.",
+    tags: ["Full Stack", "Healthcare", "PHP"],
+    techStack: ["PHP", "TailwindCSS", "MySQL", "JavaScript"],
+    images: [
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
+      "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&q=80",
+      "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=800&q=80",
+    ],
+    github: "https://github.com/WUIX69/MindTrack",
     variant: "wide",
-    link: "#",
   },
   {
-    id: "real-time-sync",
-    title: "Real-time Sync Engine",
+    id: "vetsync",
+    title: "VetSync",
     description:
-      "Developed a robust WebSocket-based synchronization engine for a collaborative design tool, handling thousands of concurrent connections with sub-50ms latency.",
-    tags: ["API Design"],
-    techStack: ["Node.js", "Redis", "Docker"],
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDnon_9gL2pNj6JsRaj2v7ua0tXj9LWUxFFqKLnJnoX0y_JeSAz7Sz6qTraG_HhgUb7heTX3kwBB8I1DHap5a9JQ8USrMHUySO1cpOHI0MFsy7HxiDZoKLh3SRPnlsaKbUZ9QhfUZ7j-aYj22hP3xLdFoSQp89hj77cimpevOYlB1Mt7iKIMEbNGwreEp_RUOzdHExG1OwvmGeLa0KGc9iAflx0rkbHcRVrRxL1EA_1RNEnRWt8PaLg6gv8fZwV1sqnUdrDeVmJq_P6",
+      "Web-based administrative dashboard application for veterinary/pet service management.",
+    longDescription:
+      "VetSync is a multi-page web application providing an admin dashboard with user management, analytics tracking, system settings configuration, and messaging features.",
+    architecture:
+      "Multi-page application (MPA) with modular organization, reusable HTML components, and separated concerns (styles, scripts, markup).",
+    purpose:
+      "To provide administrative and management tools for veterinary clinics.",
+    tags: ["Full Stack", "Dashboard", "Admin"],
+    techStack: ["PHP", "Bootstrap", "MySQL", "Vanilla JS"],
+    images: [
+      "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=800&q=80",
+      "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80",
+    ],
+    github: "https://github.com/WUIX69/VetSync",
     variant: "standard",
-    github: "#",
   },
   {
-    id: "ci-cd-pipeline",
-    title: "Automated CI/CD Pipeline",
+    id: "fileats",
+    title: "FilEats",
     description:
-      "Architected a zero-downtime deployment pipeline reducing release cycles from weekly to multiple times a day. Implemented extensive automated testing and rollback protocols.",
-    tags: ["Infrastructure"],
-    techStack: ["GitHub Actions", "Terraform"],
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAxxGJ-OnBaJwv1hjY0DEd_xDwKFpON3_JVzXQIgYzePLnxZqhiKUsIeGmw-gECGZD2rZJ_E7h7_NmqUSSxvvRxzuqPRFdBrD4xl571_BpH08j96QqycrLTmPQsdo-z0OIoKW4kNaXVnlC6Y99Th02fNmOYExhoNOnQ9ZlM02TSfLDzvYqfl4nFSmQru34sFGf5CqjdOg_36_-6rZ2q7-6KkYDVhdsIZX4MVAKXmg48w0xaiH_Oa7CROoVuvYvqHV9eet7we080fDOX",
+      "Budget-friendly, web-based local recipe sharing platform dedicated to celebrating Filipino cuisine.",
+    longDescription:
+      "filEats connects home cooks and food enthusiasts who want to discover, share, and preserve traditional and modern Filipino recipes without expensive subscription barriers.",
+    architecture:
+      "Modular client-side web application organized by feature domains with role-based pages, module logic, and reusable UI components.",
+    purpose:
+      "To connect home cooks and food enthusiasts who want to discover, share, and preserve traditional and modern Filipino recipes.",
+    tags: ["Full Stack", "Community", "Platform"],
+    techStack: ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
+    images: [
+      "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=800&q=80",
+      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
+    ],
+    github: "https://github.com/WUIX69/FilEats",
     variant: "standard",
-    link: "#",
   },
   {
-    id: "fintech-wallet",
-    title: "FinTech Wallet Application",
+    id: "juanwork-1",
+    title: "JuanWork 1.0",
     description:
-      "Designed and developed a secure, intuitive mobile-first web application for managing cryptocurrency portfolios. Integrated complex third-party APIs for real-time pricing and secure transaction signing.",
-    tags: ["Full Stack App"],
-    techStack: ["Next.js", "Tailwind CSS", "PostgreSQL"],
-    icon: "Wallet",
+      "Philippine-based freelancing marketplace platform connecting clients with freelancers.",
+    longDescription:
+      "JuanWork serves as a comprehensive freelancing platform where clients can post projects, browse freelancers, manage proposals, and process payments securely.",
+    architecture:
+      "Monolithic PHP web application with a modular structure combining app modules, core classes, and view templates.",
+    purpose:
+      "To connect clients looking to hire talent with freelancers seeking work opportunities in the Philippines.",
+    tags: ["Full Stack", "Marketplace", "Legacy"],
+    techStack: ["PHP", "MySQL", "Bootstrap", "jQuery"],
+    images: [
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
+      "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&q=80",
+      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&q=80",
+    ],
+    github: "https://github.com/WUIX69/Juanwork-1.0",
     variant: "wide",
-    link: "#",
+  },
+  {
+    id: "juanwork-2",
+    title: "JuanWork 2.0",
+    description:
+      "Modernized freelance marketplace platform with Next.js App Router and feature-sliced architecture.",
+    longDescription:
+      "A fully overhauled version of JuanWork built with Next.js and Tailwind CSS, supporting comprehensive features for project management, bidding, messaging, and payments.",
+    architecture:
+      "Feature-based modular architecture using Next.js App Router, combining shared components, feature modules, contexts, and hooks.",
+    purpose:
+      "To provide a scalable, fast, and modern freelancing platform for clients, freelancers, and admins.",
+    tags: ["Full Stack", "Marketplace", "Next.js"],
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "React 19"],
+    images: [
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
+      "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800&q=80",
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
+    ],
+    github: "https://github.com/WUIX69/Juanwork-2.0",
+    variant: "wide",
+  },
+  {
+    id: "portfolio",
+    title: "Personal Portfolio",
+    description:
+      "Modern, responsive personal portfolio website showcasing professional projects and skills.",
+    longDescription:
+      "A Next.js 16 based portfolio website implementing Feature-Sliced Design principles, smooth animations with Motion, and dark/light theme switching.",
+    architecture:
+      "Feature-Sliced Design (FSD) inspired architecture with domain-specific modules, shared UI primitives, and centralized data definitions.",
+    purpose:
+      "To showcase professional projects, skills, and experience with clean architecture and intuitive UI.",
+    tags: ["Frontend", "Portfolio", "Next.js"],
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Motion"],
+    images: [
+      "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&q=80",
+      "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=800&q=80",
+      "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=800&q=80",
+    ],
+    github: "https://github.com/WUIX69/Portfolio",
+    variant: "standard",
+  },
+  {
+    id: "ecommerce",
+    title: "My Local Shop",
+    description:
+      "Frontend-only E-commerce website designed for a local retail business.",
+    longDescription:
+      "Provides a complete shopping experience with product browsing, cart management, checkout flow, and an admin dashboard for management via static HTML.",
+    architecture:
+      "Static HTML pages connected together with custom CSS to simulate a multi-page SPA feel.",
+    purpose:
+      "To demonstrate frontend E-commerce UI patterns and responsive web design principles using pure HTML/CSS.",
+    tags: ["Frontend", "E-Commerce", "UI/UX"],
+    techStack: ["HTML5", "CSS3", "Vanilla JS"],
+    images: [
+      "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80",
+      "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=800&q=80",
+    ],
+    github: "https://github.com/WUIX69/E-Commerce",
+    variant: "standard",
   },
 ]
