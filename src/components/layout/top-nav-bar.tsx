@@ -15,6 +15,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { NAVIGATION_LINKS, SOCIAL_LINKS } from "@/config/navigation"
+import { HERO_DATA } from "@/data/portfolio"
 
 const ICON_MAP: Record<string, React.ReactNode> = {
   github: <CodeXml className="size-5" />,
@@ -91,7 +92,11 @@ const TopNavBar = () => {
           asChild
           className="rounded-full px-4 text-sm font-bold shadow-md"
         >
-          <a href="#" aria-label="Download resume">
+          <a
+            href={HERO_DATA.resumeHref}
+            download
+            aria-label="Download resume"
+          >
             <FileDown className="size-4 md:hidden" />
             <span className="hidden md:inline">Resume</span>
             <span className="md:hidden">Resume</span>
