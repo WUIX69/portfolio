@@ -56,17 +56,17 @@ export function ProjectDialog({ project, children }: ProjectDialogProps) {
   return (
     <Dialog>
       {children}
-      <DialogContent className="max-h-[92vh] max-w-full overflow-hidden p-0 sm:max-w-5xl sm:rounded-[2rem] [&>button]:hidden">
-        <div className="flex h-full max-h-[92vh] flex-col md:flex-row">
+      <DialogContent className="max-h-[98vh] w-[96vw] max-w-none overflow-hidden p-0 sm:max-w-5xl sm:rounded-[2rem] [&>button]:hidden">
+        <div className="flex h-full max-h-[98vh] flex-col md:flex-row">
           {/* Mobile Close Button */}
           <DialogClose asChild>
-            <button className="absolute top-6 right-6 z-[110] flex h-10 w-10 items-center justify-center rounded-full bg-accent text-muted-foreground transition-all hover:bg-accent/80 hover:text-foreground md:hidden">
-              <X className="size-5" />
+            <button className="absolute top-4 right-4 z-[110] flex h-9 w-9 items-center justify-center rounded-full bg-accent/80 text-muted-foreground backdrop-blur-sm transition-all hover:bg-accent hover:text-foreground md:hidden">
+              <X className="size-4" />
             </button>
           </DialogClose>
 
           {/* Left Column */}
-          <div className="custom-scrollbar flex-1 overflow-y-auto p-6 md:p-10">
+          <div className="custom-scrollbar max-w-[96vw] flex-1 overflow-x-hidden overflow-y-auto p-5 md:p-10">
             {/* Header */}
             <div className="mb-8">
               <div className="mb-4 flex flex-wrap gap-2">
@@ -79,10 +79,10 @@ export function ProjectDialog({ project, children }: ProjectDialogProps) {
                   </span>
                 ))}
               </div>
-              <DialogTitle className="mb-4 font-sans text-4xl font-extrabold text-foreground md:text-5xl">
+              <DialogTitle className="mb-3 font-sans text-3xl leading-tight font-extrabold break-words text-foreground md:mb-4 md:text-5xl">
                 {project.title}
               </DialogTitle>
-              <DialogDescription className="max-w-2xl text-lg leading-relaxed text-muted-foreground">
+              <DialogDescription className="max-w-full text-base leading-relaxed whitespace-normal text-muted-foreground md:text-lg">
                 {project.longDescription || project.description}
               </DialogDescription>
             </div>
@@ -209,7 +209,7 @@ export function ProjectDialog({ project, children }: ProjectDialogProps) {
           </div>
 
           {/* Right Column */}
-          <div className="flex w-full flex-col justify-center border-t border-border bg-muted/20 p-6 md:w-72 md:border-t-0 md:border-l md:p-10">
+          <div className="flex w-full min-w-0 flex-col justify-start border-t border-border bg-muted/20 p-5 md:w-72 md:justify-center md:border-t-0 md:border-l md:p-10">
             <div className="absolute top-10 right-10 hidden flex-col items-end md:flex">
               <DialogClose asChild>
                 <button className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-muted-foreground transition-all hover:bg-accent/80 hover:text-foreground">
@@ -218,51 +218,51 @@ export function ProjectDialog({ project, children }: ProjectDialogProps) {
               </DialogClose>
             </div>
 
-            <div className="space-y-6">
-              <div className="space-y-4">
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex w-full items-center justify-center gap-3 rounded-2xl bg-primary py-4 font-sans text-sm font-bold text-primary-foreground shadow-xl shadow-primary/20 transition-all hover:bg-primary/90 active:scale-95"
-                  >
-                    <Terminal className="size-5" />
-                    View Source
-                  </a>
-                )}
-                {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex w-full items-center justify-center gap-3 rounded-2xl border border-border bg-accent py-4 font-sans text-sm font-bold text-foreground transition-all hover:bg-accent/80 active:scale-95"
-                  >
-                    <Rocket className="size-5" />
-                    Live Demo
-                  </a>
-                )}
-              </div>
+            <div className="grid grid-cols-1 gap-3 md:flex md:flex-col md:gap-4">
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex w-full items-center justify-center gap-3 rounded-xl bg-primary py-3 font-sans text-sm font-bold text-primary-foreground shadow-xl shadow-primary/20 transition-all hover:bg-primary/90 active:scale-95 md:rounded-2xl md:py-4"
+                >
+                  <Terminal className="size-4 md:size-5" />
+                  View Source
+                </a>
+              )}
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex w-full items-center justify-center gap-3 rounded-xl border border-border bg-accent py-3 font-sans text-sm font-bold text-foreground transition-all hover:bg-accent/80 active:scale-95 md:rounded-2xl md:py-4"
+                >
+                  <Rocket className="size-4 md:size-5" />
+                  Live Demo
+                </a>
+              )}
+            </div>
 
-              <div className="border-t border-border pt-8">
-                <p className="mb-4 font-sans text-[12px] font-bold tracking-widest text-muted-foreground uppercase">
+            <div className="mt-6 flex items-center justify-between border-t border-border pt-6 md:block md:pt-8">
+              <div>
+                <p className="mb-1 font-sans text-[10px] font-bold tracking-widest text-muted-foreground uppercase md:mb-4 md:text-[12px]">
                   Project Date
                 </p>
-                <p className="font-sans text-sm font-semibold text-foreground">
+                <p className="font-sans text-xs font-semibold text-foreground md:text-sm">
                   December 2023
                 </p>
               </div>
 
-              <div className="pt-6">
-                <p className="mb-4 font-sans text-[12px] font-bold tracking-widest text-muted-foreground uppercase">
+              <div className="md:pt-6">
+                <p className="mb-2 hidden font-sans text-[10px] font-bold tracking-widest text-muted-foreground uppercase md:mb-4 md:block md:text-[12px]">
                   Share Project
                 </p>
-                <div className="flex gap-4">
-                  <button className="flex h-10 w-10 items-center justify-center rounded-full bg-accent transition-colors hover:bg-accent/80">
-                    <Share2 className="size-5 text-muted-foreground" />
+                <div className="flex gap-2 md:gap-4">
+                  <button className="flex h-9 w-9 items-center justify-center rounded-full bg-accent transition-colors hover:bg-accent/80 md:h-10 md:w-10">
+                    <Share2 className="size-4 text-muted-foreground md:size-5" />
                   </button>
-                  <button className="flex h-10 w-10 items-center justify-center rounded-full bg-accent transition-colors hover:bg-accent/80">
-                    <Bookmark className="size-5 text-muted-foreground" />
+                  <button className="flex h-9 w-9 items-center justify-center rounded-full bg-accent transition-colors hover:bg-accent/80 md:h-10 md:w-10">
+                    <Bookmark className="size-4 text-muted-foreground md:size-5" />
                   </button>
                 </div>
               </div>
