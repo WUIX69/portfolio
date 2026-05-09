@@ -12,4 +12,5 @@ export interface Project {
   link?: string
   github?: string
   variant: "wide" | "standard" | "full"
+  date: string
 }

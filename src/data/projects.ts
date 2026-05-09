@@ -21,6 +21,7 @@ export const PROJECTS_DATA: Project[] = [
     ],
     github: "https://github.com/WUIX69/MindTrack",
     variant: "wide",
+    date: "March\u00A02026",
   },
   {
     id: "vetsync",
@@ -42,6 +43,7 @@ export const PROJECTS_DATA: Project[] = [
     ],
     github: "https://github.com/WUIX69/VetSync",
     variant: "standard",
+    date: "February\u00A02025",
   },
   {
     id: "fileats",
@@ -63,6 +65,7 @@ export const PROJECTS_DATA: Project[] = [
     ],
     github: "https://github.com/WUIX69/FilEats",
     variant: "standard",
+    date: "March\u00A02025",
   },
   {
     id: "juanwork-1",
@@ -84,6 +87,7 @@ export const PROJECTS_DATA: Project[] = [
     ],
     github: "https://github.com/WUIX69/Juanwork-capstone",
     variant: "wide",
+    date: "April\u00A02024",
   },
   {
     id: "juanwork-2",
@@ -105,6 +109,7 @@ export const PROJECTS_DATA: Project[] = [
     ],
     github: "https://github.com/WUIX69/Juanwork-frontend",
     variant: "wide",
+    date: "January\u00A02026",
   },
   {
     id: "portfolio",
@@ -126,6 +131,7 @@ export const PROJECTS_DATA: Project[] = [
     ],
     github: "https://github.com/WUIX69/Portfolio",
     variant: "standard",
+    date: "May\u00A02026",
   },
   {
     id: "ecommerce",
@@ -147,5 +153,6 @@ export const PROJECTS_DATA: Project[] = [
     ],
     github: "https://github.com/WUIX69/E-Commerce",
     variant: "full",
+    date: "May\u00A02023",
   },
 ]

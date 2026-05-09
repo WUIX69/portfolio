@@ -248,8 +248,8 @@ export function ProjectDialog({ project, children }: ProjectDialogProps) {
                 <p className="mb-1 font-sans text-[10px] font-bold tracking-widest text-muted-foreground uppercase md:mb-4 md:text-[12px]">
                   Project Date
                 </p>
-                <p className="font-sans text-xs font-semibold text-foreground md:text-sm">
-                  December 2023
+                <p className="font-sans text-xs font-semibold tracking-wide text-foreground md:text-sm">
+                  {project.date}
                 </p>
               </div>
 
