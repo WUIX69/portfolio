@@ -17,6 +17,7 @@ import {
 import { NAVIGATION_LINKS } from "@/config/navigation"
 import { HERO_DATA } from "@/data/portfolio"
 import { ThemeToggle } from "./theme-toggle"
+import { GlimmerButton } from "@/components/shared/glimmer-button"
 
 const TopNavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -73,15 +74,15 @@ const TopNavBar = () => {
         ))}
       </div>
 
-      <div className="flex items-center gap-1 md:gap-2">
-        <Button
-          asChild
-          className="hidden rounded-full px-4 text-sm font-bold shadow-md md:inline-flex"
+      <div className="flex items-center gap-1 md:gap-5">
+        <GlimmerButton
+          href={HERO_DATA.resumeHref}
+          download
+          aria-label="Download resume"
+          className="hidden md:inline-flex"
         >
-          <a href={HERO_DATA.resumeHref} download aria-label="Download resume">
-            <span className="hidden md:inline">Resume</span>
-          </a>
-        </Button>
+          Resume
+        </GlimmerButton>
 
         <ThemeToggle />
 
@@ -103,15 +104,15 @@ const TopNavBar = () => {
                 Jonathan.Dev
               </SheetTitle>
             </SheetHeader>
-            <div className="mt-6 flex flex-col gap-2">
+            <div className="flex flex-col gap-1 px-3">
               {NAVIGATION_LINKS.map((navLink) => (
                 <a
                   key={navLink.id}
                   href={navLink.href}
                   className={cn(
-                    "rounded-lg px-4 py-3 text-sm font-bold tracking-tight transition-colors hover:bg-accent hover:text-accent-foreground",
+                    "rounded-lg px-4 py-3 text-base font-bold tracking-tight transition-colors hover:bg-accent hover:text-accent-foreground",
                     activeNavLinkId === navLink.id
-                      ? "bg-accent text-primary"
+                      ? "bg-accent/50 text-primary"
                       : "text-muted-foreground"
                   )}
                   onClick={() => handleNavLinkClick(navLink.id)}
@@ -124,23 +125,18 @@ const TopNavBar = () => {
                   {navLink.label}
                 </a>
               ))}
-              <div className="mt-4 px-2">
-                <Button
-                  asChild
-                  className="w-full rounded-xl py-6 font-bold shadow-md"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <a
-                    href={HERO_DATA.resumeHref}
-                    download
-                    aria-label="Download resume"
-                    className="flex items-center justify-center gap-2"
-                  >
-                    <FileDown className="size-5" />
-                    <span>Download Resume</span>
-                  </a>
-                </Button>
-              </div>
+            </div>
+            <div className="mt-2 flex justify-center px-4">
+              <GlimmerButton
+                href={HERO_DATA.resumeHref}
+                download
+                aria-label="Download resume"
+                className="w-fit w-full px-8 py-3 text-sm"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <FileDown className="size-4" />
+                <span>Resume</span>
+              </GlimmerButton>
             </div>
           </SheetContent>
         </Sheet>
