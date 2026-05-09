@@ -7,24 +7,26 @@ import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { HERO_DATA } from "@/data/portfolio"
 
+import Typewriter from "typewriter-effect"
+
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
       staggerChildren: 0.15,
-      delayChildren: 0.2,
+      delayChildren: 0.3,
     },
   },
 }
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { y: 20, opacity: 0 },
   visible: {
-    opacity: 1,
     y: 0,
+    opacity: 1,
     transition: {
-      duration: 0.6,
+      duration: 0.5,
       ease: [0.25, 0.1, 0.25, 1],
     },
   },
@@ -36,7 +38,7 @@ const HeroTextContent = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="col-span-1 z-10 flex flex-col gap-6 lg:col-span-6"
+      className="z-10 col-span-1 flex flex-col gap-6 lg:col-span-6"
     >
       <motion.div
         variants={itemVariants}
@@ -48,13 +50,49 @@ const HeroTextContent = () => {
         </span>
       </motion.div>
 
-      <motion.h1
+      <motion.div
         variants={itemVariants}
-        className="text-4xl font-extrabold tracking-tighter sm:text-5xl lg:text-[48px] lg:leading-[1.1]"
+        className="min-h-full text-4xl font-extrabold tracking-wide sm:text-5xl lg:text-[48px] lg:leading-[1.2]"
       >
-        {HERO_DATA.title} <br />
-        <span className="text-primary">{HERO_DATA.highlightedTitle}</span>
-      </motion.h1>
+        <Typewriter
+          onInit={(typewriter) => {
+            typewriter
+              .typeString(
+                "👋 Greetings! I'm <span class='text-primary'>Jonathan L Violeta</span>..."
+              )
+              .pauseFor(2000)
+              .deleteAll()
+              .typeString(
+                "A Jr. <span class='text-primary'>FullStack Developer</span>..."
+              )
+              .pauseFor(2000)
+              .deleteAll()
+              .typeString(
+                "Building <span class='text-primary'>modern</span> and <span class='text-primary'>legacy</span> web experiences..."
+              )
+              .pauseFor(2000)
+              .deleteAll()
+              .typeString(
+                "Passionate about <span class='text-primary'>code excellence</span>..."
+              )
+              .pauseFor(2000)
+              .deleteAll()
+              .typeString(
+                "Continuously <span class='text-primary'>growing</span> and <span class='text-primary'>learning</span>..."
+              )
+              .pauseFor(2000)
+              .start()
+          }}
+          options={{
+            autoStart: true,
+            loop: true,
+            deleteSpeed: 50,
+            delay: 75,
+            wrapperClassName: "text-foreground",
+            cursorClassName: "text-primary ml-1",
+          }}
+        />
+      </motion.div>
 
       <motion.p
         variants={itemVariants}
@@ -119,4 +157,3 @@ const HeroTextContent = () => {
 }
 
 export { HeroTextContent }
-
