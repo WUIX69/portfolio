@@ -8,15 +8,36 @@ import { ButtonWithLoading } from "@/components/shared/button-with-loading"
 import { cn } from "@/lib/utils"
 
 const ContactForm = ({ className, ...props }: HTMLMotionProps<"div">) => {
+  const [formData, setFormData] = React.useState({
+    name: "",
+    email: "",
+    message: "",
+  })
   const [isSubmitting, setIsSubmitting] = React.useState(false)
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    // HACK: Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+
+    // Construct mailto link
+    const subject = `Portfolio Message from ${formData.name}`
+    const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`
+    const mailtoUrl = `mailto:jonavioleta19@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`
+
+    // HACK: Small delay for UX feedback
+    await new Promise((resolve) => setTimeout(resolve, 800))
+
+    window.location.href = mailtoUrl
+
     setIsSubmitting(false)
-    // Handle form submission completion
+    setFormData({ name: "", email: "", message: "" })
   }
 
   return (
@@ -41,6 +62,9 @@ const ContactForm = ({ className, ...props }: HTMLMotionProps<"div">) => {
             </label>
             <input
               type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
               placeholder="John Doe"
               className="w-full rounded-xl border border-border bg-muted/50 px-4 py-3 font-sans text-foreground transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
               required
@@ -52,6 +76,9 @@ const ContactForm = ({ className, ...props }: HTMLMotionProps<"div">) => {
             </label>
             <input
               type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               placeholder="john@example.com"
               className="w-full rounded-xl border border-border bg-muted/50 px-4 py-3 font-sans text-foreground transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
               required
@@ -63,6 +90,9 @@ const ContactForm = ({ className, ...props }: HTMLMotionProps<"div">) => {
             Message
           </label>
           <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
             placeholder="Tell me about your project..."
             rows={6}
             className="w-full flex-grow resize-none rounded-xl border border-border bg-muted/50 px-4 py-3 font-sans text-foreground transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"

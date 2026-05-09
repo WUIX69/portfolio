@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { CodeXml, Mail, Menu, FileDown } from "lucide-react"
+import { Menu, FileDown } from "lucide-react"
 import { motion } from "motion/react"
 
 import { cn } from "@/lib/utils"
@@ -14,13 +14,9 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { NAVIGATION_LINKS, SOCIAL_LINKS } from "@/config/navigation"
+import { NAVIGATION_LINKS } from "@/config/navigation"
 import { HERO_DATA } from "@/data/portfolio"
-
-const ICON_MAP: Record<string, React.ReactNode> = {
-  github: <CodeXml className="size-5" />,
-  mail: <Mail className="size-5" />,
-}
+import { ThemeToggle } from "./theme-toggle"
 
 const TopNavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -31,19 +27,11 @@ const TopNavBar = () => {
     setIsMobileMenuOpen(false)
   }
 
-  const handleNavLinkKeyDown = (
-    event: React.KeyboardEvent,
-    linkId: string
-  ) => {
+  const handleNavLinkKeyDown = (event: React.KeyboardEvent, linkId: string) => {
     if (event.key === "Enter" || event.key === " ") {
       handleNavLinkClick(linkId)
     }
   }
-
-  const headerIconLinks = SOCIAL_LINKS.filter(
-    (socialLink) =>
-      socialLink.iconName === "github" || socialLink.iconName === "mail"
-  )
 
   return (
     <motion.nav
@@ -61,7 +49,7 @@ const TopNavBar = () => {
         className="text-xl font-extrabold tracking-tighter text-primary"
         onClick={() => handleNavLinkClick("home")}
       >
-        Jonathan L.
+        Jonathan.Dev
       </Link>
 
       <div className="hidden items-center gap-6 md:flex">
@@ -78,51 +66,24 @@ const TopNavBar = () => {
             onClick={() => handleNavLinkClick(navLink.id)}
             onKeyDown={(event) => handleNavLinkKeyDown(event, navLink.id)}
             tabIndex={0}
-            aria-current={
-              activeNavLinkId === navLink.id ? "page" : undefined
-            }
+            aria-current={activeNavLinkId === navLink.id ? "page" : undefined}
           >
             {navLink.label}
           </a>
         ))}
       </div>
 
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1 md:gap-2">
         <Button
           asChild
-          className="rounded-full px-4 text-sm font-bold shadow-md"
+          className="hidden rounded-full px-4 text-sm font-bold shadow-md md:inline-flex"
         >
-          <a
-            href={HERO_DATA.resumeHref}
-            download
-            aria-label="Download resume"
-          >
-            <FileDown className="size-4 md:hidden" />
+          <a href={HERO_DATA.resumeHref} download aria-label="Download resume">
             <span className="hidden md:inline">Resume</span>
-            <span className="md:hidden">Resume</span>
           </a>
         </Button>
 
-        <div className="hidden gap-1 md:flex">
-          {headerIconLinks.map((iconLink) => (
-            <Button
-              key={iconLink.label}
-              variant="ghost"
-              size="icon"
-              className="rounded-full text-primary hover:bg-accent"
-              asChild
-            >
-              <a
-                href={iconLink.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={iconLink.label}
-              >
-                {ICON_MAP[iconLink.iconName]}
-              </a>
-            </Button>
-          ))}
-        </div>
+        <ThemeToggle />
 
         <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
           <SheetTrigger asChild>
@@ -139,7 +100,7 @@ const TopNavBar = () => {
           <SheetContent side="right" className="w-[280px]">
             <SheetHeader>
               <SheetTitle className="text-left text-lg font-extrabold tracking-tighter text-primary">
-                Jonathan L.
+                Jonathan.Dev
               </SheetTitle>
             </SheetHeader>
             <div className="mt-6 flex flex-col gap-2">
@@ -154,9 +115,7 @@ const TopNavBar = () => {
                       : "text-muted-foreground"
                   )}
                   onClick={() => handleNavLinkClick(navLink.id)}
-                  onKeyDown={(event) =>
-                    handleNavLinkKeyDown(event, navLink.id)
-                  }
+                  onKeyDown={(event) => handleNavLinkKeyDown(event, navLink.id)}
                   tabIndex={0}
                   aria-current={
                     activeNavLinkId === navLink.id ? "page" : undefined
@@ -165,28 +124,22 @@ const TopNavBar = () => {
                   {navLink.label}
                 </a>
               ))}
-
-              <div className="my-4 h-px bg-border" aria-hidden="true" />
-
-              <div className="flex gap-2 px-4">
-                {headerIconLinks.map((iconLink) => (
-                  <Button
-                    key={iconLink.label}
-                    variant="ghost"
-                    size="icon"
-                    className="rounded-full text-primary hover:bg-accent"
-                    asChild
+              <div className="mt-4 px-2">
+                <Button
+                  asChild
+                  className="w-full rounded-xl py-6 font-bold shadow-md"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <a
+                    href={HERO_DATA.resumeHref}
+                    download
+                    aria-label="Download resume"
+                    className="flex items-center justify-center gap-2"
                   >
-                    <a
-                      href={iconLink.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={iconLink.label}
-                    >
-                      {ICON_MAP[iconLink.iconName]}
-                    </a>
-                  </Button>
-                ))}
+                    <FileDown className="size-5" />
+                    <span>Download Resume</span>
+                  </a>
+                </Button>
               </div>
             </div>
           </SheetContent>
@@ -197,4 +150,3 @@ const TopNavBar = () => {
 }
 
 export { TopNavBar }
-

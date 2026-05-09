@@ -26,11 +26,11 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Jonathan L. — Jr. Full Stack Developer",
+  title: "Jonathan.Dev — Jr. Full Stack Developer",
   description:
     "Portfolio of Jonathan L. Violeta — Jr. Full Stack Developer with 2+ years of experience building scalable web applications. Bridging robust backend systems with intuitive user interfaces.",
   openGraph: {
-    title: "Jonathan L. — Jr. Full Stack Developer",
+    title: "Jonathan.Dev — Jr. Full Stack Developer",
     description:
       "Portfolio of Jonathan L. Violeta — Jr. Full Stack Developer with 2+ years of experience building scalable web applications.",
     type: "website",

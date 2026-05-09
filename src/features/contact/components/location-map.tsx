@@ -25,7 +25,7 @@ const LocationMap = ({ location, className, ...props }: LocationMapProps) => {
         allowFullScreen
         referrerPolicy="no-referrer-when-downgrade"
         src="https://www.google.com/maps?q=R262%2BRQ9,Santa%20Maria,Bulacan&output=embed"
-        className="opacity-80 grayscale invert dark:grayscale-0 dark:invert-0"
+        className="opacity-100 transition-all duration-700"
       ></iframe>
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
       <div className="absolute right-6 bottom-6 left-6 rounded-xl border border-border bg-card/80 p-4 shadow-xl backdrop-blur-md">
