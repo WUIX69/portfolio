@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import { MapPin } from "lucide-react"
 import { motion, HTMLMotionProps } from "motion/react"
 import { cn } from "@/lib/utils"
@@ -18,14 +17,18 @@ const LocationMap = ({ location, className, ...props }: LocationMapProps) => {
       )}
       {...props}
     >
-      <Image
-        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKTeQTucN-zU1ZCU06obKXAv_CZK35Ny1cghYQpcrP-L0E2TfDvQr1p7khopUbMfS0RP2qbWjI1aJyRgf9vJAhmTI86X4JNHlKp_DEFzIFt66fQfzr723cHMp8hoLU7GdbSm4VIDq_t9H6GHKP8vDF7L34X-p5Xuck_zs9ze1i6ka6kllH6ch71kO58SJ9RSKeCBfpCyWgWzKaROQZNOgqbtnyEQ6hdhgFp86hiqU1Jh7uteIPAyYTVKQIVD97YTxoqLl-W6CCjgQy"
-        alt="Silicon Valley Map"
-        fill
-        className="object-cover opacity-60"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
-      <div className="absolute bottom-6 left-6 max-w-[80%] rounded-xl border border-border bg-card/80 p-4 shadow-xl backdrop-blur-md">
+      <iframe
+        width="100%"
+        height="100%"
+        style={{ border: 0 }}
+        loading="lazy"
+        allowFullScreen
+        referrerPolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=R262%2BRQ9,Santa%20Maria,Bulacan&output=embed"
+        className="opacity-80 grayscale invert dark:grayscale-0 dark:invert-0"
+      ></iframe>
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
+      <div className="absolute right-6 bottom-6 left-6 rounded-xl border border-border bg-card/80 p-4 shadow-xl backdrop-blur-md">
         <div className="mb-1 flex items-center gap-2">
           <MapPin className="size-4 text-primary" />
           <span className="font-sans text-sm font-bold text-foreground">
@@ -41,4 +44,3 @@ const LocationMap = ({ location, className, ...props }: LocationMapProps) => {
 }
 
 export { LocationMap }
-
