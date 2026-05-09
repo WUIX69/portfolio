@@ -146,6 +146,6 @@ export const PROJECTS_DATA: Project[] = [
       "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=800&q=80",
     ],
     github: "https://github.com/WUIX69/E-Commerce",
-    variant: "standard",
+    variant: "full",
   },
 ]

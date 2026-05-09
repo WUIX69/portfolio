@@ -30,6 +30,8 @@ interface ProjectCardProps extends HTMLMotionProps<"article"> {
 
 const ProjectCard = ({ project, className, ...props }: ProjectCardProps) => {
   const isWide = project.variant === "wide"
+  const isFull = project.variant === "full"
+  const isExpanded = isWide || isFull
   const Icon = project.icon ? ICON_MAP[project.icon] : null
 
   // Carousel state
@@ -67,7 +69,7 @@ const ProjectCard = ({ project, className, ...props }: ProjectCardProps) => {
       <motion.article
         className={cn(
           "group flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-lg shadow-primary/5 transition-shadow duration-300 hover:shadow-xl hover:shadow-primary/10",
-          isWide ? "md:col-span-2 lg:flex-row" : "col-span-1",
+          isFull ? "md:col-span-2 lg:col-span-full lg:flex-row" : isWide ? "md:col-span-2 lg:col-span-2 lg:flex-row" : "col-span-1",
           className
         )}
         {...props}
@@ -76,7 +78,7 @@ const ProjectCard = ({ project, className, ...props }: ProjectCardProps) => {
         <div
           className={cn(
             "group/carousel relative overflow-hidden bg-muted",
-            isWide ? "h-64 md:h-auto md:w-1/2" : "h-48"
+            isExpanded ? "h-64 md:h-auto md:w-1/2" : "h-48"
           )}
         >
           {hasImages ? (
@@ -136,8 +138,8 @@ const ProjectCard = ({ project, className, ...props }: ProjectCardProps) => {
         {/* Content Container */}
         <div
           className={cn(
-            "flex flex-col justify-between p-6 md:p-8",
-            isWide ? "md:w-1/2" : "flex-grow"
+            "flex flex-1 flex-col p-6 md:p-10",
+            isExpanded ? "md:w-1/2" : "w-full"
           )}
         >
           <div>
