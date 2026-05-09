@@ -82,7 +82,7 @@ export const PROJECTS_DATA: Project[] = [
       "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&q=80",
       "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&q=80",
     ],
-    github: "https://github.com/WUIX69/Juanwork-1.0",
+    github: "https://github.com/WUIX69/Juanwork-capstone",
     variant: "wide",
   },
   {
@@ -103,7 +103,7 @@ export const PROJECTS_DATA: Project[] = [
       "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800&q=80",
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
     ],
-    github: "https://github.com/WUIX69/Juanwork-2.0",
+    github: "https://github.com/WUIX69/Juanwork-frontend",
     variant: "wide",
   },
   {
