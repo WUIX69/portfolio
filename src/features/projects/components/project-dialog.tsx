@@ -37,7 +37,10 @@ interface ProjectDialogProps {
 }
 
 export function ProjectDialog({ project, children }: ProjectDialogProps) {
-  const images = project.images || []
+  const imagesRaw = project.images || []
+  const images = imagesRaw.map((img) =>
+    typeof img === "string" ? { url: img, fit: "cover" as const } : img
+  )
   const hasImages = images.length > 0
 
   // Dialog Carousel state
@@ -70,8 +73,8 @@ export function ProjectDialog({ project, children }: ProjectDialogProps) {
   return (
     <Dialog>
       {children}
-      <DialogContent className="max-h-[98vh] w-[96vw] max-w-none overflow-hidden p-0 sm:max-w-5xl sm:rounded-[2rem] [&>button]:hidden flex flex-col">
-        <div className="flex h-full w-full min-w-0 max-h-[98vh] flex-col md:flex-row">
+      <DialogContent className="flex max-h-[98vh] w-[96vw] max-w-none flex-col overflow-hidden p-0 sm:max-w-5xl sm:rounded-[2rem] [&>button]:hidden">
+        <div className="flex h-full max-h-[98vh] w-full min-w-0 flex-col md:flex-row">
           {/* Mobile Close Button */}
           <DialogClose asChild>
             <button
@@ -118,7 +121,7 @@ export function ProjectDialog({ project, children }: ProjectDialogProps) {
                         onClick={() => api?.scrollPrev()}
                         disabled={!canScrollPrev}
                         aria-label="Previous image"
-                        className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-accent-foreground transition-colors hover:bg-accent/80 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-accent-foreground transition-colors hover:bg-accent/80 disabled:cursor-not-allowed disabled:opacity-50"
                       >
                         <ChevronLeft className="size-5" />
                       </button>
@@ -127,7 +130,7 @@ export function ProjectDialog({ project, children }: ProjectDialogProps) {
                         onClick={() => api?.scrollNext()}
                         disabled={!canScrollNext}
                         aria-label="Next image"
-                        className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-accent-foreground transition-colors hover:bg-accent/80 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-accent-foreground transition-colors hover:bg-accent/80 disabled:cursor-not-allowed disabled:opacity-50"
                       >
                         <ChevronRight className="size-5" />
                       </button>
@@ -135,16 +138,24 @@ export function ProjectDialog({ project, children }: ProjectDialogProps) {
                   )}
                 </div>
 
-                <Carousel setApi={setApi} className="w-full">
+                <Carousel
+                  setApi={setApi}
+                  className="w-full overflow-hidden rounded-2xl"
+                >
                   <CarouselContent>
                     {images.map((img, idx) => (
                       <CarouselItem key={idx}>
-                        <div className="group relative aspect-video w-full overflow-hidden rounded-2xl shadow-xl ring-1 ring-border">
+                        <div className="group relative aspect-video w-full overflow-hidden rounded-2xl">
                           <Image
-                            src={img}
+                            src={img.url}
                             alt={`${project.title} - Gallery Image ${idx + 1}`}
                             fill
-                            className="object-cover"
+                            className={cn(
+                              "transition-all duration-300",
+                              img.fit === "contain"
+                                ? "object-contain"
+                                : "object-cover"
+                            )}
                           />
                         </div>
                       </CarouselItem>
@@ -162,17 +173,21 @@ export function ProjectDialog({ project, children }: ProjectDialogProps) {
                         aria-label={`View image ${idx + 1}`}
                         aria-current={current === idx ? "true" : undefined}
                         className={cn(
-                          "relative aspect-video w-32 shrink-0 cursor-pointer overflow-hidden rounded-xl transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+                          "relative aspect-video w-32 shrink-0 cursor-pointer overflow-hidden rounded-xl transition-all duration-300 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none",
                           current === idx
                             ? "border-2 border-primary ring-4 ring-primary/20"
                             : "opacity-60 hover:opacity-100"
                         )}
                       >
                         <Image
-                          src={img}
+                          src={img.url}
                           alt={`Thumbnail ${idx + 1}`}
                           fill
-                          className="object-cover"
+                          className={cn(
+                            img.fit === "contain"
+                              ? "bg-black/5 object-contain dark:bg-white/5"
+                              : "object-cover"
+                          )}
                           sizes="128px"
                         />
                       </button>

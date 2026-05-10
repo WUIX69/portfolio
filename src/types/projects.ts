@@ -1,3 +1,8 @@
+export interface ProjectImage {
+  url: string
+  fit?: "cover" | "contain"
+}
+
 export interface Project {
   id: string
   title: string
@@ -7,7 +12,7 @@ export interface Project {
   purpose?: string
   tags: string[]
   techStack: string[]
-  images?: string[]
+  images?: (string | ProjectImage)[]
   icon?: string
   link?: string
   github?: string

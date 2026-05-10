@@ -36,7 +36,8 @@ const ProjectCard = ({ project, className, ...props }: ProjectCardProps) => {
 
   // Carousel state
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const images = project.images || []
+  const imagesRaw = project.images || []
+  const images = imagesRaw.map((img) => (typeof img === "string" ? img : img.url))
   const hasImages = images.length > 0
 
   // Auto-play carousel
