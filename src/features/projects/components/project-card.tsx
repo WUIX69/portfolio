@@ -46,7 +46,9 @@ const ProjectCard = ({ project, className, ...props }: ProjectCardProps) => {
   const [api, setApi] = useState<CarouselApi>()
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const imagesRaw = project.images || []
-  const images = imagesRaw.map((img) => (typeof img === "string" ? img : img.url))
+  const images = imagesRaw.map((img) =>
+    typeof img === "string" ? img : img.url
+  )
   const hasImages = images.length > 0
 
   useEffect(() => {
@@ -70,7 +72,11 @@ const ProjectCard = ({ project, className, ...props }: ProjectCardProps) => {
       <motion.article
         className={cn(
           "group flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-lg shadow-primary/5 transition-shadow duration-300 hover:shadow-xl hover:shadow-primary/10",
-          isFull ? "md:col-span-2 lg:col-span-full lg:flex-row" : isWide ? "md:col-span-2 lg:col-span-2 lg:flex-row" : "col-span-1",
+          isFull
+            ? "md:col-span-2 lg:col-span-full lg:flex-row"
+            : isWide
+              ? "md:col-span-2 lg:col-span-2 lg:flex-row"
+              : "col-span-1",
           className
         )}
         {...props}
@@ -86,7 +92,7 @@ const ProjectCard = ({ project, className, ...props }: ProjectCardProps) => {
             <>
               <Carousel
                 setApi={setApi}
-                plugins={[Autoplay({ delay: 2000, stopOnInteraction: true })]}
+                plugins={[Autoplay({ delay: 4000, stopOnInteraction: false })]}
                 className="h-full w-full [&_[data-slot=carousel-content]]:h-full"
                 opts={{
                   loop: true,
@@ -94,12 +100,15 @@ const ProjectCard = ({ project, className, ...props }: ProjectCardProps) => {
               >
                 <CarouselContent className="ml-0 h-full">
                   {images.map((src, idx) => (
-                    <CarouselItem key={idx} className="relative h-full w-full pl-0">
+                    <CarouselItem
+                      key={idx}
+                      className="relative h-full w-full pl-0"
+                    >
                       <Image
                         src={src}
                         alt={`${project.title} - Image ${idx + 1}`}
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="object-cover transition-transform duration-500"
                         sizes="(max-width: 768px) 100vw, 50vw"
                       />
                     </CarouselItem>
@@ -109,7 +118,7 @@ const ProjectCard = ({ project, className, ...props }: ProjectCardProps) => {
 
               {images.length > 1 && (
                 <>
-                  <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover/carousel:opacity-100" />
+                  <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover/carousel:opacity-100" />
                   <button
                     onClick={(e) => {
                       e.preventDefault()
