@@ -43,30 +43,47 @@ export function ProjectDialog({ project, children }: ProjectDialogProps) {
   // Dialog Carousel state
   const [api, setApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState(0)
+  const [canScrollPrev, setCanScrollPrev] = useState(false)
+  const [canScrollNext, setCanScrollNext] = useState(false)
 
   useEffect(() => {
     if (!api) return
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setCurrent(api.selectedScrollSnap())
-    api.on("select", () => {
+
+    const updateState = () => {
       setCurrent(api.selectedScrollSnap())
-    })
+      setCanScrollPrev(api.canScrollPrev())
+      setCanScrollNext(api.canScrollNext())
+    }
+
+    // Initialize state
+    updateState()
+
+    api.on("select", updateState)
+    api.on("reInit", updateState)
+
+    return () => {
+      api.off("select", updateState)
+      api.off("reInit", updateState)
+    }
   }, [api])
 
   return (
     <Dialog>
       {children}
-      <DialogContent className="max-h-[98vh] w-[96vw] max-w-none overflow-hidden p-0 sm:max-w-5xl sm:rounded-[2rem] [&>button]:hidden">
-        <div className="flex h-full max-h-[98vh] flex-col md:flex-row">
+      <DialogContent className="max-h-[98vh] w-[96vw] max-w-none overflow-hidden p-0 sm:max-w-5xl sm:rounded-[2rem] [&>button]:hidden flex flex-col">
+        <div className="flex h-full w-full min-w-0 max-h-[98vh] flex-col md:flex-row">
           {/* Mobile Close Button */}
           <DialogClose asChild>
-            <button className="absolute top-4 right-4 z-[110] flex h-9 w-9 items-center justify-center rounded-full bg-accent/80 text-muted-foreground backdrop-blur-sm transition-all hover:bg-accent hover:text-foreground md:hidden">
+            <button
+              type="button"
+              className="absolute top-4 right-4 z-[110] flex h-9 w-9 items-center justify-center rounded-full bg-accent/80 text-muted-foreground backdrop-blur-sm transition-all hover:bg-accent hover:text-foreground md:hidden"
+            >
               <X className="size-4" />
             </button>
           </DialogClose>
 
           {/* Left Column */}
-          <div className="custom-scrollbar max-w-[96vw] flex-1 overflow-x-hidden overflow-y-auto p-5 md:p-10">
+          <div className="custom-scrollbar max-w-[96vw] min-w-0 flex-1 overflow-x-hidden overflow-y-auto p-5 md:p-10">
             {/* Header */}
             <div className="mb-8">
               <div className="mb-4 flex flex-wrap gap-2">
@@ -97,14 +114,20 @@ export function ProjectDialog({ project, children }: ProjectDialogProps) {
                   {images.length > 1 && (
                     <div className="flex gap-2">
                       <button
+                        type="button"
                         onClick={() => api?.scrollPrev()}
-                        className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-accent-foreground transition-colors hover:bg-accent/80"
+                        disabled={!canScrollPrev}
+                        aria-label="Previous image"
+                        className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-accent-foreground transition-colors hover:bg-accent/80 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         <ChevronLeft className="size-5" />
                       </button>
                       <button
+                        type="button"
                         onClick={() => api?.scrollNext()}
-                        className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-accent-foreground transition-colors hover:bg-accent/80"
+                        disabled={!canScrollNext}
+                        aria-label="Next image"
+                        className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-accent-foreground transition-colors hover:bg-accent/80 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         <ChevronRight className="size-5" />
                       </button>
@@ -130,13 +153,16 @@ export function ProjectDialog({ project, children }: ProjectDialogProps) {
                 </Carousel>
 
                 {images.length > 1 && (
-                  <div className="custom-scrollbar flex gap-4 overflow-x-auto pb-4">
+                  <div className="custom-scrollbar flex w-full gap-4 overflow-x-auto pb-4">
                     {images.map((img, idx) => (
                       <button
                         key={idx}
+                        type="button"
                         onClick={() => api?.scrollTo(idx)}
+                        aria-label={`View image ${idx + 1}`}
+                        aria-current={current === idx ? "true" : undefined}
                         className={cn(
-                          "relative aspect-video w-32 shrink-0 cursor-pointer overflow-hidden rounded-xl transition-all duration-300",
+                          "relative aspect-video w-32 shrink-0 cursor-pointer overflow-hidden rounded-xl transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                           current === idx
                             ? "border-2 border-primary ring-4 ring-primary/20"
                             : "opacity-60 hover:opacity-100"
@@ -209,10 +235,13 @@ export function ProjectDialog({ project, children }: ProjectDialogProps) {
           </div>
 
           {/* Right Column */}
-          <div className="flex w-full min-w-0 flex-col justify-start border-t border-border bg-muted/20 p-5 md:w-72 md:justify-center md:border-t-0 md:border-l md:p-10">
+          <div className="flex w-full shrink-0 flex-col justify-start border-t border-border bg-muted/20 p-5 md:w-72 md:justify-center md:border-t-0 md:border-l md:p-10">
             <div className="absolute top-10 right-10 hidden flex-col items-end md:flex">
               <DialogClose asChild>
-                <button className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-muted-foreground transition-all hover:bg-accent/80 hover:text-foreground">
+                <button
+                  type="button"
+                  className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-muted-foreground transition-all hover:bg-accent/80 hover:text-foreground"
+                >
                   <X className="size-5" />
                 </button>
               </DialogClose>
@@ -258,10 +287,18 @@ export function ProjectDialog({ project, children }: ProjectDialogProps) {
                   Share Project
                 </p>
                 <div className="flex gap-2 md:gap-4">
-                  <button className="flex h-9 w-9 items-center justify-center rounded-full bg-accent transition-colors hover:bg-accent/80 md:h-10 md:w-10">
+                  <button
+                    type="button"
+                    aria-label="Share project"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-accent transition-colors hover:bg-accent/80 md:h-10 md:w-10"
+                  >
                     <Share2 className="size-4 text-muted-foreground md:size-5" />
                   </button>
-                  <button className="flex h-9 w-9 items-center justify-center rounded-full bg-accent transition-colors hover:bg-accent/80 md:h-10 md:w-10">
+                  <button
+                    type="button"
+                    aria-label="Save project"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-accent transition-colors hover:bg-accent/80 md:h-10 md:w-10"
+                  >
                     <Bookmark className="size-4 text-muted-foreground md:size-5" />
                   </button>
                 </div>
