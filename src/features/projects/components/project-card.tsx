@@ -11,11 +11,19 @@ import {
   ChevronRight,
   type LucideIcon,
 } from "lucide-react"
-import { motion, HTMLMotionProps, AnimatePresence } from "motion/react"
+import { motion, HTMLMotionProps } from "motion/react"
+import Image from "next/image"
+import Autoplay from "embla-carousel-autoplay"
 
 import { type Project } from "@/types/projects"
 import { cn } from "@/lib/utils"
 import { DialogTrigger } from "@/components/ui/dialog"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel"
 import { ProjectDialog } from "./project-dialog"
 
 const ICON_MAP: Record<string, LucideIcon> = {
@@ -35,35 +43,27 @@ const ProjectCard = ({ project, className, ...props }: ProjectCardProps) => {
   const Icon = project.icon ? ICON_MAP[project.icon] : null
 
   // Carousel state
+  const [api, setApi] = useState<CarouselApi>()
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const imagesRaw = project.images || []
   const images = imagesRaw.map((img) => (typeof img === "string" ? img : img.url))
   const hasImages = images.length > 0
 
-  // Auto-play carousel
   useEffect(() => {
-    if (images.length <= 1) return
+    if (!api) return
 
-    const timer = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % images.length)
-    }, 2000) // Change image every 2 seconds
+    const onSelect = () => {
+      setCurrentImageIndex(api.selectedScrollSnap())
+    }
 
-    return () => clearInterval(timer)
-  }, [images.length])
+    api.on("select", onSelect)
+    api.on("reInit", onSelect)
 
-  const nextImage = (e: React.MouseEvent) => {
-    e.preventDefault()
-    e.stopPropagation()
-    if (images.length <= 1) return
-    setCurrentImageIndex((prev) => (prev + 1) % images.length)
-  }
-
-  const prevImage = (e: React.MouseEvent) => {
-    e.preventDefault()
-    e.stopPropagation()
-    if (images.length <= 1) return
-    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length)
-  }
+    return () => {
+      api.off("select", onSelect)
+      api.off("reInit", onSelect)
+    }
+  }, [api])
 
   return (
     <ProjectDialog project={project}>
@@ -84,36 +84,55 @@ const ProjectCard = ({ project, className, ...props }: ProjectCardProps) => {
         >
           {hasImages ? (
             <>
-              <AnimatePresence mode="popLayout" initial={false}>
-                <motion.img
-                  key={currentImageIndex}
-                  src={images[currentImageIndex]}
-                  alt={`${project.title} - Image ${currentImageIndex + 1}`}
-                  className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                />
-              </AnimatePresence>
+              <Carousel
+                setApi={setApi}
+                plugins={[Autoplay({ delay: 2000, stopOnInteraction: true })]}
+                className="h-full w-full [&_[data-slot=carousel-content]]:h-full"
+                opts={{
+                  loop: true,
+                }}
+              >
+                <CarouselContent className="ml-0 h-full">
+                  {images.map((src, idx) => (
+                    <CarouselItem key={idx} className="relative h-full w-full pl-0">
+                      <Image
+                        src={src}
+                        alt={`${project.title} - Image ${idx + 1}`}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
+
               {images.length > 1 && (
                 <>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover/carousel:opacity-100" />
+                  <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover/carousel:opacity-100" />
                   <button
-                    onClick={prevImage}
-                    className="absolute top-1/2 left-2 -translate-y-1/2 rounded-full bg-black/50 p-1.5 text-white opacity-0 backdrop-blur-sm transition-all duration-300 group-hover/carousel:opacity-100 hover:bg-black/70"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      e.stopPropagation()
+                      api?.scrollPrev()
+                    }}
+                    className="absolute top-1/2 left-2 z-20 -translate-y-1/2 rounded-full bg-black/50 p-1.5 text-white opacity-0 backdrop-blur-sm transition-all duration-300 group-hover/carousel:opacity-100 hover:bg-black/70"
                     aria-label="Previous image"
                   >
                     <ChevronLeft className="size-5" />
                   </button>
                   <button
-                    onClick={nextImage}
-                    className="absolute top-1/2 right-2 -translate-y-1/2 rounded-full bg-black/50 p-1.5 text-white opacity-0 backdrop-blur-sm transition-all duration-300 group-hover/carousel:opacity-100 hover:bg-black/70"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      e.stopPropagation()
+                      api?.scrollNext()
+                    }}
+                    className="absolute top-1/2 right-2 z-20 -translate-y-1/2 rounded-full bg-black/50 p-1.5 text-white opacity-0 backdrop-blur-sm transition-all duration-300 group-hover/carousel:opacity-100 hover:bg-black/70"
                     aria-label="Next image"
                   >
                     <ChevronRight className="size-5" />
                   </button>
-                  <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5">
+                  <div className="absolute bottom-3 left-1/2 z-20 flex -translate-x-1/2 gap-1.5">
                     {images.map((_, idx) => (
                       <div
                         key={idx}
