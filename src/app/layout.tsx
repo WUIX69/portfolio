@@ -2,7 +2,8 @@ import { Inter, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google"
 import { Metadata } from "next"
 
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/context/theme-provider"
+import { MobileMenuProvider } from "@/context/mobile-menu"
 import { TopNavBar } from "@/components/layout/top-nav-bar"
 import { Footer } from "@/components/layout/footer"
 import { cn } from "@/lib/utils"
@@ -55,11 +56,13 @@ const RootLayout = ({
     >
       <body className="flex min-h-screen flex-col bg-background pt-[72px] text-foreground">
         <ThemeProvider>
-          <TopNavBar />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer />
+          <MobileMenuProvider>
+            <TopNavBar />
+            <main className="flex-grow">
+              {children}
+            </main>
+            <Footer />
+          </MobileMenuProvider>
         </ThemeProvider>
       </body>
     </html>

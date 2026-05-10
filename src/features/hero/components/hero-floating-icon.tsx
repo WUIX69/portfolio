@@ -4,7 +4,7 @@ import { type ComponentType } from "react"
 import { motion } from "motion/react"
 import * as SimpleIcons from "@icons-pack/react-simple-icons"
 import { cn } from "@/lib/utils"
-import { type HeroTechIcon } from "@/types/portfolio"
+import { type HeroTechIcon } from "@/types/hero"
 
 interface HeroFloatingIconProps {
   techIcon: HeroTechIcon

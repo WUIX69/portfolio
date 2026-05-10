@@ -5,7 +5,7 @@ import { motion, Variants } from "motion/react"
 
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
-import { HERO_DATA } from "@/data/portfolio"
+import { HERO_DATA } from "@/data/hero"
 
 import Typewriter from "typewriter-effect"
 

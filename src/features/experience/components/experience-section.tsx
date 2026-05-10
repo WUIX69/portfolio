@@ -1,5 +1,5 @@
 import { Variants } from "motion/react"
-import { EXPERIENCE_DATA, EDUCATION_DATA, SKILLS_DATA } from "@/data/portfolio"
+import { EXPERIENCE_DATA, EDUCATION_DATA, SKILLS_DATA } from "@/data/experience"
 import { ExperienceCard } from "@/features/experience/components/experience-card"
 import { EducationCard } from "@/features/experience/components/education-card"
 import { SkillsBento } from "@/features/experience/components/skills-bento"

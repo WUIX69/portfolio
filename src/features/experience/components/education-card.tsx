@@ -3,7 +3,7 @@
 import { GraduationCap } from "lucide-react"
 import { motion, HTMLMotionProps } from "motion/react"
 
-import { type EducationEntry } from "@/types/portfolio"
+import { type EducationEntry } from "@/types/experience"
 import { cn } from "@/lib/utils"
 
 interface EducationCardProps extends HTMLMotionProps<"section"> {

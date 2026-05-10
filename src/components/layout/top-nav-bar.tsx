@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
 import { Menu, FileDown } from "lucide-react"
 import { motion } from "motion/react"
@@ -14,14 +13,19 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { NAVIGATION_LINKS } from "@/config/navigation"
-import { HERO_DATA } from "@/data/portfolio"
+import { NAVIGATION_LINKS } from "@/data/navigation"
+import { HERO_DATA } from "@/data/hero"
 import { ThemeToggle } from "./theme-toggle"
 import { GlimmerButton } from "@/components/shared/glimmer-button"
+import { useMobileMenu } from "@/context/mobile-menu"
 
 const TopNavBar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [activeNavLinkId, setActiveNavLinkId] = useState("home")
+  const {
+    isMobileMenuOpen,
+    setIsMobileMenuOpen,
+    activeNavLinkId,
+    setActiveNavLinkId,
+  } = useMobileMenu()
 
   const handleNavLinkClick = (linkId: string) => {
     setActiveNavLinkId(linkId)

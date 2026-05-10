@@ -1,6 +1,6 @@
 "use client"
 
-import { HERO_TECH_ICONS } from "@/data/portfolio"
+import { HERO_TECH_ICONS } from "@/data/hero"
 import { HeroFloatingIcon } from "@/features/hero/components/hero-floating-icon"
 
 const HeroFloatingIcons = () => (

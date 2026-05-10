@@ -2,7 +2,7 @@
 
 import { Award, Brain, type LucideIcon } from "lucide-react"
 import { motion, HTMLMotionProps, Variants } from "motion/react"
-import { type SkillCategory } from "@/types/portfolio"
+import { type SkillCategory } from "@/types/experience"
 import { cn } from "@/lib/utils"
 import { IconWrapper } from "@/components/shared/icon-wrapper"
 

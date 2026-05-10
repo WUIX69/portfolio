@@ -1,4 +1,4 @@
-import { SOCIAL_LINKS } from "@/config/navigation"
+import { SOCIAL_LINKS } from "@/data/navigation"
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
