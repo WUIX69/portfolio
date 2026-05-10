@@ -13,7 +13,7 @@ export const PROJECTS_DATA: Project[] = [
     purpose:
       "Replaces manual scheduling with a centralized platform where patients book consultations online, admins manage requests, and clinicians access records.",
     tags: ["Full Stack", "Healthcare", "PHP"],
-    techStack: ["PHP", "TailwindCSS", "MySQL", "JavaScript"],
+    techStack: ["PHP", "TailwindCSS", "MySQL", "JavaScript", "jQuery", "XAMPP"],
     images: [
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
       "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&q=80",
@@ -35,7 +35,15 @@ export const PROJECTS_DATA: Project[] = [
     purpose:
       "To provide administrative and management tools for veterinary clinics.",
     tags: ["Full Stack", "Dashboard", "Admin"],
-    techStack: ["PHP", "Bootstrap", "MySQL", "Vanilla JS"],
+    techStack: [
+      "PHP",
+      "Bootstrap",
+      "MySQL",
+      "Vanilla JS",
+      "XAMPP",
+      "jQuery",
+      "Fomantic UI",
+    ],
     images: [
       "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=800&q=80",
       "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&q=80",
@@ -57,7 +65,15 @@ export const PROJECTS_DATA: Project[] = [
     purpose:
       "To connect home cooks and food enthusiasts who want to discover, share, and preserve traditional and modern Filipino recipes.",
     tags: ["Full Stack", "Community", "Platform"],
-    techStack: ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
+    techStack: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Bootstrap",
+      "XAMPP",
+      "MySQL",
+      "PHP",
+    ],
     images: [
       "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=800&q=80",
       "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80",
@@ -79,7 +95,15 @@ export const PROJECTS_DATA: Project[] = [
     purpose:
       "To connect clients looking to hire talent with freelancers seeking work opportunities in the Philippines.",
     tags: ["Full Stack", "Marketplace", "Legacy"],
-    techStack: ["PHP", "MySQL", "Bootstrap", "jQuery"],
+    techStack: [
+      "PHP",
+      "MySQL",
+      "Bootstrap",
+      "jQuery",
+      "XAMPP",
+      "Fomantic UI",
+      "JavaScript",
+    ],
     images: [
       "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
       "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&q=80",
@@ -101,7 +125,16 @@ export const PROJECTS_DATA: Project[] = [
     purpose:
       "To provide a scalable, fast, and modern freelancing platform for clients, freelancers, and admins.",
     tags: ["Full Stack", "Marketplace", "Next.js"],
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "React 19"],
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "React 19",
+      "Shadcn UI",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "FastAPI",
+    ],
     images: [
       "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
       "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800&q=80",
@@ -123,7 +156,7 @@ export const PROJECTS_DATA: Project[] = [
     purpose:
       "To showcase professional projects, skills, and experience with clean architecture and intuitive UI.",
     tags: ["Frontend", "Portfolio", "Next.js"],
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Motion"],
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Motion", "Shadcn UI"],
     images: [
       "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&q=80",
       "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=800&q=80",
