@@ -44,5 +44,8 @@ next-env.d.ts
 /scripts
 /agents
 
+# everything-claude-code
 /everything-claude-code/yarn.lock
 everything-claude-code
+/ECC
+ECC
