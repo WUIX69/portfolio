@@ -49,3 +49,5 @@ next-env.d.ts
 everything-claude-code
 /ECC
 ECC
+# Sentry Config File
+.env.sentry-build-plugin
