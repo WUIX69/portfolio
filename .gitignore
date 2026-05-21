@@ -41,6 +41,7 @@ next-env.d.ts
 .env
 
 /docs
+/temp
 /scripts
 /agents
 
