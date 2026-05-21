@@ -10,6 +10,7 @@
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "typecheck": "tsc --noEmit",
+    "validate": "pnpm lint && pnpm typecheck",
     "generate:component": "node scripts/generate-component.js"
   },
   "dependencies": {
