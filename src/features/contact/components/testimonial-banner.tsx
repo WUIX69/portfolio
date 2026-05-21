@@ -15,7 +15,7 @@ const TestimonialBanner = ({
   return (
     <div
       className={cn(
-        "flex flex-col items-start gap-8 rounded-2xl border border-primary/10 bg-primary/5 p-8 shadow-lg shadow-primary/5 md:col-span-4 md:row-span-1 md:flex-row md:items-center md:p-10",
+        "flex flex-col items-start gap-8 rounded-2xl border border-primary/10 bg-primary/5 p-8 shadow-lg shadow-primary/5 md:flex-row md:items-center md:p-10",
         className
       )}
     >

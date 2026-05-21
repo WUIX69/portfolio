@@ -40,22 +40,22 @@ const ContactSection = () => {
 
           {/* Bento Grid */}
           <div className="grid grid-cols-1 gap-6 md:grid-cols-4 md:grid-rows-[repeat(3,minmax(280px,auto))]">
-            <AnimatedItem variants={itemVariants}>
+            <AnimatedItem className="md:col-span-2 md:row-span-2" variants={itemVariants}>
               <ContactForm />
             </AnimatedItem>
-            <AnimatedItem variants={itemVariants}>
+            <AnimatedItem className="md:col-span-1 md:row-span-1" variants={itemVariants}>
               <ContactInfoCard
                 email={CONTACT_DATA.email}
                 phone={CONTACT_DATA.phone}
               />
             </AnimatedItem>
-            <AnimatedItem variants={itemVariants}>
+            <AnimatedItem className="md:col-span-1 md:row-span-1" variants={itemVariants}>
               <SocialLinksCard socials={CONTACT_DATA.socials} />
             </AnimatedItem>
-            <AnimatedItem variants={itemVariants}>
+            <AnimatedItem className="md:col-span-2 md:row-span-1" variants={itemVariants}>
               <LocationMap location={CONTACT_DATA.location} />
             </AnimatedItem>
-            <AnimatedItem variants={itemVariants}>
+            <AnimatedItem className="md:col-span-4 md:row-span-1" variants={itemVariants}>
               <TestimonialBanner testimonial={CONTACT_DATA.testimonial} />
             </AnimatedItem>
           </div>

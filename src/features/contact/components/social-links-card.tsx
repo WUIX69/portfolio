@@ -23,7 +23,7 @@ const SocialLinksCard = ({
   return (
     <div
       className={cn(
-        "flex flex-col justify-between rounded-2xl border border-border bg-muted/30 p-8 shadow-lg shadow-primary/5 md:col-span-1 md:row-span-1 md:p-10",
+        "flex flex-col justify-between rounded-2xl border border-border bg-muted/30 p-8 shadow-lg shadow-primary/5 md:p-10",
         className
       )}
     >

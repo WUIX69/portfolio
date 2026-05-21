@@ -16,7 +16,7 @@ const ContactInfoCard = ({
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-2xl bg-primary p-8 text-primary-foreground shadow-lg shadow-primary/20 md:col-span-1 md:row-span-1 md:p-10",
+        "relative overflow-hidden rounded-2xl bg-primary p-8 text-primary-foreground shadow-lg shadow-primary/20 md:p-10",
         className
       )}
     >

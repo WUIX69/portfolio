@@ -36,11 +36,20 @@ const ProjectsSection = () => {
 
           {/* Bento Grid */}
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {PROJECTS_DATA.map((project) => (
-              <AnimatedItem key={project.id} variants={itemVariants}>
-                <ProjectCard project={project} />
-              </AnimatedItem>
-            ))}
+            {PROJECTS_DATA.map((project) => {
+              const isWide = project.variant === "wide"
+              const isFull = project.variant === "full"
+              const gridClass = isFull
+                ? "md:col-span-2 lg:col-span-full"
+                : isWide
+                  ? "md:col-span-2 lg:col-span-2"
+                  : ""
+              return (
+                <AnimatedItem key={project.id} className={gridClass} variants={itemVariants}>
+                  <ProjectCard project={project} />
+                </AnimatedItem>
+              )
+            })}
           </div>
         </MotionViewport>
       </Container>

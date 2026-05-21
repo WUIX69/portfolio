@@ -40,7 +40,7 @@ const ContactForm = ({ className, ...props }: HTMLMotionProps<"div">) => {
   return (
     <motion.div
       className={cn(
-        "flex flex-col rounded-2xl border border-border bg-card p-8 shadow-lg shadow-primary/5 md:col-span-2 md:row-span-2 md:p-10",
+        "flex flex-col rounded-2xl border border-border bg-card p-8 shadow-lg shadow-primary/5 md:p-10",
         className
       )}
       {...props}

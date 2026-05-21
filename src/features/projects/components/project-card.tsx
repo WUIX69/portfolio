@@ -95,10 +95,10 @@ const ProjectCard = ({ project, className }: ProjectCardProps) => {
         className={cn(
           "group flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-lg shadow-primary/5 transition-shadow duration-300 hover:shadow-xl hover:shadow-primary/10",
           isFull
-            ? "md:col-span-2 lg:col-span-full lg:flex-row"
+            ? "lg:flex-row"
             : isWide
-              ? "md:col-span-2 lg:col-span-2 lg:flex-row"
-              : "col-span-1",
+              ? "lg:flex-row"
+              : "",
           className
         )}
       >
