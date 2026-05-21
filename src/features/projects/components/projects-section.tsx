@@ -3,6 +3,7 @@ import { PROJECTS_DATA } from "@/data/projects"
 import { ProjectCard } from "@/features/projects/components/project-card"
 import { SectionHeader } from "@/components/shared/section-header"
 import { MotionViewport } from "@/components/shared/motion-viewport"
+import { AnimatedItem } from "@/components/shared/animated-item"
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -25,21 +26,20 @@ const ProjectsSection = () => {
       <SectionGradient side="left" />
       <Container>
         <MotionViewport>
-          <SectionHeader
-            title="Projects Showcase"
-            subtitle="A curated selection of full-feature lifecycles, complex system migrations, and scalable architectures designed for modern SaaS platforms."
-            titleClassName="text-primary"
-            variants={itemVariants}
-          />
+          <AnimatedItem variants={itemVariants}>
+            <SectionHeader
+              title="Projects Showcase"
+              subtitle="A curated selection of full-feature lifecycles, complex system migrations, and scalable architectures designed for modern SaaS platforms."
+              titleClassName="text-primary"
+            />
+          </AnimatedItem>
 
           {/* Bento Grid */}
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {PROJECTS_DATA.map((project) => (
-              <ProjectCard
-                key={project.id}
-                project={project}
-                variants={itemVariants}
-              />
+              <AnimatedItem key={project.id} variants={itemVariants}>
+                <ProjectCard project={project} />
+              </AnimatedItem>
             ))}
           </div>
         </MotionViewport>

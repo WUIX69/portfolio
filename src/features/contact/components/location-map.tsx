@@ -1,21 +1,18 @@
-"use client"
-
 import { MapPin } from "lucide-react"
-import { motion, HTMLMotionProps } from "motion/react"
 import { cn } from "@/lib/utils"
 
-interface LocationMapProps extends HTMLMotionProps<"div"> {
+interface LocationMapProps {
   location: string
+  className?: string
 }
 
-const LocationMap = ({ location, className, ...props }: LocationMapProps) => {
+const LocationMap = ({ location, className }: LocationMapProps) => {
   return (
-    <motion.div
+    <div
       className={cn(
         "relative overflow-hidden rounded-2xl shadow-lg shadow-primary/5 md:col-span-2 md:row-span-1",
         className
       )}
-      {...props}
     >
       <iframe
         width="100%"
@@ -39,7 +36,7 @@ const LocationMap = ({ location, className, ...props }: LocationMapProps) => {
           Available for worldwide remote collaboration
         </p>
       </div>
-    </motion.div>
+    </div>
   )
 }
 

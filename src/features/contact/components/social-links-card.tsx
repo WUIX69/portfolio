@@ -1,7 +1,4 @@
-"use client"
-
 import { CodeXml, Link, MessageCircle, Camera, type LucideIcon } from "lucide-react"
-import { motion, HTMLMotionProps } from "motion/react"
 import { IconWrapper } from "@/components/shared/icon-wrapper"
 import { cn } from "@/lib/utils"
 
@@ -14,22 +11,21 @@ const ICON_MAP: Record<string, LucideIcon> = {
   Instagram: Camera,
 }
 
-interface SocialLinksCardProps extends HTMLMotionProps<"div"> {
+interface SocialLinksCardProps {
   socials: SocialLink[]
+  className?: string
 }
 
 const SocialLinksCard = ({
   socials,
   className,
-  ...props
 }: SocialLinksCardProps) => {
   return (
-    <motion.div
+    <div
       className={cn(
         "flex flex-col justify-between rounded-2xl border border-border bg-muted/30 p-8 shadow-lg shadow-primary/5 md:col-span-1 md:row-span-1 md:p-10",
         className
       )}
-      {...props}
     >
       <h3 className="mb-6 font-sans text-xs font-bold uppercase tracking-widest text-primary">
         Network
@@ -61,7 +57,7 @@ const SocialLinksCard = ({
           Active daily for code reviews and tech discussions.
         </p>
       </div>
-    </motion.div>
+    </div>
   )
 }
 

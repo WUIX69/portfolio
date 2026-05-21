@@ -1,27 +1,23 @@
-"use client"
-
 import { GraduationCap } from "lucide-react"
-import { motion, HTMLMotionProps } from "motion/react"
 
 import { type EducationEntry } from "@/types/experience"
 import { cn } from "@/lib/utils"
 
-interface EducationCardProps extends HTMLMotionProps<"section"> {
+interface EducationCardProps {
   education: EducationEntry
+  className?: string
 }
 
 const EducationCard = ({
   education,
   className,
-  ...props
 }: EducationCardProps) => {
   return (
-    <motion.section
+    <section
       className={cn(
         "rounded-xl border border-border bg-card p-8 shadow-sm",
         className
       )}
-      {...props}
     >
       <div className="mb-6 flex items-center gap-3">
         <div className="flex size-10 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
@@ -42,7 +38,7 @@ const EducationCard = ({
           {education.period}
         </span>
       </div>
-    </motion.section>
+    </section>
   )
 }
 

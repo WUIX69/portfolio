@@ -1,30 +1,28 @@
-"use client"
-
 import { Award, Brain, type LucideIcon } from "lucide-react"
-import { motion, HTMLMotionProps, Variants } from "motion/react"
 import { type SkillCategory } from "@/types/experience"
 import { cn } from "@/lib/utils"
 import { IconWrapper } from "@/components/shared/icon-wrapper"
+import { AnimatedItem } from "@/components/shared/animated-item"
 
 const ICON_MAP: Record<string, LucideIcon> = {
   military_tech: Award,
   psychology: Brain,
 }
 
-interface SkillCardProps extends HTMLMotionProps<"section"> {
+interface SkillCardProps {
   category: SkillCategory
+  className?: string
 }
 
-const SkillCard = ({ category, className, ...props }: SkillCardProps) => {
+const SkillCard = ({ category, className }: SkillCardProps) => {
   const Icon = ICON_MAP[category.iconName] || Award
 
   return (
-    <motion.section
+    <section
       className={cn(
         "flex h-full flex-col rounded-xl border border-border bg-card p-8 shadow-sm",
         className
       )}
-      {...props}
     >
       <div className="mb-6 flex items-center gap-3">
         <IconWrapper
@@ -54,24 +52,24 @@ const SkillCard = ({ category, className, ...props }: SkillCardProps) => {
           </span>
         ))}
       </div>
-    </motion.section>
+    </section>
   )
 }
 
 interface SkillsBentoProps {
   categories: SkillCategory[]
-  variants?: Variants
 }
 
-const SkillsBento = ({ categories, variants }: SkillsBentoProps) => {
+const SkillsBento = ({ categories }: SkillsBentoProps) => {
   return (
     <div className="flex flex-col gap-6 h-full">
       {categories.map((category) => (
-        <SkillCard key={category.title} category={category} variants={variants} />
+        <AnimatedItem key={category.title}>
+          <SkillCard category={category} />
+        </AnimatedItem>
       ))}
     </div>
   )
 }
 
 export { SkillsBento }
-

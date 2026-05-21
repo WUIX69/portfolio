@@ -161,6 +161,7 @@ export function ProjectDialog({ project, children }: ProjectDialogProps) {
                             src={img.url}
                             alt={`${project.title} - Gallery Image ${idx + 1}`}
                             fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className={cn(
                               "transition-all duration-300",
                               img.fit === "contain"

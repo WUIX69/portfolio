@@ -10,7 +10,7 @@ import { HERO_DATA } from "@/data/hero"
 import Typewriter from "typewriter-effect"
 
 const containerVariants: Variants = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 1 },
   visible: {
     opacity: 1,
     transition: {
@@ -21,7 +21,7 @@ const containerVariants: Variants = {
 }
 
 const itemVariants: Variants = {
-  hidden: { y: 20, opacity: 0 },
+  hidden: { y: 20, opacity: 0.01 }, // Using 0.01 forces paint for LCP but keeps it visually hidden until animation
   visible: {
     y: 0,
     opacity: 1,
@@ -52,7 +52,7 @@ const HeroTextContent = () => {
 
       <motion.div
         variants={itemVariants}
-        className="min-h-full text-4xl font-extrabold tracking-wide sm:text-5xl lg:text-[48px] lg:leading-[1.2]"
+        className="min-h-[144px] text-4xl font-extrabold tracking-wide sm:min-h-[100px] sm:text-5xl lg:min-h-[120px] lg:text-[48px] lg:leading-[1.2]"
       >
         <Typewriter
           onInit={(typewriter) => {

@@ -1,5 +1,5 @@
 import { Inter, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google"
-import { Metadata } from "next"
+import { Metadata, Viewport } from "next"
 
 import "./globals.css"
 import { ThemeProvider } from "@/context/theme-provider"
@@ -25,6 +25,11 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400"],
   variable: "--font-mono",
 })
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+}
 
 export const metadata: Metadata = {
   title: "Jonathan.Dev — Jr. Full Stack Developer",

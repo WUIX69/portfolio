@@ -7,6 +7,7 @@ import { SocialLinksCard } from "./social-links-card"
 import { LocationMap } from "./location-map"
 import { TestimonialBanner } from "./testimonial-banner"
 import { MotionViewport } from "@/components/shared/motion-viewport"
+import { AnimatedItem } from "@/components/shared/animated-item"
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -29,33 +30,34 @@ const ContactSection = () => {
       <SectionGradient side="right" />
       <Container>
         <MotionViewport>
-          <SectionHeader
-            title={CONTACT_DATA.title}
-            subtitle={CONTACT_DATA.description}
-            titleClassName="text-primary md:text-6xl"
-            variants={itemVariants}
-          />
+          <AnimatedItem variants={itemVariants}>
+            <SectionHeader
+              title={CONTACT_DATA.title}
+              subtitle={CONTACT_DATA.description}
+              titleClassName="text-primary md:text-6xl"
+            />
+          </AnimatedItem>
 
           {/* Bento Grid */}
           <div className="grid grid-cols-1 gap-6 md:grid-cols-4 md:grid-rows-[repeat(3,minmax(280px,auto))]">
-            <ContactForm variants={itemVariants} />
-            <ContactInfoCard
-              variants={itemVariants}
-              email={CONTACT_DATA.email}
-              phone={CONTACT_DATA.phone}
-            />
-            <SocialLinksCard
-              variants={itemVariants}
-              socials={CONTACT_DATA.socials}
-            />
-            <LocationMap
-              variants={itemVariants}
-              location={CONTACT_DATA.location}
-            />
-            <TestimonialBanner
-              variants={itemVariants}
-              testimonial={CONTACT_DATA.testimonial}
-            />
+            <AnimatedItem variants={itemVariants}>
+              <ContactForm />
+            </AnimatedItem>
+            <AnimatedItem variants={itemVariants}>
+              <ContactInfoCard
+                email={CONTACT_DATA.email}
+                phone={CONTACT_DATA.phone}
+              />
+            </AnimatedItem>
+            <AnimatedItem variants={itemVariants}>
+              <SocialLinksCard socials={CONTACT_DATA.socials} />
+            </AnimatedItem>
+            <AnimatedItem variants={itemVariants}>
+              <LocationMap location={CONTACT_DATA.location} />
+            </AnimatedItem>
+            <AnimatedItem variants={itemVariants}>
+              <TestimonialBanner testimonial={CONTACT_DATA.testimonial} />
+            </AnimatedItem>
           </div>
         </MotionViewport>
       </Container>

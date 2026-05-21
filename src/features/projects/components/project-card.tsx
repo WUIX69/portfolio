@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import {
   ExternalLink,
   Code,
@@ -11,7 +11,7 @@ import {
   ChevronRight,
   type LucideIcon,
 } from "lucide-react"
-import { motion, HTMLMotionProps } from "motion/react"
+import { motion } from "motion/react"
 import Image from "next/image"
 import Autoplay from "embla-carousel-autoplay"
 
@@ -32,11 +32,12 @@ const ICON_MAP: Record<string, LucideIcon> = {
   article: FileText,
 }
 
-interface ProjectCardProps extends HTMLMotionProps<"article"> {
+interface ProjectCardProps {
   project: Project
+  className?: string
 }
 
-const ProjectCard = ({ project, className, ...props }: ProjectCardProps) => {
+const ProjectCard = ({ project, className }: ProjectCardProps) => {
   const isWide = project.variant === "wide"
   const isFull = project.variant === "full"
   const isExpanded = isWide || isFull
@@ -50,6 +51,8 @@ const ProjectCard = ({ project, className, ...props }: ProjectCardProps) => {
     typeof img === "string" ? img : img.url
   )
   const hasImages = images.length > 0
+  const [autoplayPlugin] = useState(() => Autoplay({ delay: 4000, stopOnInteraction: true, stopOnMouseEnter: true }))
+  const carouselRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (!api) return
@@ -67,6 +70,25 @@ const ProjectCard = ({ project, className, ...props }: ProjectCardProps) => {
     }
   }, [api])
 
+  useEffect(() => {
+    const el = carouselRef.current
+    if (!el || !api) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          autoplayPlugin.play()
+        } else {
+          autoplayPlugin.stop()
+        }
+      },
+      { threshold: 0.2 }
+    )
+
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [api, autoplayPlugin])
+
   return (
     <ProjectDialog project={project}>
       <motion.article
@@ -79,7 +101,6 @@ const ProjectCard = ({ project, className, ...props }: ProjectCardProps) => {
               : "col-span-1",
           className
         )}
-        {...props}
       >
         {/* Image Container */}
         <div
@@ -89,10 +110,10 @@ const ProjectCard = ({ project, className, ...props }: ProjectCardProps) => {
           )}
         >
           {hasImages ? (
-            <>
+            <div ref={carouselRef} className="h-full w-full">
               <Carousel
                 setApi={setApi}
-                plugins={[Autoplay({ delay: 4000, stopOnInteraction: false })]}
+                plugins={[autoplayPlugin]}
                 className="h-full w-full [&_[data-slot=carousel-content]]:h-full"
                 opts={{
                   loop: true,
@@ -156,7 +177,7 @@ const ProjectCard = ({ project, className, ...props }: ProjectCardProps) => {
                   </div>
                 </>
               )}
-            </>
+            </div>
           ) : (
             <div className="flex h-full items-center justify-center bg-primary/10">
               {Icon && <Icon className="size-24 text-primary opacity-20" />}

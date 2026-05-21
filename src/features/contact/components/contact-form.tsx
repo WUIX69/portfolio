@@ -31,9 +31,6 @@ const ContactForm = ({ className, ...props }: HTMLMotionProps<"div">) => {
     const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`
     const mailtoUrl = `mailto:jonavioleta19@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`
 
-    // HACK: Small delay for UX feedback
-    await new Promise((resolve) => setTimeout(resolve, 800))
-
     window.location.href = mailtoUrl
 
     setIsSubmitting(false)

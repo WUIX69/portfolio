@@ -204,3 +204,13 @@
     @apply font-sans;
   }
 }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-25px); }
+}
+
+.animate-float {
+  animation: float var(--float-duration, 3s) ease-in-out var(--float-delay, 0s) infinite;
+  will-change: transform;
+}
