@@ -90,6 +90,7 @@ const HeroTextContent = () => {
             delay: 75,
             wrapperClassName: "text-foreground",
             cursorClassName: "text-primary ml-1",
+            stringSplitter: (str) => Array.from(str),
           }}
         />
       </motion.div>
