@@ -40,7 +40,7 @@ const ContactForm = ({ className, ...props }: HTMLMotionProps<"div">) => {
   return (
     <motion.div
       className={cn(
-        "flex flex-col rounded-2xl border border-border bg-card p-8 shadow-lg shadow-primary/5 md:p-10",
+        "flex h-full flex-col rounded-2xl border border-border bg-card p-8 shadow-lg shadow-primary/5 md:p-10",
         className
       )}
       {...props}
@@ -51,7 +51,10 @@ const ContactForm = ({ className, ...props }: HTMLMotionProps<"div">) => {
           Send a Message
         </h2>
       </div>
-      <form onSubmit={handleSubmit} className="flex flex-grow flex-col space-y-6">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-grow flex-col space-y-6"
+      >
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div className="space-y-2">
             <label className="ml-1 font-sans text-sm font-semibold text-muted-foreground">
@@ -63,7 +66,7 @@ const ContactForm = ({ className, ...props }: HTMLMotionProps<"div">) => {
               value={formData.name}
               onChange={handleChange}
               placeholder="John Doe"
-              className="w-full rounded-xl border border-border bg-muted/50 px-4 py-3 font-sans text-foreground transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
+              className="w-full rounded-xl border border-border bg-muted/50 px-4 py-3 font-sans text-foreground transition-all outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
               required
             />
           </div>
@@ -77,7 +80,7 @@ const ContactForm = ({ className, ...props }: HTMLMotionProps<"div">) => {
               value={formData.email}
               onChange={handleChange}
               placeholder="john@example.com"
-              className="w-full rounded-xl border border-border bg-muted/50 px-4 py-3 font-sans text-foreground transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
+              className="w-full rounded-xl border border-border bg-muted/50 px-4 py-3 font-sans text-foreground transition-all outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
               required
             />
           </div>
@@ -92,7 +95,7 @@ const ContactForm = ({ className, ...props }: HTMLMotionProps<"div">) => {
             onChange={handleChange}
             placeholder="Tell me about your project..."
             rows={6}
-            className="w-full flex-grow resize-none rounded-xl border border-border bg-muted/50 px-4 py-3 font-sans text-foreground transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
+            className="w-full flex-grow resize-none rounded-xl border border-border bg-muted/50 px-4 py-3 font-sans text-foreground transition-all outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
             required
           />
         </div>
@@ -111,4 +114,3 @@ const ContactForm = ({ className, ...props }: HTMLMotionProps<"div">) => {
 }
 
 export { ContactForm }
-

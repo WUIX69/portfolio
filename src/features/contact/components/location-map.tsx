@@ -10,7 +10,7 @@ const LocationMap = ({ location, className }: LocationMapProps) => {
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-2xl shadow-lg shadow-primary/5",
+        "relative h-full overflow-hidden rounded-2xl shadow-lg shadow-primary/5",
         className
       )}
     >

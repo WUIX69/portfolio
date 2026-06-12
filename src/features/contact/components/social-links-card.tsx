@@ -1,4 +1,10 @@
-import { CodeXml, Link, MessageCircle, Camera, type LucideIcon } from "lucide-react"
+import {
+  CodeXml,
+  Link,
+  MessageCircle,
+  Camera,
+  type LucideIcon,
+} from "lucide-react"
 import { IconWrapper } from "@/components/shared/icon-wrapper"
 import { cn } from "@/lib/utils"
 
@@ -16,18 +22,15 @@ interface SocialLinksCardProps {
   className?: string
 }
 
-const SocialLinksCard = ({
-  socials,
-  className,
-}: SocialLinksCardProps) => {
+const SocialLinksCard = ({ socials, className }: SocialLinksCardProps) => {
   return (
     <div
       className={cn(
-        "flex flex-col justify-between rounded-2xl border border-border bg-muted/30 p-8 shadow-lg shadow-primary/5 md:p-10",
+        "flex h-full flex-col justify-between rounded-2xl border border-border bg-muted/30 p-8 shadow-lg shadow-primary/5 md:p-10",
         className
       )}
     >
-      <h3 className="mb-6 font-sans text-xs font-bold uppercase tracking-widest text-primary">
+      <h3 className="mb-6 font-sans text-xs font-bold tracking-widest text-primary uppercase">
         Network
       </h3>
       <div className="grid grid-cols-2 gap-4">
@@ -62,4 +65,3 @@ const SocialLinksCard = ({
 }
 
 export { SocialLinksCard }
-

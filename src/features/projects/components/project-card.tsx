@@ -51,7 +51,9 @@ const ProjectCard = ({ project, className }: ProjectCardProps) => {
     typeof img === "string" ? img : img.url
   )
   const hasImages = images.length > 0
-  const [autoplayPlugin] = useState(() => Autoplay({ delay: 4000, stopOnInteraction: true, stopOnMouseEnter: true }))
+  const [autoplayPlugin] = useState(() =>
+    Autoplay({ delay: 4000, stopOnInteraction: true, stopOnMouseEnter: true })
+  )
   const carouselRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -93,12 +95,8 @@ const ProjectCard = ({ project, className }: ProjectCardProps) => {
     <ProjectDialog project={project}>
       <motion.article
         className={cn(
-          "group flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-lg shadow-primary/5 transition-shadow duration-300 hover:shadow-xl hover:shadow-primary/10",
-          isFull
-            ? "lg:flex-row"
-            : isWide
-              ? "lg:flex-row"
-              : "",
+          "group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card shadow-lg shadow-primary/5 transition-shadow duration-300 hover:shadow-xl hover:shadow-primary/10",
+          isFull ? "lg:flex-row" : isWide ? "lg:flex-row" : "",
           className
         )}
       >
@@ -106,7 +104,7 @@ const ProjectCard = ({ project, className }: ProjectCardProps) => {
         <div
           className={cn(
             "group/carousel relative overflow-hidden bg-muted",
-            isExpanded ? "h-64 md:h-auto md:w-1/2" : "h-48"
+            isExpanded ? "h-64 md:h-auto md:w-1/2" : "h-60"
           )}
         >
           {hasImages ? (
@@ -188,8 +186,8 @@ const ProjectCard = ({ project, className }: ProjectCardProps) => {
         {/* Content Container */}
         <div
           className={cn(
-            "flex flex-1 flex-col p-6 md:p-10",
-            isExpanded ? "md:w-1/2" : "w-full"
+            "flex flex-1 flex-col p-6",
+            isExpanded ? "md:w-1/2 md:p-10" : "w-full md:p-8"
           )}
         >
           <div>
@@ -226,7 +224,7 @@ const ProjectCard = ({ project, className }: ProjectCardProps) => {
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center gap-2 md:gap-5">
             <DialogTrigger asChild>
               <button className="flex items-center gap-2 rounded-full bg-primary px-6 py-2.5 font-sans text-sm font-bold text-primary-foreground transition-colors hover:bg-primary/90">
                 <Info className="size-4" />
