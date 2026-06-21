@@ -29,26 +29,30 @@ yarn-error.log*
 pnpm-debug.log*
 
 # env files
+.env
 .env*.local
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
 
-# others
+# everything-claude-code
+/ECC
+ECC
+
+# Sentry Config File
+.env.sentry-build-plugin
+
+# Graphify
+graphify-out/cost.json
+graphify-out/cache/
+
+# Others
 .agents
 .agent
-.env
-
+.claude
+.opencode
 /docs
 /temp
 /scripts
 /agents
-
-# everything-claude-code
-/everything-claude-code/yarn.lock
-everything-claude-code
-/ECC
-ECC
-# Sentry Config File
-.env.sentry-build-plugin

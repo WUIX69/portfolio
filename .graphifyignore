@@ -1,0 +1,6 @@
+# Always exclude build artifacts and deps wherever they appear
+node_modules/
+dist/
+.next/
+*.generated.py
+public/
