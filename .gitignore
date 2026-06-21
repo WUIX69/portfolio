@@ -39,6 +39,7 @@ next-env.d.ts
 .agents
 .agent
 .env
+.claude
 
 /docs
 /temp
@@ -50,5 +51,6 @@ next-env.d.ts
 everything-claude-code
 /ECC
 ECC
+
 # Sentry Config File
 .env.sentry-build-plugin
