@@ -180,8 +180,8 @@
     "semantic_hash": "358070e9e6a7f5b99428d3360c7f3c69"
   },
   "src/data/projects.ts": {
-    "mtime": 1782051842.0046415,
-    "ast_hash": "fedfa11ca64f90384ce0ae512387ea3c",
+    "mtime": 1782052027.245489,
+    "ast_hash": "2cb21629ea2d50dd13316497ad25d003",
     "semantic_hash": ""
   },
   "src/features/contact/components/contact-form.tsx": {
