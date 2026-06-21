@@ -1,16 +1,16 @@
 # Graph Report - portfolio  (2026-06-21)
 
 ## Corpus Check
-- 68 files · ~43,172 words
+- 68 files · ~43,453 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 324 nodes · 553 edges · 19 communities (15 shown, 4 thin omitted)
+- 327 nodes · 556 edges · 19 communities (15 shown, 4 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 5 edges (avg confidence: 0.91)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e6dfe75e`
+- Built from commit: `5afc07e0`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -66,8 +66,8 @@
 ## Communities (19 total, 4 thin omitted)
 
 ### Community 0 - "Shared UI and Navigation Components"
-Cohesion: 0.16
-Nodes (14): ThemeToggle(), ButtonWithLoadingProps, GlimmerButton(), GlimmerButtonProps, Button(), buttonVariants, Sheet(), SheetContent() (+6 more)
+Cohesion: 0.13
+Nodes (23): ThemeToggle(), cn(), ButtonWithLoading(), ButtonWithLoadingProps, GlimmerButton(), GlimmerButtonProps, Button(), buttonVariants (+15 more)
 
 ### Community 1 - "Project Display Components"
 Cohesion: 0.11
@@ -82,8 +82,8 @@ Cohesion: 0.07
 Nodes (26): devDependencies, eslint, eslint-config-next, @eslint/eslintrc, postcss, prettier, prettier-plugin-tailwindcss, tailwindcss (+18 more)
 
 ### Community 4 - "Experience and Skills Bento Layout"
-Cohesion: 0.10
-Nodes (25): EducationCard(), EducationCardProps, ExperienceCard(), ExperienceCardProps, itemVariants, ProjectCard(), itemVariants, ICON_MAP (+17 more)
+Cohesion: 0.09
+Nodes (27): EducationCard(), EducationCardProps, ExperienceCard(), ExperienceCardProps, itemVariants, ProjectCard(), itemVariants, ICON_MAP (+19 more)
 
 ### Community 5 - "Global Layout, Providers, and Menu Context"
 Cohesion: 0.10
@@ -95,43 +95,43 @@ Nodes (23): aliases, components, hooks, lib, ui, utils, iconLibrary, menuAccent 
 
 ### Community 7 - "Hero Section Components and Data"
 Cohesion: 0.09
-Nodes (20): ContactSection, ExperienceSection, ProjectsSection, HeroFloatingIcon(), HeroFloatingIconProps, iconMap, HeroFloatingIcons(), HeroSection() (+12 more)
+Nodes (22): ContactSection, ExperienceSection, ProjectsSection, HeroFloatingIcon(), HeroFloatingIconProps, iconMap, HeroFloatingIcons(), HeroSection() (+14 more)
 
 ### Community 8 - "TypeScript Compiler Options"
 Cohesion: 0.10
 Nodes (20): compilerOptions, allowJs, baseUrl, esModuleInterop, incremental, isolatedModules, jsx, lib (+12 more)
 
 ### Community 9 - "Contact Page Features and Map"
-Cohesion: 0.09
-Nodes (30): ContactForm(), ContactInfoCard(), ContactInfoCardProps, itemVariants, LocationMap(), LocationMapProps, ICON_MAP, SocialLinksCard() (+22 more)
+Cohesion: 0.13
+Nodes (17): ContactForm(), ContactInfoCard(), ContactInfoCardProps, itemVariants, LocationMap(), LocationMapProps, ICON_MAP, SocialLinksCard() (+9 more)
 
 ### Community 10 - "Application Production Dependencies"
 Cohesion: 0.11
 Nodes (19): dependencies, class-variance-authority, clsx, embla-carousel-autoplay, embla-carousel-react, @icons-pack/react-simple-icons, lucide-react, motion (+11 more)
 
 ### Community 11 - "Project Documentation and Workspace Tools"
-Cohesion: 0.14
-Nodes (15): graphify, Lighthouse Performance Report, PNPM Workspace Configuration, MSW (Mock Service Worker), Sentry CLI, Sharp, UNRS Resolver, Feature-Sliced Design (FSD) (+7 more)
+Cohesion: 0.12
+Nodes (18): architecture, conventions, graphify, repo, Lighthouse Performance Report, PNPM Workspace Configuration, MSW (Mock Service Worker), Sentry CLI (+10 more)
 
 ## Knowledge Gaps
-- **130 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+125 more)
+- **133 isolated node(s):** `repo`, `architecture`, `conventions`, `$schema`, `style` (+128 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `Contact Page Features and Map` to `Shared UI and Navigation Components`, `Project Display Components`, `Experience and Skills Bento Layout`, `Global Layout, Providers, and Menu Context`, `Hero Section Components and Data`?**
-  _High betweenness centrality (0.193) - this node is a cross-community bridge._
+- **Why does `cn()` connect `Shared UI and Navigation Components` to `Project Display Components`, `Experience and Skills Bento Layout`, `Global Layout, Providers, and Menu Context`, `Hero Section Components and Data`, `Contact Page Features and Map`?**
+  _High betweenness centrality (0.189) - this node is a cross-community bridge._
 - **Why does `dependencies` connect `Application Production Dependencies` to `Package Configuration and Build Scripts`?**
   _High betweenness centrality (0.012) - this node is a cross-community bridge._
-- **Why does `Container()` connect `Contact Page Features and Map` to `Experience and Skills Bento Layout`, `Hero Section Components and Data`?**
+- **Why does `Container()` connect `Hero Section Components and Data` to `Shared UI and Navigation Components`, `Contact Page Features and Map`, `Experience and Skills Bento Layout`?**
   _High betweenness centrality (0.012) - this node is a cross-community bridge._
-- **What connects `$schema`, `style`, `rsc` to the rest of the system?**
-  _131 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `repo`, `architecture`, `conventions` to the rest of the system?**
+  _134 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Shared UI and Navigation Components` be split into smaller, more focused modules?**
+  _Cohesion score 0.13306451612903225 - nodes in this community are weakly interconnected._
 - **Should `Project Display Components` be split into smaller, more focused modules?**
   _Cohesion score 0.1051693404634581 - nodes in this community are weakly interconnected._
 - **Should `Package Configuration and Build Scripts` be split into smaller, more focused modules?**
   _Cohesion score 0.07407407407407407 - nodes in this community are weakly interconnected._
-- **Should `Experience and Skills Bento Layout` be split into smaller, more focused modules?**
-  _Cohesion score 0.0953058321479374 - nodes in this community are weakly interconnected._
