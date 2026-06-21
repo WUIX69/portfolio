@@ -217,6 +217,34 @@ export const PROJECTS_DATA: Project[] = [
     date: "May\u00A02026",
   },
   {
+    id: "e-lock",
+    title: "E-Lock",
+    description:
+      "Automated IoT Lockout/Tagout (LOTO) safety system with biometric authentication and physical fail-safes.",
+    longDescription:
+      "E-Lock is an IoT-enabled Lockout/Tagout (LOTO) safety system that replaces manual physical locks with automated, biometric machine isolation. Integrating ESP32 microcontrollers, AS608 fingerprint scanners, and shunt trip circuit breakers, it ensures high-risk industrial equipment remains de-energized during maintenance and can only be restored after verified physical clearance and digital authorization.",
+    architecture:
+      "FSD-structured Next.js 16 Web Dashboard using PostgreSQL and Drizzle ORM; ESP32 PlatformIO firmware in C++ communicating via MQTT broker and ESP-NOW.",
+    purpose:
+      "To eliminate human error in industrial machine lockout procedures by enforcing biometric role-based access control, dual-worker collaborative lockout, and real-time digital auditing.",
+    tags: ["IoT", "Firmware", "Full Stack"],
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "C++",
+      "ESP32",
+      "MQTT",
+      "PlatformIO",
+    ],
+    images: ["/images/e-lock-1.png"],
+    github: "https://github.com/WUIX69/e-lock",
+    variant: "standard",
+    date: "June\u00A02026",
+  },
+  {
     id: "ecommerce",
     title: "My Local Shop",
     description:
