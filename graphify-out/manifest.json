@@ -270,8 +270,8 @@
     "semantic_hash": "189d7e8f2defb8cb9269a86d67597c12"
   },
   "src/features/projects/components/project-card.tsx": {
-    "mtime": 1782101364.960931,
-    "ast_hash": "9f70969fd0ba6a9b2335cc63bf57284c",
+    "mtime": 1782103054.386784,
+    "ast_hash": "b986e62bdc90d515c8c633f05ab34e38",
     "semantic_hash": ""
   },
   "src/features/projects/components/project-dialog.tsx": {

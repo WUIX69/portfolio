@@ -51,8 +51,11 @@ const ProjectCard = ({ project, className }: ProjectCardProps) => {
     typeof img === "string" ? img : img.url
   )
   const hasImages = images.length > 0
+  const hasMultipleImages = images.length > 1
   const [autoplayPlugin] = useState(() =>
-    Autoplay({ delay: 4000, stopOnInteraction: true, stopOnMouseEnter: true })
+    hasMultipleImages
+      ? Autoplay({ delay: 4000, stopOnInteraction: true, stopOnMouseEnter: true })
+      : null
   )
   const carouselRef = useRef<HTMLDivElement>(null)
 
@@ -74,7 +77,7 @@ const ProjectCard = ({ project, className }: ProjectCardProps) => {
 
   useEffect(() => {
     const el = carouselRef.current
-    if (!el || !api) return
+    if (!el || !api || !autoplayPlugin) return
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -113,7 +116,7 @@ const ProjectCard = ({ project, className }: ProjectCardProps) => {
             <div ref={carouselRef} className="h-full w-full">
               <Carousel
                 setApi={setApi}
-                plugins={[autoplayPlugin]}
+                plugins={autoplayPlugin ? [autoplayPlugin] : []}
                 className="h-full w-full [&_[data-slot=carousel-content]]:h-full"
                 opts={{
                   loop: true,
