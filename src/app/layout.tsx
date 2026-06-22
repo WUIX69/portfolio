@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/context/theme-provider"
 import { MobileMenuProvider } from "@/context/mobile-menu"
 import { TopNavBar } from "@/components/layout/top-nav-bar"
 import { Footer } from "@/components/layout/footer"
+import { ScrollToTop } from "@/components/shared/scroll-to-top"
 import { cn } from "@/lib/utils"
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -59,7 +60,7 @@ const RootLayout = ({
         "antialiased"
       )}
     >
-      <body className="flex min-h-screen flex-col bg-background pt-[72px] text-foreground">
+      <body className="flex min-h-screen flex-col bg-background pt-[96px] text-foreground">
         <ThemeProvider>
           <MobileMenuProvider>
             <TopNavBar />
@@ -67,6 +68,7 @@ const RootLayout = ({
               {children}
             </main>
             <Footer />
+            <ScrollToTop />
           </MobileMenuProvider>
         </ThemeProvider>
       </body>
