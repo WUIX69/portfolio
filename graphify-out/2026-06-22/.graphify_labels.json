@@ -5,17 +5,13 @@
   "3": "Package Configuration and Build Scripts",
   "4": "Experience and Skills Bento Layout",
   "5": "Global Layout, Providers, and Menu Context",
-  "6": "UI Registry and Styling Configuration",
   "7": "Hero Section Components and Data",
-  "8": "TypeScript Compiler Options",
   "9": "Contact Page Features and Map",
-  "10": "Application Production Dependencies",
   "11": "Project Documentation and Workspace Tools",
   "12": "Sentry Monitoring and Instrumentation",
   "13": "Global Error Boundary Handler",
   "14": "Threads Visual Background Canvas",
   "15": "ESLint Configuration",
-  "16": "Next.js Application Configuration",
   "17": "PostCSS Configuration",
   "18": "Client-side Application Instrumentation"
 }

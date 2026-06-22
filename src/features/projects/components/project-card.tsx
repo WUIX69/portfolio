@@ -94,8 +94,10 @@ const ProjectCard = ({ project, className }: ProjectCardProps) => {
   return (
     <ProjectDialog project={project}>
       <motion.article
+        whileHover={{ y: -4, scale: 1.01 }}
+        transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
         className={cn(
-          "group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card shadow-lg shadow-primary/5 transition-shadow duration-300 hover:shadow-xl hover:shadow-primary/10",
+          "group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card shadow-lg shadow-primary/5 cursor-pointer transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10",
           isFull ? "lg:flex-row" : isWide ? "lg:flex-row" : "",
           className
         )}
