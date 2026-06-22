@@ -180,8 +180,8 @@
     "semantic_hash": "358070e9e6a7f5b99428d3360c7f3c69"
   },
   "src/data/projects.ts": {
-    "mtime": 1782052027.245489,
-    "ast_hash": "2cb21629ea2d50dd13316497ad25d003",
+    "mtime": 1782113725.0470054,
+    "ast_hash": "a1109e5a9d6eff987457ae22669e6f0e",
     "semantic_hash": ""
   },
   "src/features/contact/components/contact-form.tsx": {
@@ -280,7 +280,7 @@
     "semantic_hash": "f3ecc81652b12ac14a393cc3d73afa81"
   },
   "src/features/projects/components/projects-section.tsx": {
-    "mtime": 1782044984.0074735,
+    "mtime": 1782113701.4962199,
     "ast_hash": "91e4601968286f5ece9ed805c41389b0",
     "semantic_hash": "91e4601968286f5ece9ed805c41389b0"
   },
@@ -320,7 +320,7 @@
     "semantic_hash": "cf30778df408e91a115c7371de5d3532"
   },
   "src/types/projects.ts": {
-    "mtime": 1778409947.399161,
+    "mtime": 1782113704.4186957,
     "ast_hash": "c84ab8804ea187cf7faa6fc8eabbd201",
     "semantic_hash": "c84ab8804ea187cf7faa6fc8eabbd201"
   },

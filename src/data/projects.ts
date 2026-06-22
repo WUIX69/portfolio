@@ -2,6 +2,96 @@ import { type Project } from "@/types/projects"
 
 export const PROJECTS_DATA: Project[] = [
   {
+    id: "juanwork-1",
+    title: "JuanWork 1.0",
+    description:
+      "Philippine-based freelancing marketplace platform connecting clients with freelancers.",
+    longDescription:
+      "JuanWork serves as a comprehensive freelancing platform where clients can post projects, browse freelancers, manage proposals, and process payments securely.",
+    architecture:
+      "Monolithic PHP web application with a modular structure combining app modules, core classes, and view templates.",
+    purpose:
+      "To connect clients looking to hire talent with freelancers seeking work opportunities in the Philippines.",
+    tags: ["Full Stack", "Marketplace", "Legacy"],
+    techStack: [
+      "PHP",
+      "MySQL",
+      "Bootstrap",
+      "jQuery",
+      "XAMPP",
+      "Fomantic UI",
+      "JavaScript",
+    ],
+    images: [
+      { url: "/images/juanwork-1.0-1.png", fit: "contain" },
+      { url: "/images/juanwork-1.0-2.png", fit: "contain" },
+      { url: "/images/juanwork-1.0-3.png", fit: "contain" },
+      { url: "/images/juanwork-1.0-4.png", fit: "contain" },
+      { url: "/images/juanwork-1.0-5.png", fit: "contain" },
+      { url: "/images/juanwork-1.0-6.png", fit: "contain" },
+      { url: "/images/juanwork-1.0-7.png", fit: "contain" },
+      { url: "/images/juanwork-1.0-8.png", fit: "contain" },
+      { url: "/images/juanwork-1.0-9.png", fit: "contain" },
+      { url: "/images/juanwork-1.0-10.png", fit: "contain" },
+      { url: "/images/juanwork-1.0-11.png", fit: "contain" },
+      { url: "/images/juanwork-1.0-12.png", fit: "contain" },
+      { url: "/images/juanwork-1.0-13.png", fit: "contain" },
+      { url: "/images/juanwork-1.0-14.png", fit: "contain" },
+      { url: "/images/juanwork-1.0-15.png", fit: "contain" },
+    ],
+    github: "https://github.com/WUIX69/Juanwork-capstone",
+    variant: "standard",
+    date: "April\u00A02024",
+  },
+  {
+    id: "juanwork-2",
+    title: "JuanWork 2.0",
+    description:
+      "Modernized freelance marketplace platform with Next.js App Router and feature-sliced architecture.",
+    longDescription:
+      "A fully overhauled version of JuanWork built with Next.js and Tailwind CSS, supporting comprehensive features for project management, bidding, messaging, and payments.",
+    architecture:
+      "Feature-based modular architecture using Next.js App Router, combining shared components, feature modules, contexts, and hooks.",
+    purpose:
+      "To provide a scalable, fast, and modern freelancing platform for clients, freelancers, and admins.",
+    tags: ["Full Stack", "Marketplace", "Next.js"],
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "React 19",
+      "Shadcn UI",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "FastAPI",
+    ],
+    images: [
+      { url: "/images/juanwork-2.0-0.png", fit: "contain" },
+      { url: "/images/juanwork-2.0-1.png", fit: "contain" },
+      { url: "/images/juanwork-2.0-2.png", fit: "contain" },
+      { url: "/images/juanwork-2.0-3.png", fit: "contain" },
+      { url: "/images/juanwork-2.0-4.png", fit: "contain" },
+      { url: "/images/juanwork-2.0-5.jpg", fit: "contain" },
+      { url: "/images/juanwork-2.0-6.jpg", fit: "contain" },
+      { url: "/images/juanwork-2.0-7.jpg", fit: "contain" },
+      { url: "/images/juanwork-2.0-8.jpg", fit: "contain" },
+      { url: "/images/juanwork-2.0-9.jpg", fit: "contain" },
+      { url: "/images/juanwork-2.0-10.jpg", fit: "contain" },
+      { url: "/images/juanwork-2.0-11.png", fit: "contain" },
+      { url: "/images/juanwork-2.0-12.png", fit: "contain" },
+      { url: "/images/juanwork-2.0-13.jpg", fit: "contain" },
+      { url: "/images/juanwork-2.0-14.jpg", fit: "contain" },
+      { url: "/images/juanwork-2.0-15.jpg", fit: "contain" },
+      { url: "/images/juanwork-2.0-16.png", fit: "contain" },
+      { url: "/images/juanwork-2.0-17.png", fit: "contain" },
+      { url: "/images/juanwork-2.0-18.png", fit: "contain" },
+      { url: "/images/juanwork-2.0-19.png", fit: "contain" },
+    ],
+    github: "https://github.com/WUIX69/Juanwork-frontend",
+    variant: "wide",
+    date: "January\u00A02026",
+  },
+  {
     id: "mindtrack",
     title: "MindTrack",
     description:
@@ -102,96 +192,6 @@ export const PROJECTS_DATA: Project[] = [
     date: "March\u00A02025",
   },
   {
-    id: "juanwork-1",
-    title: "JuanWork 1.0",
-    description:
-      "Philippine-based freelancing marketplace platform connecting clients with freelancers.",
-    longDescription:
-      "JuanWork serves as a comprehensive freelancing platform where clients can post projects, browse freelancers, manage proposals, and process payments securely.",
-    architecture:
-      "Monolithic PHP web application with a modular structure combining app modules, core classes, and view templates.",
-    purpose:
-      "To connect clients looking to hire talent with freelancers seeking work opportunities in the Philippines.",
-    tags: ["Full Stack", "Marketplace", "Legacy"],
-    techStack: [
-      "PHP",
-      "MySQL",
-      "Bootstrap",
-      "jQuery",
-      "XAMPP",
-      "Fomantic UI",
-      "JavaScript",
-    ],
-    images: [
-      { url: "/images/juanwork-1.0-1.png", fit: "contain" },
-      { url: "/images/juanwork-1.0-2.png", fit: "contain" },
-      { url: "/images/juanwork-1.0-3.png", fit: "contain" },
-      { url: "/images/juanwork-1.0-4.png", fit: "contain" },
-      { url: "/images/juanwork-1.0-5.png", fit: "contain" },
-      { url: "/images/juanwork-1.0-6.png", fit: "contain" },
-      { url: "/images/juanwork-1.0-7.png", fit: "contain" },
-      { url: "/images/juanwork-1.0-8.png", fit: "contain" },
-      { url: "/images/juanwork-1.0-9.png", fit: "contain" },
-      { url: "/images/juanwork-1.0-10.png", fit: "contain" },
-      { url: "/images/juanwork-1.0-11.png", fit: "contain" },
-      { url: "/images/juanwork-1.0-12.png", fit: "contain" },
-      { url: "/images/juanwork-1.0-13.png", fit: "contain" },
-      { url: "/images/juanwork-1.0-14.png", fit: "contain" },
-      { url: "/images/juanwork-1.0-15.png", fit: "contain" },
-    ],
-    github: "https://github.com/WUIX69/Juanwork-capstone",
-    variant: "wide",
-    date: "April\u00A02024",
-  },
-  {
-    id: "juanwork-2",
-    title: "JuanWork 2.0",
-    description:
-      "Modernized freelance marketplace platform with Next.js App Router and feature-sliced architecture.",
-    longDescription:
-      "A fully overhauled version of JuanWork built with Next.js and Tailwind CSS, supporting comprehensive features for project management, bidding, messaging, and payments.",
-    architecture:
-      "Feature-based modular architecture using Next.js App Router, combining shared components, feature modules, contexts, and hooks.",
-    purpose:
-      "To provide a scalable, fast, and modern freelancing platform for clients, freelancers, and admins.",
-    tags: ["Full Stack", "Marketplace", "Next.js"],
-    techStack: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "React 19",
-      "Shadcn UI",
-      "PostgreSQL",
-      "Drizzle ORM",
-      "FastAPI",
-    ],
-    images: [
-      { url: "/images/juanwork-2.0-0.png", fit: "contain" },
-      { url: "/images/juanwork-2.0-1.png", fit: "contain" },
-      { url: "/images/juanwork-2.0-2.png", fit: "contain" },
-      { url: "/images/juanwork-2.0-3.png", fit: "contain" },
-      { url: "/images/juanwork-2.0-4.png", fit: "contain" },
-      { url: "/images/juanwork-2.0-5.jpg", fit: "contain" },
-      { url: "/images/juanwork-2.0-6.jpg", fit: "contain" },
-      { url: "/images/juanwork-2.0-7.jpg", fit: "contain" },
-      { url: "/images/juanwork-2.0-8.jpg", fit: "contain" },
-      { url: "/images/juanwork-2.0-9.jpg", fit: "contain" },
-      { url: "/images/juanwork-2.0-10.jpg", fit: "contain" },
-      { url: "/images/juanwork-2.0-11.png", fit: "contain" },
-      { url: "/images/juanwork-2.0-12.png", fit: "contain" },
-      { url: "/images/juanwork-2.0-13.jpg", fit: "contain" },
-      { url: "/images/juanwork-2.0-14.jpg", fit: "contain" },
-      { url: "/images/juanwork-2.0-15.jpg", fit: "contain" },
-      { url: "/images/juanwork-2.0-16.png", fit: "contain" },
-      { url: "/images/juanwork-2.0-17.png", fit: "contain" },
-      { url: "/images/juanwork-2.0-18.png", fit: "contain" },
-      { url: "/images/juanwork-2.0-19.png", fit: "contain" },
-    ],
-    github: "https://github.com/WUIX69/Juanwork-frontend",
-    variant: "wide",
-    date: "January\u00A02026",
-  },
-  {
     id: "portfolio",
     title: "Personal Portfolio",
     description:
@@ -213,8 +213,30 @@ export const PROJECTS_DATA: Project[] = [
       { url: "/images/portfolio-6.jpg", fit: "contain" },
     ],
     github: "https://github.com/WUIX69/Portfolio",
-    variant: "standard",
+    variant: "wide",
     date: "May\u00A02026",
+  },
+  {
+    id: "ecommerce",
+    title: "My Local Shop",
+    description:
+      "Frontend-only E-commerce website designed for a local retail business.",
+    longDescription:
+      "Provides a complete shopping experience with product browsing, cart management, checkout flow, and an admin dashboard for management via static HTML.",
+    architecture:
+      "Static HTML pages connected together with custom CSS to simulate a multi-page SPA feel.",
+    purpose:
+      "To demonstrate frontend E-commerce UI patterns and responsive web design principles using pure HTML/CSS.",
+    tags: ["Frontend", "E-Commerce", "UI/UX"],
+    techStack: ["HTML5", "CSS3", "Vanilla JS"],
+    images: [
+      "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80",
+      "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=800&q=80",
+    ],
+    github: "https://github.com/WUIX69/E-Commerce",
+    variant: "wide",
+    date: "May\u00A02023",
   },
   {
     id: "e-lock",
@@ -243,27 +265,5 @@ export const PROJECTS_DATA: Project[] = [
     github: "https://github.com/WUIX69/e-lock",
     variant: "standard",
     date: "June\u00A02026",
-  },
-  {
-    id: "ecommerce",
-    title: "My Local Shop",
-    description:
-      "Frontend-only E-commerce website designed for a local retail business.",
-    longDescription:
-      "Provides a complete shopping experience with product browsing, cart management, checkout flow, and an admin dashboard for management via static HTML.",
-    architecture:
-      "Static HTML pages connected together with custom CSS to simulate a multi-page SPA feel.",
-    purpose:
-      "To demonstrate frontend E-commerce UI patterns and responsive web design principles using pure HTML/CSS.",
-    tags: ["Frontend", "E-Commerce", "UI/UX"],
-    techStack: ["HTML5", "CSS3", "Vanilla JS"],
-    images: [
-      "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&q=80",
-      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80",
-      "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=800&q=80",
-    ],
-    github: "https://github.com/WUIX69/E-Commerce",
-    variant: "wide",
-    date: "May\u00A02023",
   },
 ]
