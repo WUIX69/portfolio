@@ -44,7 +44,7 @@ export const ScrollToTop = () => {
           }}
           onClick={scrollToTop}
           className={cn(
-            "fixed bottom-8 right-8 z-40 flex size-12 items-center justify-center rounded-full border border-border/40 bg-background/80 text-primary shadow-lg shadow-primary/5 backdrop-blur-md transition-all duration-200 hover:border-primary/45 hover:bg-accent focus:outline-none focus:ring-4 focus:ring-primary/10 cursor-pointer"
+            "fixed right-8 bottom-8 z-40 flex size-12 cursor-pointer items-center justify-center rounded-full border border-border/40 bg-background/80 text-primary shadow-lg shadow-primary/5 backdrop-blur-md transition-all duration-200 hover:border-primary/45 hover:bg-accent focus:ring-4 focus:ring-primary/10 focus:outline-none"
           )}
           aria-label="Scroll to top"
           title="Scroll to top"

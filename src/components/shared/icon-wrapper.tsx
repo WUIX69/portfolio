@@ -3,7 +3,9 @@ import { type LucideIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface IconWrapperProps {
-  icon: React.ComponentType<{ className?: string; size?: number; color?: string }> | LucideIcon
+  icon:
+    | React.ComponentType<{ className?: string; size?: number; color?: string }>
+    | LucideIcon
   variant?: "primary" | "secondary" | "outline" | "ghost" | "muted"
   size?: "sm" | "md" | "lg" | "xl"
   containerClassName?: string

@@ -1,16 +1,16 @@
 import * as React from "react"
 import { Code, type LucideIcon } from "lucide-react"
-import {
-  SiGithub,
-  SiX,
-  SiInstagram,
-} from "@icons-pack/react-simple-icons"
+import { SiGithub, SiX, SiInstagram } from "@icons-pack/react-simple-icons"
 import { IconWrapper } from "@/components/shared/icon-wrapper"
 import { cn } from "@/lib/utils"
 
 import { type SocialLink } from "@/types/contact"
 
-const LinkedInIcon = ({ size = 24, className, ...props }: React.SVGProps<SVGSVGElement> & { size?: number }) => (
+const LinkedInIcon = ({
+  size = 24,
+  className,
+  ...props
+}: React.SVGProps<SVGSVGElement> & { size?: number }) => (
   <svg
     role="img"
     viewBox="0 0 24 24"
@@ -24,14 +24,21 @@ const LinkedInIcon = ({ size = 24, className, ...props }: React.SVGProps<SVGSVGE
   </svg>
 )
 
-const ICON_MAP: Record<string, React.ComponentType<{ className?: string; size?: number; color?: string }> | LucideIcon> = {
+const ICON_MAP: Record<
+  string,
+  | React.ComponentType<{ className?: string; size?: number; color?: string }>
+  | LucideIcon
+> = {
   Github: SiGithub,
   Linkedin: LinkedInIcon,
   Twitter: SiX,
   Instagram: SiInstagram,
 }
 
-const hoverStyles: Record<string, { bg: string; border: string; text: string }> = {
+const hoverStyles: Record<
+  string,
+  { bg: string; border: string; text: string }
+> = {
   github: {
     bg: "group-hover:bg-[#181717]/10 dark:group-hover:bg-white/10",
     border: "group-hover:border-[#181717]/40 dark:group-hover:border-white/40",
@@ -82,7 +89,7 @@ const SocialLinksCard = ({ socials, className }: SocialLinksCardProps) => {
             <a
               key={social.id}
               href={social.href}
-              className="group flex items-center gap-3 transition-all cursor-pointer"
+              className="group flex cursor-pointer items-center gap-3 transition-all"
             >
               <IconWrapper
                 icon={Icon}

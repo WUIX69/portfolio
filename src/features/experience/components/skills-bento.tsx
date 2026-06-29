@@ -62,7 +62,7 @@ interface SkillsBentoProps {
 
 const SkillsBento = ({ categories }: SkillsBentoProps) => {
   return (
-    <div className="flex flex-col gap-6 h-full">
+    <div className="flex h-full flex-col gap-6">
       {categories.map((category) => (
         <AnimatedItem key={category.title}>
           <SkillCard category={category} />

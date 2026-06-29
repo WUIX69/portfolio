@@ -12,7 +12,7 @@ const HeroStatusOverlay = () => {
       <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-primary/20">
         <div className="h-full w-3/4 rounded-full bg-primary shadow-[0_0_8px_rgba(var(--primary),0.5)]" />
       </div>
-      <p className="mt-3 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+      <p className="mt-3 font-mono text-[10px] tracking-wider text-muted-foreground uppercase">
         Deployment successful in 1.2s
       </p>
     </div>

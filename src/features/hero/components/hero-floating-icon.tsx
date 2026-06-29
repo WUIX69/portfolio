@@ -21,7 +21,10 @@ import {
 import { cn } from "@/lib/utils"
 import { type HeroTechIcon } from "@/types/hero"
 
-const iconMap: Record<string, ComponentType<{ size: number; color: string }>> = {
+const iconMap: Record<
+  string,
+  ComponentType<{ size: number; color: string }>
+> = {
   Nextdotjs: SiNextdotjs,
   React: SiReact,
   Typescript: SiTypescript,

@@ -8,10 +8,7 @@ interface EducationCardProps {
   className?: string
 }
 
-const EducationCard = ({
-  education,
-  className,
-}: EducationCardProps) => {
+const EducationCard = ({ education, className }: EducationCardProps) => {
   return (
     <section
       className={cn(
@@ -43,4 +40,3 @@ const EducationCard = ({
 }
 
 export { EducationCard }
-

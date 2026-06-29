@@ -8,11 +8,7 @@ interface ContactInfoCardProps {
   className?: string
 }
 
-const ContactInfoCard = ({
-  email,
-  phone,
-  className,
-}: ContactInfoCardProps) => {
+const ContactInfoCard = ({ email, phone, className }: ContactInfoCardProps) => {
   return (
     <div
       className={cn(
@@ -41,10 +37,9 @@ const ContactInfoCard = ({
         </div>
       </div>
       {/* Decorative element */}
-      <div className="absolute -bottom-8 -right-8 size-32 rounded-full bg-white/10 blur-2xl" />
+      <div className="absolute -right-8 -bottom-8 size-32 rounded-full bg-white/10 blur-2xl" />
     </div>
   )
 }
 
 export { ContactInfoCard }
-

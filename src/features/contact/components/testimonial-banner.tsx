@@ -23,7 +23,7 @@ const TestimonialBanner = ({
         <Quote className="size-8 text-primary" />
       </div>
       <div className="flex-grow">
-        <p className="mb-6 font-sans text-xl italic leading-relaxed text-foreground/80 md:text-2xl">
+        <p className="mb-6 font-sans text-xl leading-relaxed text-foreground/80 italic md:text-2xl">
           &quot;{testimonial.quote}&quot;
         </p>
         <div className="flex flex-wrap items-center justify-between gap-4">
@@ -37,10 +37,7 @@ const TestimonialBanner = ({
           </div>
           <div className="flex gap-1">
             {[...Array(testimonial.rating)].map((_, i) => (
-              <Star
-                key={i}
-                className="size-5 fill-primary text-primary"
-              />
+              <Star key={i} className="size-5 fill-primary text-primary" />
             ))}
           </div>
         </div>
@@ -50,4 +47,3 @@ const TestimonialBanner = ({
 }
 
 export { TestimonialBanner }
-

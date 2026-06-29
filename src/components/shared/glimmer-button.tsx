@@ -22,13 +22,13 @@ export const GlimmerButton = ({
         "relative inline-flex items-center justify-center overflow-visible rounded-full px-6 py-2 text-sm font-bold transition-all duration-300",
         // Light mode: Purple background, White text
         // Dark mode: Black background, Purple text
-        "bg-primary text-primary-foreground dark:bg-black dark:text-primary shadow-lg",
+        "bg-primary text-primary-foreground shadow-lg dark:bg-black dark:text-primary",
         className
       )}
       {...props}
     >
       {/* Background Glow Layers (Behind) */}
-      
+
       {/* Subtle atmospheric glow using theme primary color */}
       <motion.div
         variants={{
@@ -36,7 +36,7 @@ export const GlimmerButton = ({
           hover: { scale: 1.1, opacity: 0.25 },
           press: { scale: 1.2, opacity: 0.35 },
         }}
-        className="absolute inset-0 -z-10 rounded-full blur-[15px] bg-primary"
+        className="absolute inset-0 -z-10 rounded-full bg-primary blur-[15px]"
       />
 
       {/* Border Glow (Animated Conic using Theme Colors) */}
@@ -58,7 +58,7 @@ export const GlimmerButton = ({
       <span className="relative z-10 flex items-center gap-2 drop-shadow-sm">
         {children}
       </span>
-      
+
       {/* Animated Shine Effect - Theme sensitive opacity */}
       <motion.div
         animate={{
@@ -70,7 +70,7 @@ export const GlimmerButton = ({
           ease: "linear",
           repeatDelay: 1.5,
         }}
-        className="pointer-events-none absolute inset-0 z-30 w-1/2 skew-x-[-25deg] bg-gradient-to-r from-transparent via-white/20 dark:via-primary/10 to-transparent"
+        className="pointer-events-none absolute inset-0 z-30 w-1/2 skew-x-[-25deg] bg-gradient-to-r from-transparent via-white/20 to-transparent dark:via-primary/10"
       />
     </motion.a>
   )

@@ -64,9 +64,7 @@ const RootLayout = ({
         <ThemeProvider>
           <MobileMenuProvider>
             <TopNavBar />
-            <main className="flex-grow">
-              {children}
-            </main>
+            <main className="flex-grow">{children}</main>
             <Footer />
             <ScrollToTop />
           </MobileMenuProvider>

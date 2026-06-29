@@ -45,7 +45,11 @@ const ProjectsSection = () => {
                   ? "md:col-span-2 lg:col-span-2"
                   : ""
               return (
-                <AnimatedItem key={project.id} className={gridClass} variants={itemVariants}>
+                <AnimatedItem
+                  key={project.id}
+                  className={gridClass}
+                  variants={itemVariants}
+                >
                   <ProjectCard project={project} />
                 </AnimatedItem>
               )

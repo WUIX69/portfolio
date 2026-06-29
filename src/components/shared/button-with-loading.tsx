@@ -5,7 +5,8 @@ import { type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 interface ButtonWithLoadingProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   isLoading?: boolean
   loadingText?: string

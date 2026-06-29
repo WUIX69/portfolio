@@ -195,7 +195,7 @@ export function ProjectDialog({ project, children }: ProjectDialogProps) {
                             aria-label={`View image ${idx + 1}`}
                             aria-current={current === idx ? "true" : undefined}
                             className={cn(
-                              "relative aspect-video w-32 shrink-0 overflow-hidden rounded-xl transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+                              "relative aspect-video w-32 shrink-0 overflow-hidden rounded-xl transition-all duration-300 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none",
                               current === idx
                                 ? "border-2 border-primary ring-4 ring-primary/20"
                                 : "opacity-60 hover:opacity-100"

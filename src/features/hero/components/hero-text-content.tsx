@@ -111,7 +111,12 @@ const HeroTextContent = () => {
           size="lg"
           className="h-12 rounded-full px-8 text-sm font-semibold shadow-lg"
         >
-          <a href={HERO_DATA.resumeHref} aria-label="Download resume PDF">
+          <a
+            href={HERO_DATA.resumeHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View resume PDF"
+          >
             <FileDown className="size-4" />
             Download Resume
           </a>

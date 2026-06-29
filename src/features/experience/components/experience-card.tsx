@@ -8,10 +8,7 @@ interface ExperienceCardProps {
   className?: string
 }
 
-const ExperienceCard = ({
-  experience,
-  className,
-}: ExperienceCardProps) => {
+const ExperienceCard = ({ experience, className }: ExperienceCardProps) => {
   return (
     <section
       className={cn(
@@ -28,8 +25,8 @@ const ExperienceCard = ({
         </h2>
       </div>
 
-      <div className="relative border-l-2 border-border pb-4 pl-6 ml-4">
-        <div className="absolute -left-[9px] top-1 size-4 rounded-full border-4 border-card bg-primary" />
+      <div className="relative ml-4 border-l-2 border-border pb-4 pl-6">
+        <div className="absolute top-1 -left-[9px] size-4 rounded-full border-4 border-card bg-primary" />
         <div className="mb-2 flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
           <div className="flex flex-col gap-1">
             <h3 className="font-sans text-xl font-semibold text-foreground">
@@ -43,7 +40,7 @@ const ExperienceCard = ({
             {experience.period}
           </span>
         </div>
-        <h4 className="mb-4 font-sans text-sm font-bold uppercase tracking-wider text-muted-foreground">
+        <h4 className="mb-4 font-sans text-sm font-bold tracking-wider text-muted-foreground uppercase">
           {experience.company}
         </h4>
         <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
@@ -55,11 +52,11 @@ const ExperienceCard = ({
           ))}
         </ul>
 
-        <div className="flex flex-wrap gap-2 pt-2 border-t border-border/50">
+        <div className="flex flex-wrap gap-2 border-t border-border/50 pt-2">
           {experience.techStack.map((tech) => (
             <span
               key={tech}
-              className="rounded-md bg-muted/50 px-2 py-1 font-mono text-[10px] font-medium text-muted-foreground border border-border/50"
+              className="rounded-md border border-border/50 bg-muted/50 px-2 py-1 font-mono text-[10px] font-medium text-muted-foreground"
             >
               {tech}
             </span>
@@ -71,4 +68,3 @@ const ExperienceCard = ({
 }
 
 export { ExperienceCard }
-

@@ -66,7 +66,7 @@ const ContactForm = ({ className, ...props }: HTMLMotionProps<"div">) => {
               value={formData.name}
               onChange={handleChange}
               placeholder="John Doe"
-              className="w-full rounded-xl border border-border bg-muted/50 px-4 py-3 font-sans text-foreground transition-all duration-300 outline-none hover:border-primary/30 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:shadow-md focus:shadow-primary/5"
+              className="w-full rounded-xl border border-border bg-muted/50 px-4 py-3 font-sans text-foreground transition-all duration-300 outline-none hover:border-primary/30 focus:border-primary focus:shadow-md focus:ring-4 focus:shadow-primary/5 focus:ring-primary/10"
               required
             />
           </div>
@@ -80,7 +80,7 @@ const ContactForm = ({ className, ...props }: HTMLMotionProps<"div">) => {
               value={formData.email}
               onChange={handleChange}
               placeholder="john@example.com"
-              className="w-full rounded-xl border border-border bg-muted/50 px-4 py-3 font-sans text-foreground transition-all duration-300 outline-none hover:border-primary/30 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:shadow-md focus:shadow-primary/5"
+              className="w-full rounded-xl border border-border bg-muted/50 px-4 py-3 font-sans text-foreground transition-all duration-300 outline-none hover:border-primary/30 focus:border-primary focus:shadow-md focus:ring-4 focus:shadow-primary/5 focus:ring-primary/10"
               required
             />
           </div>
@@ -95,7 +95,7 @@ const ContactForm = ({ className, ...props }: HTMLMotionProps<"div">) => {
             onChange={handleChange}
             placeholder="Tell me about your project..."
             rows={6}
-            className="w-full flex-grow resize-none rounded-xl border border-border bg-muted/50 px-4 py-3 font-sans text-foreground transition-all duration-300 outline-none hover:border-primary/30 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:shadow-md focus:shadow-primary/5"
+            className="w-full flex-grow resize-none rounded-xl border border-border bg-muted/50 px-4 py-3 font-sans text-foreground transition-all duration-300 outline-none hover:border-primary/30 focus:border-primary focus:shadow-md focus:ring-4 focus:shadow-primary/5 focus:ring-primary/10"
             required
           />
         </div>

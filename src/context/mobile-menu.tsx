@@ -9,7 +9,9 @@ interface MobileMenuContextValue {
   setActiveNavLinkId: (id: string) => void
 }
 
-const MobileMenuContext = createContext<MobileMenuContextValue | undefined>(undefined)
+const MobileMenuContext = createContext<MobileMenuContextValue | undefined>(
+  undefined
+)
 
 const MobileMenuProvider = ({ children }: { children: ReactNode }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)

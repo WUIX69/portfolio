@@ -24,7 +24,7 @@ const SectionHeader = ({
   }
 
   return (
-    <div className={cn("flex flex-col mb-12", alignment[align], className)}>
+    <div className={cn("mb-12 flex flex-col", alignment[align], className)}>
       <h2
         className={cn(
           "mb-4 font-sans text-4xl font-extrabold tracking-tight text-foreground md:text-5xl lg:text-6xl",
@@ -36,7 +36,7 @@ const SectionHeader = ({
       {subtitle && (
         <p
           className={cn(
-            "max-w-2xl text-muted-foreground md:text-lg leading-relaxed",
+            "max-w-2xl leading-relaxed text-muted-foreground md:text-lg",
             subtitleClassName
           )}
         >

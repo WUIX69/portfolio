@@ -46,12 +46,12 @@ const TopNavBar = () => {
         duration: 0.5,
         ease: [0.25, 0.1, 0.25, 1],
       }}
-      className="fixed top-4 left-4 right-4 z-50 mx-auto flex max-w-7xl items-center justify-between rounded-full border border-border/40 bg-background/70 px-6 py-3 shadow-lg shadow-primary/5 backdrop-blur-md transition-all duration-300 md:px-8"
+      className="fixed top-4 right-4 left-4 z-50 mx-auto flex max-w-7xl items-center justify-between rounded-full border border-border/40 bg-background/70 px-6 py-3 shadow-lg shadow-primary/5 backdrop-blur-md transition-all duration-300 md:px-8"
       aria-label="Main navigation"
     >
       <Link
         href="#home"
-        className="text-xl font-extrabold tracking-tighter text-primary hover:opacity-90 transition-opacity"
+        className="text-xl font-extrabold tracking-tighter text-primary transition-opacity hover:opacity-90"
         onClick={() => handleNavLinkClick("home")}
       >
         Jonathan.Dev
@@ -81,8 +81,9 @@ const TopNavBar = () => {
       <div className="flex items-center gap-1 md:gap-5">
         <GlimmerButton
           href={HERO_DATA.resumeHref}
-          download
-          aria-label="Download resume"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View resume"
           className="hidden md:inline-flex"
         >
           Resume
@@ -133,8 +134,9 @@ const TopNavBar = () => {
             <div className="mt-2 flex justify-center px-4">
               <GlimmerButton
                 href={HERO_DATA.resumeHref}
-                download
-                aria-label="Download resume"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View resume"
                 className="w-fit w-full px-8 py-3 text-sm"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
