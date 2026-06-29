@@ -46,7 +46,7 @@ const TopNavBar = () => {
         duration: 0.5,
         ease: [0.25, 0.1, 0.25, 1],
       }}
-      className="fixed top-4 right-4 left-4 z-50 mx-auto flex max-w-7xl items-center justify-between rounded-full border border-border/40 bg-background/70 px-6 py-3 shadow-lg shadow-primary/5 backdrop-blur-md transition-all duration-300 md:px-8"
+      className="fixed top-4 right-4 left-4 z-50 mx-auto flex max-w-[88rem] items-center justify-between rounded-full border border-border/40 bg-background/70 px-6 py-3 shadow-lg shadow-primary/5 backdrop-blur-md transition-all duration-300 md:px-8"
       aria-label="Main navigation"
     >
       <Link

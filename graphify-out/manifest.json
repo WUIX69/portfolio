@@ -85,8 +85,8 @@
     "semantic_hash": ""
   },
   "src/components/layout/top-nav-bar.tsx": {
-    "mtime": 1782749681.8566308,
-    "ast_hash": "df9ff743801a732c183aa4109226f730",
+    "mtime": 1782751658.488491,
+    "ast_hash": "4eac4af241a765819b11fdb63da567e0",
     "semantic_hash": ""
   },
   "src/components/shared/animated-item.tsx": {
@@ -170,8 +170,8 @@
     "semantic_hash": ""
   },
   "src/data/hero.ts": {
-    "mtime": 1782749682.1255417,
-    "ast_hash": "072988cf13cddf55bcf49481d1a80d6e",
+    "mtime": 1782751525.812546,
+    "ast_hash": "9283b43b1cd071b4b7cf947cbb94bf48",
     "semantic_hash": ""
   },
   "src/data/navigation.ts": {
@@ -250,8 +250,8 @@
     "semantic_hash": ""
   },
   "src/features/hero/components/hero-status-overlay.tsx": {
-    "mtime": 1782749682.545369,
-    "ast_hash": "6cf71e34d009f86592b9cb41e55991d4",
+    "mtime": 1782751426.8917837,
+    "ast_hash": "1080ec95ec93c908aa598be4b14ca825",
     "semantic_hash": ""
   },
   "src/features/hero/components/hero-text-content.tsx": {
@@ -265,7 +265,7 @@
     "semantic_hash": ""
   },
   "src/features/hero/components/hero-visual-card.tsx": {
-    "mtime": 1782749682.6320045,
+    "mtime": 1782751360.7614765,
     "ast_hash": "14c5a72388c77f7386148ba0efeebff8",
     "semantic_hash": ""
   },
@@ -350,8 +350,8 @@
     "semantic_hash": "c8651a674835675b7817ff04f801d995"
   },
   "src/components/shared/scroll-to-top.tsx": {
-    "mtime": 1782749681.9568672,
-    "ast_hash": "564e66f4158064a97a99867c155b5d3a",
+    "mtime": 1782751099.0939856,
+    "ast_hash": "6d00e07b31eb8b9de69fc9a3a047a3f1",
     "semantic_hash": ""
   },
   "design-system/developer-portfolio/MASTER.md": {

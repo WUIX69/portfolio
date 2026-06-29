@@ -2,7 +2,7 @@ import { Package } from "lucide-react"
 
 const HeroStatusOverlay = () => {
   return (
-    <div className="absolute bottom-8 left-8 max-w-[250px] rounded-2xl border border-primary/10 bg-card/80 p-6 shadow-2xl shadow-black/40 backdrop-blur-md">
+    <div className="absolute bottom-8 left-8 block max-w-[250px] rounded-2xl border border-primary/10 bg-card/80 p-6 shadow-2xl shadow-black/40 backdrop-blur-md sm:hidden">
       <div className="mb-2 flex items-center gap-3">
         <Package className="size-5 text-primary" aria-hidden="true" />
         <span className="font-sans text-sm font-bold tracking-tight text-foreground">

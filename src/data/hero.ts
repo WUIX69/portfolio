@@ -6,7 +6,7 @@ export const HERO_DATA: HeroData = {
   title: "Jr. Full Stack",
   highlightedTitle: "Developer",
   description:
-    "A Full Stack Developer with over two years of experience in real-world end-to-end software development. Distinguished by a high degree of technical autonomy, I possess a proven track record of leading full-feature lifecycles and complex system migrations without senior oversight.",
+    "A Full Stack Developer with over two years of experience in real-world software development. Distinguished by a high degree of technical autonomy, I possess a proven track record of leading full-feature lifecycles and complex system migrations.",
   stats: [
     { value: "2+", label: "Years Experience" },
     { value: "15+", label: "Projects Shipped" },
