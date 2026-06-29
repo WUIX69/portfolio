@@ -11,7 +11,7 @@ export const HERO_DATA: HeroData = {
     { value: "2+", label: "Years Experience" },
     { value: "15+", label: "Projects Shipped" },
   ],
-  resumeHref: "/misc/R1-ATS-Resume-CV-Violeta-Jonathan-L.pdf",
+  resumeHref: "/misc/ATS-VIOLETA-JONATHAN-L-RESUME-CV.pdf",
 }
 
 export const HERO_TECH_ICONS: HeroTechIcon[] = [

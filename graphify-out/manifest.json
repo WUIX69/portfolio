@@ -170,9 +170,9 @@
     "semantic_hash": "f1b816c53c1a009da486b21d0fbd3ba9"
   },
   "src/data/hero.ts": {
-    "mtime": 1778409947.3912222,
-    "ast_hash": "b5bb1c95f577c58195f8fbcc59bd5102",
-    "semantic_hash": "b5bb1c95f577c58195f8fbcc59bd5102"
+    "mtime": 1782749246.9036198,
+    "ast_hash": "2a573a2f9a3fd4d461c9d06bf7651d25",
+    "semantic_hash": ""
   },
   "src/data/navigation.ts": {
     "mtime": 1778409947.3912222,
