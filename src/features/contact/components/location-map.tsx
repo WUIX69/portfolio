@@ -15,11 +15,13 @@ const LocationMap = ({ location, className }: LocationMapProps) => {
       )}
     >
       <iframe
+        title="Google Maps Location"
         width="100%"
         height="100%"
         style={{ border: 0 }}
         loading="lazy"
         allowFullScreen
+        sandbox="allow-scripts allow-popups"
         referrerPolicy="no-referrer-when-downgrade"
         src="https://www.google.com/maps?q=R262%2BRQ9,Santa%20Maria,Bulacan&output=embed"
         className="opacity-100 transition-all duration-700"

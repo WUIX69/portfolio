@@ -1,14 +1,14 @@
 "use client"
 
 import Image from "next/image"
-import { motion } from "motion/react"
+import { m } from "motion/react"
 
 import { HeroStatusOverlay } from "@/features/hero/components/hero-status-overlay"
 import { HeroFloatingIcons } from "@/features/hero/components/hero-floating-icons"
 
 const HeroVisualCard = () => {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, x: 40, scale: 0.95 }}
       animate={{ opacity: 1, x: 0, scale: 1 }}
       transition={{
@@ -36,7 +36,7 @@ const HeroVisualCard = () => {
           <HeroStatusOverlay />
         </div>
       </div>
-    </motion.div>
+    </m.div>
   )
 }
 

@@ -11,7 +11,7 @@ import {
   ChevronRight,
   type LucideIcon,
 } from "lucide-react"
-import { motion } from "motion/react"
+import { m } from "motion/react"
 import Image from "next/image"
 import Autoplay from "embla-carousel-autoplay"
 
@@ -100,7 +100,7 @@ const ProjectCard = ({ project, className }: ProjectCardProps) => {
 
   return (
     <ProjectDialog project={project}>
-      <motion.article
+      <m.article
         whileHover={{ y: -4, scale: 1.01 }}
         transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
         className={cn(
@@ -129,7 +129,7 @@ const ProjectCard = ({ project, className }: ProjectCardProps) => {
                 <CarouselContent className="ml-0 h-full">
                   {images.map((src, idx) => (
                     <CarouselItem
-                      key={idx}
+                      key={`${src}-${idx}`}
                       className="relative h-full w-full pl-0"
                     >
                       <Image
@@ -148,6 +148,7 @@ const ProjectCard = ({ project, className }: ProjectCardProps) => {
                 <>
                   <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover/carousel:opacity-100" />
                   <button
+                    type="button"
                     onClick={(e) => {
                       e.preventDefault()
                       e.stopPropagation()
@@ -159,6 +160,7 @@ const ProjectCard = ({ project, className }: ProjectCardProps) => {
                     <ChevronLeft className="size-5" />
                   </button>
                   <button
+                    type="button"
                     onClick={(e) => {
                       e.preventDefault()
                       e.stopPropagation()
@@ -172,7 +174,7 @@ const ProjectCard = ({ project, className }: ProjectCardProps) => {
                   <div className="absolute bottom-3 left-1/2 z-20 flex -translate-x-1/2 gap-1.5">
                     {images.map((_, idx) => (
                       <div
-                        key={idx}
+                        key={`${images[idx]}-${idx}`}
                         className={cn(
                           "size-1.5 rounded-full transition-all duration-300",
                           idx === currentImageIndex
@@ -235,7 +237,7 @@ const ProjectCard = ({ project, className }: ProjectCardProps) => {
 
           <div className="flex flex-wrap items-center gap-2 md:gap-5">
             <DialogTrigger asChild>
-              <button className="flex items-center gap-2 rounded-full bg-primary px-6 py-2.5 font-sans text-sm font-bold text-primary-foreground transition-colors hover:bg-primary/90">
+              <button type="button" className="flex items-center gap-2 rounded-full bg-primary px-6 py-2.5 font-sans text-sm font-bold text-primary-foreground transition-colors hover:bg-primary/90">
                 <Info className="size-4" />
                 Details
               </button>
@@ -264,7 +266,7 @@ const ProjectCard = ({ project, className }: ProjectCardProps) => {
             )}
           </div>
         </div>
-      </motion.article>
+      </m.article>
     </ProjectDialog>
   )
 }

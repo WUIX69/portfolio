@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Code, type LucideIcon } from "lucide-react"
-import { SiGithub, SiX, SiInstagram } from "@icons-pack/react-simple-icons"
+import { SiGithub, SiX, SiInstagram } from "react-icons/si"
 import { IconWrapper } from "@/components/shared/icon-wrapper"
 import { cn } from "@/lib/utils"
 

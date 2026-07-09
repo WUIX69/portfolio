@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, HTMLMotionProps, Variants } from "motion/react"
+import { m, HTMLMotionProps, Variants } from "motion/react"
 
 interface MotionViewportProps extends HTMLMotionProps<"div"> {
   children: React.ReactNode
@@ -37,7 +37,7 @@ const MotionViewport = ({
   }
 
   return (
-    <motion.div
+    <m.div
       initial={initial}
       whileInView={whileInView}
       viewport={viewport}
@@ -45,7 +45,7 @@ const MotionViewport = ({
       {...props}
     >
       {children}
-    </motion.div>
+    </m.div>
   )
 }
 

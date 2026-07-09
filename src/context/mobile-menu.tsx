@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useContext, useState, type ReactNode } from "react"
+import { createContext, useContext, useState, useMemo, type ReactNode } from "react"
 
 interface MobileMenuContextValue {
   isMobileMenuOpen: boolean
@@ -17,15 +17,18 @@ const MobileMenuProvider = ({ children }: { children: ReactNode }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeNavLinkId, setActiveNavLinkId] = useState("home")
 
+  const value = useMemo(
+    () => ({
+      isMobileMenuOpen,
+      setIsMobileMenuOpen,
+      activeNavLinkId,
+      setActiveNavLinkId,
+    }),
+    [isMobileMenuOpen, activeNavLinkId]
+  )
+
   return (
-    <MobileMenuContext.Provider
-      value={{
-        isMobileMenuOpen,
-        setIsMobileMenuOpen,
-        activeNavLinkId,
-        setActiveNavLinkId,
-      }}
-    >
+    <MobileMenuContext.Provider value={value}>
       {children}
     </MobileMenuContext.Provider>
   )

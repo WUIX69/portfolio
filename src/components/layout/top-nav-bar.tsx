@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Menu, FileDown } from "lucide-react"
-import { motion } from "motion/react"
+import { m } from "motion/react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -39,7 +39,7 @@ const TopNavBar = () => {
   }
 
   return (
-    <motion.nav
+    <m.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{
@@ -147,7 +147,7 @@ const TopNavBar = () => {
           </SheetContent>
         </Sheet>
       </div>
-    </motion.nav>
+    </m.nav>
   )
 }
 

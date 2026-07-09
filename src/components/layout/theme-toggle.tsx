@@ -3,14 +3,13 @@
 import * as React from "react"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
-import { motion } from "motion/react"
+import { m } from "motion/react"
 import { Button } from "@/components/ui/button"
 
 export const ThemeToggle = () => {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)
 
-  // Avoid hydration mismatch
   React.useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true)
@@ -21,10 +20,10 @@ export const ThemeToggle = () => {
       <Button
         variant="ghost"
         size="icon"
-        className="rounded-full text-primary"
-        disabled
+        className="relative rounded-full text-primary hover:bg-accent"
+        aria-label="Toggle theme skeleton"
       >
-        <Sun className="size-5" />
+        <div className="size-5" />
       </Button>
     )
   }
@@ -38,8 +37,9 @@ export const ThemeToggle = () => {
       className="relative rounded-full text-primary hover:bg-accent"
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label="Toggle theme"
+      suppressHydrationWarning
     >
-      <motion.div
+      <m.div
         initial={false}
         animate={{
           scale: isDark ? 0 : 1,
@@ -50,8 +50,8 @@ export const ThemeToggle = () => {
         className="absolute"
       >
         <Sun className="size-5" />
-      </motion.div>
-      <motion.div
+      </m.div>
+      <m.div
         initial={false}
         animate={{
           scale: isDark ? 1 : 0,
@@ -61,7 +61,7 @@ export const ThemeToggle = () => {
         transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <Moon className="size-5" />
-      </motion.div>
+      </m.div>
     </Button>
   )
 }

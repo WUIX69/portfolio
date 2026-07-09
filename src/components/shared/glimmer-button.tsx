@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { motion, HTMLMotionProps } from "motion/react"
+import { m, HTMLMotionProps } from "motion/react"
 import { cn } from "@/lib/utils"
 
 interface GlimmerButtonProps extends HTMLMotionProps<"a"> {
@@ -14,7 +14,7 @@ export const GlimmerButton = ({
   ...props
 }: GlimmerButtonProps) => {
   return (
-    <motion.a
+    <m.a
       whileHover="hover"
       whileTap="press"
       initial="default"
@@ -30,7 +30,7 @@ export const GlimmerButton = ({
       {/* Background Glow Layers (Behind) */}
 
       {/* Subtle atmospheric glow using theme primary color */}
-      <motion.div
+      <m.div
         variants={{
           default: { scale: 1, opacity: 0.15 },
           hover: { scale: 1.1, opacity: 0.25 },
@@ -41,7 +41,7 @@ export const GlimmerButton = ({
 
       {/* Border Glow (Animated Conic using Theme Colors) */}
       <div className="absolute inset-[-1.5px] -z-10 overflow-hidden rounded-full p-[1.5px]">
-        <motion.div
+        <m.div
           animate={{
             rotate: [0, 360],
           }}
@@ -60,7 +60,7 @@ export const GlimmerButton = ({
       </span>
 
       {/* Animated Shine Effect - Theme sensitive opacity */}
-      <motion.div
+      <m.div
         animate={{
           x: ["-100%", "200%"],
         }}
@@ -72,6 +72,6 @@ export const GlimmerButton = ({
         }}
         className="pointer-events-none absolute inset-0 z-30 w-1/2 skew-x-[-25deg] bg-gradient-to-r from-transparent via-white/20 to-transparent dark:via-primary/10"
       />
-    </motion.a>
+    </m.a>
   )
 }

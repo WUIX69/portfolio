@@ -12,8 +12,8 @@
   "10": "Threads Interactive Canvas",
   "11": "Linter Configuration",
   "12": "PostCSS Style Configuration",
-  "13": "Architecture Design Docs",
-  "14": "Threads.jsx",
+  "13": "gallery-section.tsx",
+  "14": "global-error.tsx",
   "15": "Feature-Sliced Design (FSD)",
   "16": "Client-side Instrumentation",
   "17": "Next.js 16.1",
@@ -25,5 +25,6 @@
   "23": "Community 23",
   "24": "Community 24",
   "25": "Community 25",
-  "26": "Community 26"
+  "26": "Community 26",
+  "27": "Community 27"
 }

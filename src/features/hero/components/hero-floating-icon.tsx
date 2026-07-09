@@ -1,7 +1,7 @@
 "use client"
 
 import { type ComponentType } from "react"
-import { motion } from "motion/react"
+import { m } from "motion/react"
 import {
   SiNextdotjs,
   SiReact,
@@ -17,7 +17,7 @@ import {
   SiFastapi,
   SiGit,
   SiJquery,
-} from "@icons-pack/react-simple-icons"
+} from "react-icons/si"
 import { cn } from "@/lib/utils"
 import { type HeroTechIcon } from "@/types/hero"
 
@@ -51,8 +51,8 @@ const HeroFloatingIcon = ({ techIcon }: HeroFloatingIconProps) => {
   if (!IconComponent) return null
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0 }}
+    <m.div
+      initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{
         opacity: 1,
         scale: 1,
@@ -83,7 +83,7 @@ const HeroFloatingIcon = ({ techIcon }: HeroFloatingIconProps) => {
       role="img"
     >
       <IconComponent size={27} color={`#${techIcon.brandHex}`} />
-    </motion.div>
+    </m.div>
   )
 }
 

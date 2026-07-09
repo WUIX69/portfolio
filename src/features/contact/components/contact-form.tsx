@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { Send } from "lucide-react"
-import { motion, HTMLMotionProps } from "motion/react"
+import { m, HTMLMotionProps } from "motion/react"
 import { IconWrapper } from "@/components/shared/icon-wrapper"
 import { ButtonWithLoading } from "@/components/shared/button-with-loading"
 import { cn } from "@/lib/utils"
@@ -38,7 +38,7 @@ const ContactForm = ({ className, ...props }: HTMLMotionProps<"div">) => {
   }
 
   return (
-    <motion.div
+    <m.div
       className={cn(
         "flex h-full flex-col rounded-2xl border border-border bg-card p-8 shadow-lg shadow-primary/5 md:p-10",
         className
@@ -57,10 +57,11 @@ const ContactForm = ({ className, ...props }: HTMLMotionProps<"div">) => {
       >
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div className="space-y-2">
-            <label className="ml-1 font-sans text-sm font-semibold text-muted-foreground">
+            <label htmlFor="name" className="ml-1 font-sans text-sm font-semibold text-muted-foreground">
               Name
             </label>
             <input
+              id="name"
               type="text"
               name="name"
               value={formData.name}
@@ -71,10 +72,11 @@ const ContactForm = ({ className, ...props }: HTMLMotionProps<"div">) => {
             />
           </div>
           <div className="space-y-2">
-            <label className="ml-1 font-sans text-sm font-semibold text-muted-foreground">
+            <label htmlFor="email" className="ml-1 font-sans text-sm font-semibold text-muted-foreground">
               Email
             </label>
             <input
+              id="email"
               type="email"
               name="email"
               value={formData.email}
@@ -86,10 +88,11 @@ const ContactForm = ({ className, ...props }: HTMLMotionProps<"div">) => {
           </div>
         </div>
         <div className="flex flex-grow flex-col space-y-2">
-          <label className="ml-1 font-sans text-sm font-semibold text-muted-foreground">
+          <label htmlFor="message" className="ml-1 font-sans text-sm font-semibold text-muted-foreground">
             Message
           </label>
           <textarea
+            id="message"
             name="message"
             value={formData.message}
             onChange={handleChange}
@@ -109,7 +112,7 @@ const ContactForm = ({ className, ...props }: HTMLMotionProps<"div">) => {
           Send Message
         </ButtonWithLoading>
       </form>
-    </motion.div>
+    </m.div>
   )
 }
 
