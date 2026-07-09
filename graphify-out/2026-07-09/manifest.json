@@ -50,8 +50,8 @@
     "semantic_hash": ""
   },
   "src/app/layout.tsx": {
-    "mtime": 1782749681.7436736,
-    "ast_hash": "7bb687dcbe748fa8e8f5d5ef6e1faa0f",
+    "mtime": 1783610404.0422332,
+    "ast_hash": "f39441adf687c5265d4769b5742a8356",
     "semantic_hash": ""
   },
   "src/app/page.tsx": {
@@ -205,8 +205,8 @@
     "semantic_hash": ""
   },
   "src/features/contact/components/social-links-card.tsx": {
-    "mtime": 1782749682.2699697,
-    "ast_hash": "bcd6f20d53b64f1d18cc96a3d8ea268b",
+    "mtime": 1783610376.0236785,
+    "ast_hash": "9617b8b06639ff03a15ffb89adaa114e",
     "semantic_hash": ""
   },
   "src/features/experience/components/education-card.tsx": {
@@ -230,8 +230,8 @@
     "semantic_hash": ""
   },
   "src/features/hero/components/hero-floating-icon.tsx": {
-    "mtime": 1782749682.4461634,
-    "ast_hash": "e5850a34138e2d5d76b1fbf5469f22a1",
+    "mtime": 1783610371.2809582,
+    "ast_hash": "7d8347b1c488a4eb56e84e8a9a8a6a0b",
     "semantic_hash": ""
   },
   "src/features/hero/components/hero-floating-icons.tsx": {
@@ -372,6 +372,11 @@
   "src/types/gallery.ts": {
     "mtime": 1783602817.9154792,
     "ast_hash": "6634ee2caa3c7c12dcbcfe3596e19d45",
+    "semantic_hash": ""
+  },
+  "src/components/providers/motion-provider.tsx": {
+    "mtime": 1783610388.9181032,
+    "ast_hash": "24f62533e626977018f996a66e0520e6",
     "semantic_hash": ""
   }
 }
