@@ -1,16 +1,16 @@
 # Graph Report - portfolio  (2026-07-09)
 
 ## Corpus Check
-- 61 files · ~12,110 words
+- 61 files · ~12,120 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 210 nodes · 297 edges · 25 communities (14 shown, 11 thin omitted)
+- 210 nodes · 266 edges · 27 communities (16 shown, 11 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.72)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `617b9856`
+- Built from commit: `07b775f5`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -37,55 +37,57 @@
 - [[_COMMUNITY_Turbopack|Turbopack]]
 - [[_COMMUNITY_Community 23|Community 23]]
 - [[_COMMUNITY_Community 24|Community 24]]
+- [[_COMMUNITY_Community 25|Community 25]]
+- [[_COMMUNITY_Community 26|Community 26]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Project` - 6 edges
 2. `Design System Master File` - 6 edges
-3. `Container()` - 5 edges
-4. `SectionGradient()` - 5 edges
-5. `AnimatedItem()` - 5 edges
-6. `IconWrapper()` - 5 edges
-7. `SkillCategory` - 5 edges
-8. `Global Rules` - 5 edges
-9. `Component Specs` - 5 edges
-10. `PNPM Workspace Configuration` - 5 edges
+3. `IconWrapper()` - 5 edges
+4. `Global Rules` - 5 edges
+5. `Component Specs` - 5 edges
+6. `PNPM Workspace Configuration` - 5 edges
+7. `EducationEntry` - 4 edges
+8. `GalleryItem` - 4 edges
+9. `Container()` - 4 edges
+10. `SectionGradient()` - 4 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `PNPM Workspace Configuration` --references--> `pnpm`  [INFERRED]
   pnpm-workspace.yaml → README.md
-- `SkillCardProps` --references--> `SkillCategory`  [EXTRACTED]
-  src/features/experience/components/skills-bento.tsx → src/types/experience.ts
-- `SkillsBentoProps` --references--> `SkillCategory`  [EXTRACTED]
-  src/features/experience/components/skills-bento.tsx → src/types/experience.ts
 - `ProjectCardProps` --references--> `Project`  [EXTRACTED]
   src/features/projects/components/project-card.tsx → src/types/projects.ts
 - `ProjectDialogProps` --references--> `Project`  [EXTRACTED]
   src/features/projects/components/project-dialog.tsx → src/types/projects.ts
+- `EducationCardProps` --references--> `EducationEntry`  [EXTRACTED]
+  src/features/experience/components/education-card.tsx → src/types/experience.ts
+- `GalleryCardProps` --references--> `GalleryItem`  [EXTRACTED]
+  src/features/gallery/components/gallery-card.tsx → src/types/gallery.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (25 total, 11 thin omitted)
+## Communities (27 total, 11 thin omitted)
 
 ### Community 0 - "Contact Section and Testimonials"
 Cohesion: 0.09
 Nodes (20): inter, jetbrainsMono, metadata, plusJakartaSans, viewport, Footer(), ThemeToggle(), TopNavBar() (+12 more)
 
 ### Community 1 - "Layout and Navigation"
-Cohesion: 0.15
-Nodes (11): ContactSection, ExperienceSection, GallerySection, ProjectsSection, Container(), ContainerProps, SectionGradient(), SectionGradientProps (+3 more)
+Cohesion: 0.32
+Nodes (4): itemVariants, CONTACT_DATA, ContactData, SocialLink
 
 ### Community 2 - "Experience and Education Bento"
-Cohesion: 0.18
-Nodes (11): MotionViewport(), MotionViewportProps, PROJECTS_DATA, ICON_MAP, ProjectCard(), ProjectCardProps, ProjectDialog(), ProjectDialogProps (+3 more)
+Cohesion: 0.39
+Nodes (6): ICON_MAP, ProjectCardProps, ProjectDialog(), ProjectDialogProps, Project, ProjectImage
 
 ### Community 3 - "Main Page Structure and Sections"
-Cohesion: 0.14
-Nodes (17): AnimatedItem(), AnimatedItemProps, EDUCATION_DATA, EXPERIENCE_DATA, SKILLS_DATA, EducationCard(), EducationCardProps, ExperienceCard() (+9 more)
+Cohesion: 0.10
+Nodes (18): SectionGradient(), SectionGradientProps, AnimatedItem(), AnimatedItemProps, MotionViewport(), MotionViewportProps, SectionHeader(), SectionHeaderProps (+10 more)
 
 ### Community 4 - "Hero Landing Visuals"
-Cohesion: 0.10
-Nodes (19): ButtonWithLoading(), ButtonWithLoadingProps, IconWrapper(), IconWrapperProps, SectionHeader(), SectionHeaderProps, CONTACT_DATA, ContactForm() (+11 more)
+Cohesion: 0.15
+Nodes (8): ButtonWithLoading(), ButtonWithLoadingProps, IconWrapper(), IconWrapperProps, ContactInfoCardProps, hoverStyles, ICON_MAP, SocialLinksCardProps
 
 ### Community 5 - "Project Setup and Readme Docs"
 Cohesion: 0.29
@@ -100,19 +102,27 @@ Cohesion: 0.40
 Nodes (4): architecture, conventions, graphify, repo
 
 ### Community 9 - "Global Error Boundary"
-Cohesion: 0.15
-Nodes (13): HERO_DATA, HERO_TECH_ICONS, HeroFloatingIcon(), HeroFloatingIconProps, iconMap, HeroFloatingIcons(), HeroStatusOverlay(), containerVariants (+5 more)
+Cohesion: 0.11
+Nodes (17): Container(), ContainerProps, HERO_DATA, HERO_TECH_ICONS, HeroFloatingIcon(), HeroFloatingIconProps, iconMap, HeroFloatingIcons() (+9 more)
 
 ### Community 10 - "Threads Interactive Canvas"
 Cohesion: 0.33
 Nodes (6): PNPM Workspace Configuration, MSW (Mock Service Worker), Sentry CLI, Sharp, UNRS Resolver, pnpm
 
+### Community 23 - "Community 23"
+Cohesion: 0.33
+Nodes (4): ContactSection, ExperienceSection, GallerySection, ProjectsSection
+
 ### Community 24 - "Community 24"
-Cohesion: 0.38
-Nodes (3): itemVariants, GALLERY_DATA, GalleryItem
+Cohesion: 0.33
+Nodes (5): GalleryCard(), GalleryCardProps, itemVariants, GALLERY_DATA, GalleryItem
+
+### Community 25 - "Community 25"
+Cohesion: 0.27
+Nodes (7): EducationCardProps, EDUCATION_DATA, EXPERIENCE_DATA, SKILLS_DATA, EducationEntry, ExperienceEntry, SkillCategory
 
 ## Knowledge Gaps
-- **67 isolated node(s):** `itemVariants`, `eslintConfig`, `config`, `plusJakartaSans`, `inter` (+62 more)
+- **74 isolated node(s):** `ExperienceSection`, `ProjectsSection`, `ContactSection`, `GallerySection`, `EXPERIENCE_DATA` (+69 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **11 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -120,16 +130,16 @@ Nodes (3): itemVariants, GALLERY_DATA, GalleryItem
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `HERO_DATA` connect `Global Error Boundary` to `Contact Section and Testimonials`?**
-  _High betweenness centrality (0.073) - this node is a cross-community bridge._
-- **Why does `Container()` connect `Layout and Navigation` to `Experience and Education Bento`, `Main Page Structure and Sections`, `Hero Landing Visuals`?**
-  _High betweenness centrality (0.059) - this node is a cross-community bridge._
-- **Why does `SectionGradient()` connect `Layout and Navigation` to `Experience and Education Bento`, `Main Page Structure and Sections`, `Hero Landing Visuals`?**
-  _High betweenness centrality (0.059) - this node is a cross-community bridge._
-- **What connects `itemVariants`, `eslintConfig`, `config` to the rest of the system?**
-  _68 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.052) - this node is a cross-community bridge._
+- **Why does `Container()` connect `Global Error Boundary` to `Main Page Structure and Sections`?**
+  _High betweenness centrality (0.036) - this node is a cross-community bridge._
+- **Why does `SectionGradient()` connect `Main Page Structure and Sections` to `Global Error Boundary`?**
+  _High betweenness centrality (0.036) - this node is a cross-community bridge._
+- **What connects `ExperienceSection`, `ProjectsSection`, `ContactSection` to the rest of the system?**
+  _75 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Contact Section and Testimonials` be split into smaller, more focused modules?**
   _Cohesion score 0.08901515151515152 - nodes in this community are weakly interconnected._
-- **Should `Layout and Navigation` be split into smaller, more focused modules?**
-  _Cohesion score 0.14705882352941177 - nodes in this community are weakly interconnected._
 - **Should `Main Page Structure and Sections` be split into smaller, more focused modules?**
-  _Cohesion score 0.14461538461538462 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.10344827586206896 - nodes in this community are weakly interconnected._
+- **Should `Hero Landing Visuals` be split into smaller, more focused modules?**
+  _Cohesion score 0.14705882352941177 - nodes in this community are weakly interconnected._
