@@ -355,8 +355,8 @@
     "semantic_hash": "47550389c908cae5f6cef1a35f67b8ff"
   },
   "src/data/gallery.ts": {
-    "mtime": 1783600666.8904593,
-    "ast_hash": "76b4199db9847d6f1db64c61f36d9771",
+    "mtime": 1783601172.829683,
+    "ast_hash": "57cf689a8794dee18427b88720f4efe3",
     "semantic_hash": ""
   },
   "src/features/gallery/components/gallery-card.tsx": {
