@@ -13,6 +13,7 @@ export function ProjectDialogActions({ project }: ProjectDialogActionsProps) {
         <DialogClose asChild>
           <button
             type="button"
+            aria-label="Close dialog"
             className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-muted-foreground transition-all hover:bg-accent/80 hover:text-foreground"
           >
             <X className="size-5" />

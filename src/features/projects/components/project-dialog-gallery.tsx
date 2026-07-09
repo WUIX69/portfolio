@@ -22,9 +22,8 @@ interface ProjectDialogGalleryProps {
 export function ProjectDialogGallery({ title, images }: ProjectDialogGalleryProps) {
   const [api, setApi] = useState<CarouselApi>()
   const [thumbApi, setThumbApi] = useState<CarouselApi>()
-  const [current, setCurrent] = useState(0)
-  const [canScrollPrev, setCanScrollPrev] = useState(false)
-  const [canScrollNext, setCanScrollNext] = useState(false)
+  const [state, setState] = useState({ current: 0, canScrollPrev: false, canScrollNext: false })
+  const { current, canScrollPrev, canScrollNext } = state
 
   const onThumbClick = useCallback(
     (index: number) => {
@@ -39,9 +38,11 @@ export function ProjectDialogGallery({ title, images }: ProjectDialogGalleryProp
 
     const updateState = () => {
       const index = api.selectedScrollSnap()
-      setCurrent(index)
-      setCanScrollPrev(api.canScrollPrev())
-      setCanScrollNext(api.canScrollNext())
+      setState({
+        current: index,
+        canScrollPrev: api.canScrollPrev(),
+        canScrollNext: api.canScrollNext(),
+      })
       if (thumbApi) thumbApi.scrollTo(index)
     }
 
@@ -94,7 +95,7 @@ export function ProjectDialogGallery({ title, images }: ProjectDialogGalleryProp
       >
         <CarouselContent>
           {images.map((img, idx) => (
-            <CarouselItem key={idx}>
+            <CarouselItem key={img.url}>
               <div className="group relative aspect-video w-full overflow-hidden rounded-2xl">
                 <Image
                   src={img.url}
@@ -124,7 +125,7 @@ export function ProjectDialogGallery({ title, images }: ProjectDialogGalleryProp
           <CarouselContent className="ml-0 flex-row gap-4">
             {images.map((img, idx) => (
               <CarouselItem
-                key={idx}
+                key={img.url}
                 className="basis-auto cursor-pointer pl-0"
                 onClick={() => onThumbClick(idx)}
               >

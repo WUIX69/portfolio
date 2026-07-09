@@ -47,8 +47,8 @@ const ExperienceCard = ({ experience, className }: ExperienceCardProps) => {
           {experience.description}
         </p>
         <ul className="mb-6 flex list-inside list-disc flex-col gap-2 text-sm text-muted-foreground">
-          {experience.achievements.map((achievement, index) => (
-            <li key={index}>{achievement}</li>
+          {experience.achievements.map((achievement) => (
+            <li key={achievement}>{achievement}</li>
           ))}
         </ul>
 
