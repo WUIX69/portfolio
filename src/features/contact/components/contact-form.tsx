@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { Send } from "lucide-react"
-import { motion, HTMLMotionProps } from "motion/react"
+import { m, HTMLMotionProps } from "motion/react"
 import { IconWrapper } from "@/components/shared/icon-wrapper"
 import { ButtonWithLoading } from "@/components/shared/button-with-loading"
 import { cn } from "@/lib/utils"
@@ -38,7 +38,7 @@ const ContactForm = ({ className, ...props }: HTMLMotionProps<"div">) => {
   }
 
   return (
-    <motion.div
+    <m.div
       className={cn(
         "flex h-full flex-col rounded-2xl border border-border bg-card p-8 shadow-lg shadow-primary/5 md:p-10",
         className
@@ -109,7 +109,7 @@ const ContactForm = ({ className, ...props }: HTMLMotionProps<"div">) => {
           Send Message
         </ButtonWithLoading>
       </form>
-    </motion.div>
+    </m.div>
   )
 }
 

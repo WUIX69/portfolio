@@ -1,7 +1,7 @@
 "use client"
 
 import { FileDown, ArrowRight } from "lucide-react"
-import { motion, Variants } from "motion/react"
+import { m, Variants } from "motion/react"
 
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
@@ -34,13 +34,13 @@ const itemVariants: Variants = {
 
 const HeroTextContent = () => {
   return (
-    <motion.div
+    <m.div
       variants={containerVariants}
       initial="hidden"
       animate="visible"
       className="z-10 col-span-1 flex flex-col gap-6 lg:col-span-6"
     >
-      <motion.div
+      <m.div
         variants={itemVariants}
         className="inline-flex w-fit items-center gap-2 rounded-full bg-accent px-4 py-2"
       >
@@ -48,9 +48,9 @@ const HeroTextContent = () => {
         <span className="text-sm font-semibold tracking-tight text-accent-foreground">
           {HERO_DATA.tagline}
         </span>
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         variants={itemVariants}
         className="min-h-[144px] text-4xl font-extrabold tracking-wide sm:min-h-[100px] sm:text-5xl lg:min-h-[120px] lg:text-[48px] lg:leading-[1.2]"
       >
@@ -93,16 +93,16 @@ const HeroTextContent = () => {
             stringSplitter: (str) => Array.from(str),
           }}
         />
-      </motion.div>
+      </m.div>
 
-      <motion.p
+      <m.p
         variants={itemVariants}
         className="max-w-lg text-lg leading-relaxed text-muted-foreground"
       >
         {HERO_DATA.description}
-      </motion.p>
+      </m.p>
 
-      <motion.div
+      <m.div
         variants={itemVariants}
         className="mt-4 flex flex-wrap items-center gap-4"
       >
@@ -132,9 +132,9 @@ const HeroTextContent = () => {
             <ArrowRight className="size-4" />
           </a>
         </Button>
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         variants={itemVariants}
         className="mt-8 flex items-center gap-6 border-t border-border pt-8"
       >
@@ -157,8 +157,8 @@ const HeroTextContent = () => {
             </div>
           </div>
         ))}
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   )
 }
 

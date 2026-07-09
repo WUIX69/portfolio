@@ -2,8 +2,35 @@
 
 import * as React from "react"
 import { ArrowUp } from "lucide-react"
-import { motion, AnimatePresence } from "motion/react"
+import { m, AnimatePresence } from "motion/react"
 import { cn } from "@/lib/utils"
+
+const scrollToTop = () => {
+  const startY = window.scrollY || window.pageYOffset
+  if (startY === 0) return
+
+  const duration = 600 // ms
+  const startTime = performance.now()
+
+  const animateScroll = (currentTime: number) => {
+    const elapsed = currentTime - startTime
+    const progress = Math.min(elapsed / duration, 1)
+
+    // easeInOutCubic easing
+    const ease =
+      progress < 0.5
+        ? 4 * progress * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 3) / 2
+
+    window.scrollTo(0, startY * (1 - ease))
+
+    if (progress < 1) {
+      requestAnimationFrame(animateScroll)
+    }
+  }
+
+  requestAnimationFrame(animateScroll)
+}
 
 export const ScrollToTop = () => {
   const [isVisible, setIsVisible] = React.useState(false)
@@ -21,37 +48,10 @@ export const ScrollToTop = () => {
     return () => window.removeEventListener("scroll", toggleVisibility)
   }, [])
 
-  const scrollToTop = () => {
-    const startY = window.scrollY || window.pageYOffset
-    if (startY === 0) return
-
-    const duration = 600 // ms
-    const startTime = performance.now()
-
-    const animateScroll = (currentTime: number) => {
-      const elapsed = currentTime - startTime
-      const progress = Math.min(elapsed / duration, 1)
-
-      // easeInOutCubic easing
-      const ease =
-        progress < 0.5
-          ? 4 * progress * progress * progress
-          : 1 - Math.pow(-2 * progress + 2, 3) / 2
-
-      window.scrollTo(0, startY * (1 - ease))
-
-      if (progress < 1) {
-        requestAnimationFrame(animateScroll)
-      }
-    }
-
-    requestAnimationFrame(animateScroll)
-  }
-
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.button
+        <m.button
           initial={{ opacity: 0, scale: 0.8, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
@@ -71,7 +71,7 @@ export const ScrollToTop = () => {
           type="button"
         >
           <ArrowUp className="size-5" />
-        </motion.button>
+        </m.button>
       )}
     </AnimatePresence>
   )

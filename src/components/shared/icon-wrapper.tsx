@@ -13,6 +13,28 @@ interface IconWrapperProps {
   "aria-hidden"?: boolean
 }
 
+const VARIANTS = {
+  primary: "bg-primary/10 text-primary",
+  secondary: "bg-secondary text-secondary-foreground",
+  outline: "border border-border bg-background text-foreground",
+  ghost: "bg-transparent text-foreground",
+  muted: "bg-muted text-muted-foreground",
+}
+
+const SIZES = {
+  sm: "size-8",
+  md: "size-10",
+  lg: "size-12",
+  xl: "size-16",
+}
+
+const ICON_SIZES = {
+  sm: "size-4",
+  md: "size-5",
+  lg: "size-6",
+  xl: "size-8",
+}
+
 const IconWrapper = ({
   icon: Icon,
   variant = "primary",
@@ -21,39 +43,18 @@ const IconWrapper = ({
   iconClassName,
   "aria-hidden": ariaHidden = true,
 }: IconWrapperProps) => {
-  const variants = {
-    primary: "bg-primary/10 text-primary",
-    secondary: "bg-secondary text-secondary-foreground",
-    outline: "border border-border bg-background text-foreground",
-    ghost: "bg-transparent text-foreground",
-    muted: "bg-muted text-muted-foreground",
-  }
-
-  const sizes = {
-    sm: "size-8",
-    md: "size-10",
-    lg: "size-12",
-    xl: "size-16",
-  }
-
-  const iconSizes = {
-    sm: "size-4",
-    md: "size-5",
-    lg: "size-6",
-    xl: "size-8",
-  }
 
   return (
     <div
       className={cn(
         "flex items-center justify-center rounded-lg transition-colors",
-        variants[variant],
-        sizes[size],
+        VARIANTS[variant],
+        SIZES[size],
         containerClassName
       )}
     >
       <Icon
-        className={cn(iconSizes[size], iconClassName)}
+        className={cn(ICON_SIZES[size], iconClassName)}
         aria-hidden={ariaHidden}
       />
     </div>
