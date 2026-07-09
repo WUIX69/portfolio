@@ -21,11 +21,4 @@ export const CONTACT_DATA: ContactData = {
       iconName: "Github",
     },
   ],
-  testimonial: {
-    quote:
-      "Jonathan's technical autonomy is exceptional. He led complex system migrations and full-feature lifecycles without senior oversight, delivering high-performance results for our platform.",
-    author: "Kleng Bancud",
-    role: "CEO, Juanwork Inc.",
-    rating: 5,
-  },
 }
