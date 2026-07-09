@@ -184,7 +184,6 @@ export const PROJECTS_DATA: Project[] = [
       { url: "/images/fileats-5.jpg", fit: "contain" },
       { url: "/images/fileats-6.jpg", fit: "contain" },
       { url: "/images/fileats-7.jpg", fit: "contain" },
-      { url: "/images/fileats-8.jpg", fit: "contain" },
       { url: "/images/fileats-1.jpg", fit: "contain" },
     ],
     github: "https://github.com/WUIX69/FilEats",

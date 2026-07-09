@@ -129,7 +129,7 @@ const ProjectCard = ({ project, className }: ProjectCardProps) => {
                 <CarouselContent className="ml-0 h-full">
                   {images.map((src, idx) => (
                     <CarouselItem
-                      key={src}
+                      key={`${src}-${idx}`}
                       className="relative h-full w-full pl-0"
                     >
                       <Image
@@ -174,7 +174,7 @@ const ProjectCard = ({ project, className }: ProjectCardProps) => {
                   <div className="absolute bottom-3 left-1/2 z-20 flex -translate-x-1/2 gap-1.5">
                     {images.map((_, idx) => (
                       <div
-                        key={images[idx]}
+                        key={`${images[idx]}-${idx}`}
                         className={cn(
                           "size-1.5 rounded-full transition-all duration-300",
                           idx === currentImageIndex

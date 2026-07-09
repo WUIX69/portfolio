@@ -8,6 +8,26 @@ import { Button } from "@/components/ui/button"
 
 export const ThemeToggle = () => {
   const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = React.useState(false)
+
+  React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return (
+      <Button
+        variant="ghost"
+        size="icon"
+        className="relative rounded-full text-primary hover:bg-accent"
+        aria-label="Toggle theme skeleton"
+      >
+        <div className="size-5" />
+      </Button>
+    )
+  }
+
   const isDark = theme === "dark"
 
   return (

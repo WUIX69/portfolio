@@ -80,8 +80,8 @@
     "semantic_hash": ""
   },
   "src/components/layout/theme-toggle.tsx": {
-    "mtime": 1783612042.0755773,
-    "ast_hash": "713e9766564381cea2420c1fcf18bcee",
+    "mtime": 1783615107.939289,
+    "ast_hash": "3b9e0e1fb0f25a2a38cd1938e8a36026",
     "semantic_hash": ""
   },
   "src/components/layout/top-nav-bar.tsx": {
@@ -175,8 +175,8 @@
     "semantic_hash": ""
   },
   "src/data/projects.ts": {
-    "mtime": 1782749682.1655526,
-    "ast_hash": "d377dccd5d90298ffbb79c7eb844da44",
+    "mtime": 1783615050.6433253,
+    "ast_hash": "f90ab0e0e0147980665f253b4b2772cf",
     "semantic_hash": ""
   },
   "src/features/contact/components/contact-form.tsx": {
@@ -260,8 +260,8 @@
     "semantic_hash": ""
   },
   "src/features/projects/components/project-card.tsx": {
-    "mtime": 1783613569.0410845,
-    "ast_hash": "0131265c3a72026f82d6d6f649e7aca7",
+    "mtime": 1783615071.8560517,
+    "ast_hash": "523daacde6b83edacd59ddb0bbe62bc4",
     "semantic_hash": ""
   },
   "src/features/projects/components/project-dialog.tsx": {
