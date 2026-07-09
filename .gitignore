@@ -52,6 +52,8 @@ graphify-out/cache/
 .agent
 .claude
 .opencode
+.kiro
+
 /docs
 /temp
 /scripts
