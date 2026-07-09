@@ -37,11 +37,14 @@ const GallerySection = () => {
             {GALLERY_DATA.map((item) => {
               const isWide = item.variant === "wide"
               const isTall = item.variant === "tall"
-              const gridClass = isWide
-                ? "md:col-span-2"
-                : isTall
-                  ? "md:row-span-2"
-                  : ""
+              const isFull = item.variant === "full"
+              const gridClass = isFull
+                ? "md:col-span-2 md:row-span-2"
+                : isWide
+                  ? "md:col-span-2"
+                  : isTall
+                    ? "md:row-span-2"
+                    : ""
 
               return (
                 <AnimatedItem

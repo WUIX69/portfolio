@@ -3,5 +3,5 @@ export interface GalleryItem {
   title: string
   description: string
   imageUrl: string
-  variant?: "wide" | "tall" | "square"
+  variant?: "wide" | "tall" | "square" | "full"
 }
