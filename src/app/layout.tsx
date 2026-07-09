@@ -3,6 +3,7 @@ import { Metadata, Viewport } from "next"
 
 import "./globals.css"
 import { ThemeProvider } from "@/context/theme-provider"
+import { MotionProvider } from "@/components/providers/motion-provider"
 import { MobileMenuProvider } from "@/context/mobile-menu"
 import { TopNavBar } from "@/components/layout/top-nav-bar"
 import { Footer } from "@/components/layout/footer"
@@ -61,14 +62,16 @@ const RootLayout = ({
       )}
     >
       <body className="flex min-h-screen flex-col bg-background pt-[96px] text-foreground">
-        <ThemeProvider>
-          <MobileMenuProvider>
-            <TopNavBar />
-            <main className="flex-grow">{children}</main>
-            <Footer />
-            <ScrollToTop />
-          </MobileMenuProvider>
-        </ThemeProvider>
+        <MotionProvider>
+          <ThemeProvider>
+            <MobileMenuProvider>
+              <TopNavBar />
+              <main className="flex-grow">{children}</main>
+              <Footer />
+              <ScrollToTop />
+            </MobileMenuProvider>
+          </ThemeProvider>
+        </MotionProvider>
       </body>
     </html>
   )

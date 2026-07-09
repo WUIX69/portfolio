@@ -17,7 +17,7 @@ import {
   SiFastapi,
   SiGit,
   SiJquery,
-} from "@icons-pack/react-simple-icons"
+} from "react-icons/si"
 import { cn } from "@/lib/utils"
 import { type HeroTechIcon } from "@/types/hero"
 
