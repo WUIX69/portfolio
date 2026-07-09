@@ -21,7 +21,7 @@ const EducationCard = ({ education, className }: EducationCardProps) => {
           <GraduationCap className="size-5" aria-hidden="true" />
         </div>
         <h2 className="font-sans text-xl font-semibold text-foreground">
-          Education
+          {education.level}
         </h2>
       </div>
       <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">

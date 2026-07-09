@@ -55,8 +55,8 @@
     "semantic_hash": ""
   },
   "src/app/page.tsx": {
-    "mtime": 1782749681.7567656,
-    "ast_hash": "257e5357a0a85f5a89687ad3aa8e15bc",
+    "mtime": 1783598073.569063,
+    "ast_hash": "9dd73e441d7dd6cc2155ada0e8ee3030",
     "semantic_hash": ""
   },
   "src/components/Threads.jsx": {
@@ -353,5 +353,25 @@
     "mtime": 1782101021.898592,
     "ast_hash": "47550389c908cae5f6cef1a35f67b8ff",
     "semantic_hash": "47550389c908cae5f6cef1a35f67b8ff"
+  },
+  "src/data/gallery.ts": {
+    "mtime": 1783601172.829683,
+    "ast_hash": "57cf689a8794dee18427b88720f4efe3",
+    "semantic_hash": ""
+  },
+  "src/features/gallery/components/gallery-card.tsx": {
+    "mtime": 1783598032.6586328,
+    "ast_hash": "84a91238ed90da6609506ba8f831a65b",
+    "semantic_hash": ""
+  },
+  "src/features/gallery/components/gallery-section.tsx": {
+    "mtime": 1783600018.430606,
+    "ast_hash": "76df0d17d3afa51b1fcfe53db7fdd188",
+    "semantic_hash": ""
+  },
+  "src/types/gallery.ts": {
+    "mtime": 1783599997.1019032,
+    "ast_hash": "fe07c7d1dc09989ee0a2470da6c768ec",
+    "semantic_hash": ""
   }
 }

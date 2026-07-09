@@ -11,6 +11,7 @@ export interface ExperienceEntry {
 
 export interface EducationEntry {
   id: string
+  level: string
   school: string
   degree: string
   period: string

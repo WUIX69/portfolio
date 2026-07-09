@@ -16,6 +16,11 @@ const ContactSection = dynamic(() =>
     (mod) => mod.ContactSection
   )
 )
+const GallerySection = dynamic(() =>
+  import("@/features/gallery/components/gallery-section").then(
+    (mod) => mod.GallerySection
+  )
+)
 
 const Page = () => {
   return (
@@ -23,6 +28,7 @@ const Page = () => {
       <HeroSection />
       <ExperienceSection />
       <ProjectsSection />
+      <GallerySection />
       <ContactSection />
     </div>
   )

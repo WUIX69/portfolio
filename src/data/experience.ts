@@ -40,18 +40,21 @@ export const EXPERIENCE_DATA: ExperienceEntry[] = [
 export const EDUCATION_DATA: EducationEntry[] = [
   {
     id: "bulsu",
+    level: "College",
     school: "Bulacan State University",
     degree: "Bachelor of Science in Information Technology",
     period: "2020 - 2026",
   },
   {
     id: "icp",
+    level: "Senior High",
     school: "Immaculate Conception Polytechnic",
     degree: "Senior High School — ICT",
     period: "2018 - 2020",
   },
   {
     id: "pnhs",
+    level: "Junior High",
     school: "Parada National High School",
     degree: "Junior High School",
     period: "2013 - 2018",
