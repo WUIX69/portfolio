@@ -5,13 +5,6 @@ export interface SocialLink {
   iconName: string
 }
 
-export interface Testimonial {
-  quote: string
-  author: string
-  role: string
-  rating: number
-}
-
 export interface ContactData {
   title: string
   description: string
@@ -19,5 +12,4 @@ export interface ContactData {
   phone: string
   location: string
   socials: SocialLink[]
-  testimonial: Testimonial
 }
