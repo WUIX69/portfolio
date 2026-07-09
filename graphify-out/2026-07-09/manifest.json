@@ -355,8 +355,8 @@
     "semantic_hash": "47550389c908cae5f6cef1a35f67b8ff"
   },
   "src/data/gallery.ts": {
-    "mtime": 1783598005.8853085,
-    "ast_hash": "9e7291f508408d31ee98825476c3ed89",
+    "mtime": 1783600666.8904593,
+    "ast_hash": "76b4199db9847d6f1db64c61f36d9771",
     "semantic_hash": ""
   },
   "src/features/gallery/components/gallery-card.tsx": {
@@ -365,13 +365,13 @@
     "semantic_hash": ""
   },
   "src/features/gallery/components/gallery-section.tsx": {
-    "mtime": 1783598053.4165068,
-    "ast_hash": "480a1cb5d8e38beeba6837e3cfc2cc91",
+    "mtime": 1783600018.430606,
+    "ast_hash": "76df0d17d3afa51b1fcfe53db7fdd188",
     "semantic_hash": ""
   },
   "src/types/gallery.ts": {
-    "mtime": 1783597996.1508975,
-    "ast_hash": "2243f0df895c8e04675be1bebcdc7d27",
+    "mtime": 1783599997.1019032,
+    "ast_hash": "fe07c7d1dc09989ee0a2470da6c768ec",
     "semantic_hash": ""
   }
 }
